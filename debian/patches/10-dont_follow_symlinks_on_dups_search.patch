@@ -1,0 +1,20 @@
+Description: don't follow symlinks on duplicates search
+ It detects the same file twice if two directories are symlinked.
+Origin: vendor
+Bug-Debian: http://bugs.debian.org/533641
+Author: David Paleino <d.paleino@gmail.com>
+---
+ src/dlg-duplicates.c |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- gthumb.orig/src/dlg-duplicates.c
++++ gthumb/src/dlg-duplicates.c
+@@ -1553,7 +1553,7 @@ search_dir_async (DialogData *data, cons
+ 	gnome_vfs_async_load_directory_uri (
+ 		& (data->handle),
+ 		data->uri,
+-		GNOME_VFS_FILE_INFO_FOLLOW_LINKS,
++		GNOME_VFS_FILE_INFO_DEFAULT,
+ 		128 /* items_per_notification FIXME: find a good value */,
+ 		GNOME_VFS_PRIORITY_MIN,
+ 		directory_load_cb,

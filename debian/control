@@ -1,0 +1,47 @@
+Source: gthumb
+Section: gnome
+Priority: optional
+Maintainer: 774 <idnanashi@gmail.com>
+XSBC-Original-Maintainer: David Paleino <d.paleino@gmail.com>
+Build-Depends: debhelper (>= 5.0.51~), intltool, libexif-dev (>= 0.6.13), flex,
+ libtiff4-dev, libpng12-dev, libgnomeprintui2.2-dev, gconf2, libbonoboui2-0,
+ libgnomeui-dev (>= 2.6.0), scrollkeeper, libgphoto2-2-dev, automake1.9,
+ autoconf, quilt, libtool, gnome-doc-utils, libgtk2.0-dev (>= 2.10.0),
+ libxml2-dev (>= 2.4.0), libglib2.0-dev (>= 2.6.0), libcairo2-dev,
+ libltdl3-dev, libiptcdata0-dev
+Standards-Version: 3.7.3
+Homepage: http://id774.net
+Vcs-Git: git@git.assembla.com:774-gthumb.git
+Vcs-Browser: http://code.assembla.com/774-gthumb/git/nodes?rev=master
+
+Package: gthumb
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ gthumb-data (= ${source:Version}), scrollkeeper
+Recommends: yelp
+Conflicts: gthumb2
+Provides: gthumb2
+Replaces: gthumb2
+Description: an image viewer and browser
+ gThumb is an advanced image viewer and browser. It has many useful
+ features, such as filesystem browsing, slide show, image catalogs, web
+ album creation, camera import, image CD burning, batch file operations and
+ quick image editing features like transformation and color manipulation.
+ .
+ It's designed for GNOME 2 desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
+
+Package: gthumb-data
+Architecture: all
+Conflicts: gthumb (<< 3:2.10.8-1)
+Replaces: gthumb (<< 3:2.10.8-1)
+Description: an image viewer and browser - arch-independent files
+ gThumb is an advanced image viewer and browser. It has many useful
+ features, such as filesystem browsing, slide show, image catalogs, web
+ album creation, camera import, image CD burning, batch file operations and
+ quick image editing features like transformation and color manipulation.
+ .
+ It's designed for GNOME 2 desktop environment and uses its platform. For
+ camera import feature, the gPhoto2 library is used.
+ .
+ This package contains the architecture-independent files needed by gthumb.

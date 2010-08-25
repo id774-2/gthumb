@@ -1,0 +1,2279 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "2.10.8">
+<!ENTITY manualversion "2.10.8">
+<!ENTITY date "October 2006">
+<!ENTITY appname "gThumb">
+<!ENTITY app "<application>gThumb</application>">
+<!-- replace version above with actual application version number --><!--  Template Version: 1.0.1  (do not remove this line) -->]>
+<!-- =============Document Header ============================= -->
+<article id="index" lang="sv"> <!-- please do not change the id -->
+
+  <articleinfo>
+    <title>Handbok för <application>gThumb</application> v2.10.8</title>
+    <copyright>
+      <year>2001</year>
+      <year>2002</year>
+      <year>2003</year>
+      <year>2004</year>
+      <year>2006</year>
+      <holder>Paolo Bacchilega</holder>
+    </copyright><copyright><year>2006, 2007</year><holder>Daniel Nylander (po@danielnylander.se)</holder></copyright>
+
+    <!-- translators: uncomment this:
+
+    <copyright>
+     <year>2000</year>
+     <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+
+    -->
+
+    <!-- An address can be added to the publisher information.  If a role is
+     not specified, the publisher/author is the same for all versions of the
+     document.  -->
+    <publisher>
+      <publishername>Dokumentationsprojekt för GNOME</publishername>
+    </publisher>
+
+       <legalnotice id="legalnotice">
+         <para>Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller senare, utgivet av Free Software Foundation utan standardavsnitt och omslagstexter.  En kopia av GFDL finns att hämta på denna <ulink type="help" url="ghelp:fdl">länk</ulink> eller i filen COPYING-DOCS som medföljer denna handbok.</para>
+          <para>Denna handbok utgör en av flera GNOME-handböcker som distribueras under villkoren i GFDL.  Om du vill distribuera denna handbok separat från övriga handböcker kan du göra detta genom att lägga till en kopia av licensavtalet i handboken enligt instruktionerna i avsnitt 6 i licensavtalet.</para>
+ 
+         <para>Flera namn på produkter och tjänster är registrerade varumärken. I de fall dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med versaler eller med inledande versal.</para>
+ 
+         <para>DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE FÖRUTSÄTTNINGAR: <orderedlist>
+                 <listitem>
+                   <para>DOKUMENTET TILLHANDAHÅLLS I "BEFINTLIGT SKICK" UTAN NÅGRA SOM HELST GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST UNDER DENNA ANSVARSFRISKRIVNING;</para>
+                 </listitem>
+                 <listitem>
+                   <para>UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA SKADOR.</para>
+                 </listitem>
+           </orderedlist></para>
+   </legalnotice>
+ 
+
+    <authorgroup>
+      <author role="maintainer">
+        <firstname>Paolo</firstname>
+	<surname>Bacchilega</surname>
+	<affiliation>
+	  <address> <email>paolo.bacchilega@libero.it</email> </address>
+        </affiliation>
+      </author>
+      <author>
+	<firstname>Alexander</firstname>
+	<surname>Kirillov</surname>
+	<affiliation>
+	  <orgname>Dokumentationsprojekt för GNOME</orgname>
+	  <address> <email>kirillov@math.sunysb.edu</email> </address>
+	</affiliation>
+      </author>
+    </authorgroup>
+    <!-- do not put authorname in the header except in copyright - use
+         section "authors" below -->
+    <revhistory>
+      <revision>
+	<revnumber>2.10.8</revnumber>
+	<date>Oktober 2006</date>
+	<revdescription>
+	  <para role="author">Paolo Bacchilega</para>
+	  <para role="publisher">Dokumentationsprojekt för GNOME</para>
+	</revdescription>
+      </revision>
+    </revhistory>
+
+
+    <!-- this is version of manual, not application -->
+    <releaseinfo>Den här handboken beskriver version 2.10.8 av gThumb</releaseinfo>
+    <abstract role="description"><para><application>gThumb</application> är en bildvisare och -bläddrare för skrivbordsmiljön GNOME</para></abstract>
+  </articleinfo>
+
+  <indexterm>
+    <primary>gThumb</primary>
+  </indexterm>
+  <indexterm>
+    <primary>bildvisare</primary>
+  </indexterm>
+  <indexterm>
+    <secondary>visare</secondary>
+  </indexterm>
+
+  <!-- ============= Document Body ============================= -->
+
+  <!-- ============= Introduction ============================== -->
+
+  <sect1 id="intro">
+    <title>Introduktion</title>
+    <para><application>gThumb</application> är en bildvisare och -bläddrare skriven för skrivbordsmiljön GNOME. Den låter dig bläddra på din hårddisk, visa dig miniatyrbilder av bildfiler och visa bilder av många olika format.</para>
+    <para>De vanligaste bildformaten är JPEG och GIF. JPEG-formatet är bra för medelstora och stora bilder därför att det har en hög komprimeringsgrad med en bra bildkvalitet. GIF-formatet används av webbsidor för att visa små animeringar eller små statiska bilder. Ett annat viktigt bildformat är PNG, det här formatet är mycket vanligt på Unix-plattformar och anses vara en ersättare för GIF-formatet.</para>
+    <para><application>gThumb</application> har stöd för dessa format och många andra, även GIF-animeringar.</para>
+    <para><application>gThumb</application> låter dig inte bara visa bildfiler utan har även många andra funktioner som bland annat lägga till kommentarer till bilder, organisera bilder i album, skriva ut bilder, visa bildspel, ställa in din skrivbordsbakgrund och många andra.</para>
+  </sect1>
+
+  <!-- ============= Getting Started ==============================  -->
+  <sect1 id="gthumb-getting-started">
+  <title>Komma igång</title>
+  <para>Det här avsnittet tillhandahåller information om hur man startar <application>gThumb</application> och beskriver gränssnittet i huvudfönstret.</para>
+  <sect2 id="get-start">
+    <title>Starta <application>gThumb</application></title>
+    <para>Du kan starta <application>gThumb</application> på följande sätt:</para>
+      <variablelist>
+        <varlistentry>
+          <term><guimenu>Program</guimenu>-menyn</term>
+          <listitem>
+            <para>Välj <menuchoice><guisubmenu>Grafik</guisubmenu><guimenuitem>gThumb</guimenuitem></menuchoice>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Kommandorad</term>
+          <listitem>
+            <para>Skriv in <command>gthumb</command> och tryck på <keycap>Return</keycap>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    <para>Om du startar <application>gThumb</application> från kommandoraden kan du ange följande flaggor:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Kommando</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Förklaring</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><command>gthumb <replaceable>mapp</replaceable></command></para></entry>
+              <entry align="left"><para>Starta <application>gThumb</application> i angiven mapp</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>gthumb <replaceable>namn.jpg</replaceable></command></para></entry>
+              <entry align="left"><para>Visa bilden <filename>namn.jpg</filename>.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>gthumb <replaceable>*.jpg</replaceable></command></para></entry>
+              <entry align="left"><para>Visa alla bilder som har filändelsen <filename>.jpg</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+  </sect2>
+  <sect2 id="gthumb-main-window">
+  <title>När du startar <application>gThumb</application></title>
+    <para>När du startar <application>gThumb</application> kommer följande fönster att visas: <figure id="main-win-fig">
+    <title>Huvudfönstret</title>
+    <screenshot>
+      <screeninfo>Huvudfönstret</screeninfo>
+      <graphic format="PNG" fileref="figures/main-win.png" srccredit="Me"/>
+    </screenshot>
+    </figure> <application>gThumb</application><guilabel>-fönstret</guilabel> innehåller följande element: <variablelist>
+      <varlistentry> <term>Menyrad</term>
+        <listitem>
+          <para>Menyerna på menyraden innehåller alla kommandon som du kan använda i <application>gThumb</application></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry> <term>Verktygsrad</term>
+        <listitem>
+           <para>Verktygsraden innehåller en mindre uppsättning kommandon som du kan komma åt från menyraden.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry> <term>Adressrad</term>
+        <listitem>
+          <para>Adressraden innehåller namnet på aktuell mapp.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry> <term>Mapplista</term>
+      <listitem>
+        <para>Mapplistan visar undermappar som finns i den aktuella mappen.</para>
+      </listitem>
+      </varlistentry>
+      <varlistentry> <term>Bildlista</term>
+      <listitem>
+        <para>Bildlistan visar bilderna i den aktuella mappen.</para>
+      </listitem>
+      </varlistentry>
+      <varlistentry> <term>Statusrad</term>
+      <listitem>
+        <para>På statusraden kan du läsa: <orderedlist>
+	    <listitem>
+              <para>det totala antalet bilder som finns i den aktuella mappen och deras totala storlek.</para>
+	    </listitem>
+	    <listitem>
+	      <para>antalet markerade bilder och deras storlek.</para>
+	    </listitem>
+	    <listitem>
+	      <para>några egenskaper för den aktuella bilden som har fokus.</para>
+	    </listitem>
+	  </orderedlist></para>
+      </listitem>
+      </varlistentry>
+    </variablelist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Browsing Folders ==============================  -->
+  <sect1 id="gthumb-browsing">
+  <title>Bläddra i mappar</title>
+    <para>Bläddringsalternativ kan hittas i <xref linkend="preferences-browser"/> i dialogrutan <guilabel>Inställningar</guilabel>.</para>
+    <para>Tangentbordsgenvägar för att bläddra i mappar finns beskrivna i <xref linkend="gthumb-TBL-keyword-shortcuts-browser"/>.</para>
+    <sect2 id="gthumb-change-folder">
+    <title>Ändra mapp</title>
+    <para>Det finns två sätt att byta mapp på: <orderedlist>
+	<listitem>
+	  <para>klicka på mappnamnet i mapplistan.</para>
+        </listitem>
+        <listitem>
+	  <para>ange mappnamnet i adressfältet.</para>
+        </listitem>
+      </orderedlist></para>
+    <para>När du använder adressfältet kan du trycka på <keycombo><keycap>tabulatorn</keycap></keycombo> för att försöka att automatiskt komplettera mappnamnet, det här förenklar inmatningen av långa namn. Du kan snabbt ge fokus till adressfältet genom att trycka <keycombo><keycap>Ctrl</keycap><keycap>L</keycap></keycombo>.</para>
+    <para>För att gå till en tidigare besökt mapp kan du använda knappen <guilabel>Bakåt</guilabel> på verktygsraden.</para>
+    <para>Andra navigeringskommandon finns i menyn <menuchoice><guimenu>Visa</guimenu><guisubmenu>Gå</guisubmenu></menuchoice>.</para>
+  </sect2>
+  <sect2 id="gthumb-sort">
+  <title>Sortera bilder</title>
+    <para>För att sortera bilder i en annan ordning kan du använda undermenyn <guimenuitem>Sortera bilder</guimenuitem> i menyn <guimenu>Visa</guimenu>, använd <keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo> för att uppdatera den aktuella mappen, tryck på <keycombo><keycap>T</keycap></keycombo> för att visa eller dölja miniatyrbilderna i bildlistan.</para>
+  </sect2>
+  <sect2 id="gthumb-bookmarks">
+  <title>Lägg till en mapp till bokmärken</title>
+  <para>Ofta använda mappar kan läggas till i bokmärkeslistan för snabb åtkomst. Gå helt enkelt till mappen som du vill lägga till i dina bokmärken och tryck på <keycombo action="simul"><keycap>Ctrl</keycap><keycap>D</keycap></keycombo> eller använd kommandot <menuchoice><guimenu>Bokmärken</guimenu><guimenuitem>Lägg till bokmärke</guimenuitem></menuchoice>. För att ta bort eller arrangera om dina bokmärken i en annan ordning kan du använda kommandot <menuchoice><guimenu>Bokmärken</guimenu><guimenuitem>Redigera bokmärken</guimenuitem></menuchoice>.</para>
+  </sect2>
+  </sect1>
+  <sect1 id="gthumb-folders">
+    <title>Arbeta med mappar</title>
+    <para><application>gThumb</application> erbjuder funktionalitet att hantera mappar. <note>
+        <title>VARNING</title>
+        <para>Det rekommenderas starkt att flytta och kopiera bildmappar med <application>gThumb</application>. Det är på grund att om du flyttar eller kopierar mappar med <application>gThumb</application> kommer bildkommentarerna fortfarande att vara bifogade till dina bilder, men om du flyttar eller kopierar mappar med filhanteraren eller andra program kommer du att förlora dina kommentarer.</para>
+      </note></para>
+    <sect2 id="gthumb-create-folder">
+    <title>Skapa en mapp</title>
+    <para>Genomför följande steg för att skapa en ny mapp: <orderedlist>
+      <listitem>
+        <para>Gå till mappen där den nya mappen ska skapas.</para>
+      </listitem>
+      <listitem>
+        <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Ny mapp</guimenuitem></menuchoice> för att visa dialogrutan <guilabel>Ny mapp</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Ange det nya mappnamnet:</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Skapa</guibutton>. <application>gThumb</application> skapa en ny mapp.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-open-folder">
+    <title>Öppna en mapp</title>
+    <para>Genomför följande steg för att öppna en mapp med filhanteraren: <orderedlist>
+      <listitem>
+        <para>Gå till mappen som du vill öppna.</para>
+      </listitem>
+      <listitem>
+        <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guisubmenu>Mapp</guisubmenu><guimenuitem>Öppna med filhanteraren</guimenuitem></menuchoice>. <application>gThumb</application> öppnar mappen med filhanteraren.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-rename-folder">
+    <title>Byt namn på en mapp</title>
+    <para>Genomför följande steg för att byta namn på en mapp: <orderedlist>
+      <listitem>
+        <para>Gå till mappen som du vill byta namn på.</para>
+      </listitem>
+      <listitem>
+        <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guisubmenu>Mapp</guisubmenu><guimenuitem>Byt namn</guimenuitem></menuchoice> för att visa dialogrutan <guilabel>Byt namn på mapp</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Ange det nya mappnamnet:</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Byt namn</guibutton>. <application>gThumb</application> byter namn på mappen.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-move-to-trash-folder">
+    <title>Ta bort en mapp</title>
+    <para>Genomför följande steg för att ta bort en mapp: <orderedlist>
+      <listitem>
+        <para>Gå till mappen som du vill ta bort.</para>
+      </listitem>
+      <listitem>
+        <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guisubmenu>Mapp</guisubmenu><guimenuitem>Flytta till papperskorgen</guimenuitem></menuchoice>. <application>gThumb</application> flyttar mappen till systemets papperskorg.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-copy-folder">
+    <title>Kopiera en mapp</title>
+    <para>Genomför följande steg för att kopiera en mapp till en annan plats: <orderedlist>
+      <listitem>
+        <para>Gå till mappen som du vill kopiera.</para>
+      </listitem>
+      <listitem>
+        <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guisubmenu>Mapp</guisubmenu><guimenuitem>Kopiera</guimenuitem></menuchoice> för att visa dialogrutan <guilabel>Kopiera mapp</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Dialogrutan <guilabel>Kopiera mapp</guilabel> används för att välja målmappen. Du kan ange mappnamnet i fältet <guilabel>Mapp</guilabel>, eller klicka på <guibutton>Bläddra</guibutton> för att välja en mapp från din disk. Listan <guilabel>Nyliga</guilabel> innehåller listan över nyligen angivna målmappar och listan <guilabel>Bokmärken</guilabel> innehåller de mappar som du har ett bokmärke för. Klicka på en mapp i dessa listor för att infoga mappnamnet i fältet <guilabel>Mapp</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> kopierar mappen till målmappen.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-move-folder">
+    <title>Flytta en mapp</title>
+    <para>Genomför följande steg för att flytta en mapp till en annan plats: <orderedlist>
+      <listitem>
+        <para>Gå till mappen som du vill flytta.</para>
+      </listitem>
+      <listitem>
+        <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guisubmenu>Mapp</guisubmenu><guimenuitem>Flytta</guimenuitem></menuchoice> för att visa dialogrutan <guilabel>Flytta mapp</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Dialogrutan <guilabel>Flytta mapp</guilabel> används för att välja målmappen. Du kan ange mappnamnet i fältet <guilabel>Mapp</guilabel>, eller klicka på <guibutton>Bläddra</guibutton> för att välja en mapp från din disk. Listan <guilabel>Nyliga</guilabel> innehåller listan över nyligen angivna målmappar och listan <guilabel>Bokmärken</guilabel> innehåller de mappar som du har ett bokmärke för. Klicka på en mapp i dessa listor för att infoga mappnamnet i fältet <guilabel>Mapp</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> flyttar mappen till målmappen.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Viewing ================================== -->
+  <sect1 id="gthumb-image-viewing">
+  <title>Visa bilder</title>
+  <para>Tangentbordsgenvägar för att visa bilder beskrivs i <xref linkend="gthumb-TBL-keyword-shortcuts-viewer"/>.</para>
+  <sect2 id="gthumb-view-images">
+  <title>Visa en bild</title>
+    <para>För att visa en bild är det bara att klicka på dess miniatyrbild och bilden kommer att visas i visningspanelen. Om bilden inte passar i visningspanelen kan de ge mer utrymme till visaren genom att dölja bläddraren, den här kan göras genom att dubbelklicka på miniatyrbilderna eller genom att trycka på tangenten <keycap>Return</keycap>, tryck på den igen och bläddraren visas igen. Ett annat sätt att visa en stor bild på är att visa den i helskärmsläget, tryck på <keycombo><keycap>F</keycap></keycombo> för att aktivera/inaktivera helskärmsläget.</para>
+    <para>Musåtgärder :</para>
+      <informaltable frame="topbot">
+        <tgroup cols="2" colsep="0" rowsep="0"><colspec colname="COLSPEC0" colwidth="30.65*"/>
+        <colspec colname="COLSPEC1" colwidth="69.35*"/>
+        <tbody>
+          <row>
+            <entry>
+              <para>Håll ner vänstra knappen och flytta muspekaren</para></entry>
+            <entry>
+              <para>Flytta bilden.</para></entry>
+          </row>
+          <row>
+            <entry>
+              <para>Vänsterklick</para></entry>
+            <entry>
+              <para>Visa nästa bild.</para></entry>
+          </row>
+          <row>
+            <entry>
+              <para>Mittenklick</para></entry>
+            <entry>
+              <para>Visa föregående bild.</para></entry>
+          </row>
+          <row>
+            <entry>
+              <para>Högerklick</para></entry>
+            <entry>
+              <para>Visa bildmenyn.</para></entry>
+          </row>
+        </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Ett annat sätt att flytta bilder på är genom navigeringsknappen : <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/nav-button.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </screenshot> som finns längst ner i högra hörnet av visningsfönstret när bilderna inte passar i fönstret. Klicka och håll ner den här knappen kommer att visa en förhandsvisning av bilden. Flytta muspekaren och du kommer att flytta bilden till den önskade positionen.</para>
+   </sect2>
+   <sect2 id="gthumb-view-prop">
+   <title>Visa bildegenskaperna</title>
+     <para>Genomför följande steg för att visa bildegenskaperna: <orderedlist>
+          <listitem>
+            <para>Markera bilden.</para>
+          </listitem>
+          <listitem>
+            <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Egenskaper </guimenuitem></menuchoice>. <application>gThumb</application> visar dialogrutan <guilabel>Egenskaper</guilabel>.</para>
+          </listitem>
+        </orderedlist></para>
+   </sect2>
+  <!-- ============= EXIF ================================== -->
+  <sect2 id="gthumb-exif">
+  <title>Visa bildens EXIF-data</title>
+  <para>För att visa det exif-data som angivits för en bild kan du använda dialogrutan <guilabel>Egenskaper</guilabel> (<xref linkend="gthumb-view-prop"/>) eller genomföra följande steg: <orderedlist>
+        <listitem><para>Markera bilden.</para></listitem>
+        <listitem><para>Visa bilden genom att trycka på <keycap>Return</keycap> eller dubbelklicka på den.</para></listitem>
+        <listitem><para>Välj <menuchoice><guimenu>Visa</guimenu><guisubmenu>Visa/dölj</guisubmenu><guimenuitem>Bildkommentar</guimenuitem></menuchoice> eller tryck på <keycap>I</keycap>. <application>gThumb</application> visar exif-data.</para></listitem>
+     </orderedlist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= working with images ================================== -->
+  <sect1 id="gthumb-image-working">
+  <title>Arbeta med bilder</title>
+   <sect2 id="gthumb-alter-images">
+   <title>Ändra en bild</title>
+      <para>Den aktuella bilden kan ändras på flera sätt. De kommandon som används för att ändra en bild finns i menyn <guimenu>Bild</guimenu>.</para>
+      <informaltable frame="topbot">
+        <tgroup cols="2" colsep="0" rowsep="0"><colspec colname="COLSPEC0" colwidth="30.65*"/>
+        <colspec colname="COLSPEC1" colwidth="69.35*"/>
+        <tbody>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Förbättra</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Förbättra bilden genom att justera färgnivåerna.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Ändra storlek</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ändra bildens storlek genom att zooma in eller ut.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Beskär</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Beskär bilden.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Transformera</guisubmenu>
+		<guimenuitem>Rotera åt höger</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Rotera bilden 90 grader medsols.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Transformera</guisubmenu>
+		<guimenuitem>Rotera åt vänster</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Rotera bilden 90 grader motsols.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Transformera</guisubmenu>
+		<guimenuitem>Vänd</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Skapa en spegelbild genom att reflektera bildens linjer i vertikal riktning.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Transformera</guisubmenu>
+		<guimenuitem>Spegla</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Skapa en spegelbild genom att reflektera bildens linjer i horisontell riktning (som i en spegel).</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Avmätta</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Visa bilden i svartvitt.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Negativ</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Visa bilden med negativa färger.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Färgbalans</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ändra färgbalansen.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Nyans-mättnad</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ändra bildens färgnyans, ljus och mättnadsnivå.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Ta bort röda ögon</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ta bort röda ögon som orsakats av dåliga blixtar. Se <xref linkend="gthumb-redeye"/> för mer information.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Ljusstyrka-kontrast</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ändra bildens ljusstyrka och kontrast.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Posterisera</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Minska antalet färger.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Auto</guisubmenu>
+		<guimenuitem>Jämna ut histogram</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Förbättra bilden genom att jämna ut dess histogram.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Auto</guisubmenu>
+		<guimenuitem>Normalisera</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Normalisera kontrasten automatiskt.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Auto</guisubmenu>
+		<guimenuitem>Sträck ut kontrast</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Sträck automatiskt ut kontrasten.</para>
+	    </entry>
+	  </row>
+	</tbody>
+      </tgroup>
+      </informaltable>
+      <para>När en bild ändras kommer etiketten "[ändrad]" att visas när bildens filnamn. <note>
+        <title>OBSERVERA</title>
+        <para>Observera att dessa ändringar inte ändrar på bildfilen. Om du vill visa originalbilden är det bara att klicka på dess miniatyrbild igen eller använda kommandot <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Återställ</guimenuitem></menuchoice>.</para>
+      </note></para>
+      <para>Du kan spara ändrade bilder, se <xref linkend="gthumb-save-images"/> för mer information.</para>
+    <sect3 id="gthumb-redeye">
+    <title>Ta bort röda ögon</title>
+      <para>Många billiga kameror har en blixt som är för nära kameralinsen. Som ett resultat av det kan ljuset från blixten flyttas från kameran och delvis reflekteras av motivets retina tillbaka till kameralinsen. Detta orsakar "röda ögon".</para>
+      <para><application>gThumb</application> tillhandahåller ett verktyg för att ta bort dessa oönskade röda ögon. När du visar en bild med röda ögon, välj <menuchoice><guimenu>Bild</guimenu><guimenuitem>Ta bort röda ögon</guimenuitem></menuchoice>. Ett nytt fönster kommer att öppnas. Flytta muspekaren över ett område med röda ögon och klicka på det eller i närheten av det. Det här bör ta bort det röda området och ersätta det med ett mörkare område. Om du inte är nöjd med resultaten kan du klicka på <guibutton>Ångra</guibutton> för att återställa tidigare ändring (eller ändringar). (Klicka på <guibutton>Avbryt</guibutton> kommer att förkasta alla ändringar och stänga fönstret.) När du är nöjd med resultatet kan du klicka på fler områden med röda ögon, eller klicka på <guibutton>Spara</guibutton> eller <guibutton>Verkställ</guibutton> för att stänga fönstret.</para>
+      <para>Om du klickar på <guibutton>Verkställ</guibutton> måste bilden sparas igen på vanligt sätt efter användning av <menuchoice><guimenu>Bild</guimenu><guimenuitem>Ta bort röda ögon</guimenuitem></menuchoice>. Se <xref linkend="gthumb-save-images"/> för mer information.</para>
+      <para>Knapparna <guibutton>Zooma in</guibutton>, <guibutton>Zooma ut</guibutton>, <guibutton>Naturlig storlek</guibutton> och <guibutton>Zooma för att passa</guibutton> finns där för att låta dig zooma in och ut i intressanta områden. Mushjulet kan även användas för att zooma in och ut.</para>
+    </sect3>
+    </sect2>
+    <sect2 id="gthumb-save-images">
+    <title>Spara en bild</title>
+      <para>Genomför följande steg för att spara en bild: <orderedlist>
+        <listitem>
+           <para>Visa bilden.</para>
+        </listitem>
+        <listitem>
+           <para>Ändra bilden (beskrivs i <xref linkend="gthumb-alter-images"/>). Det här steget är så klart valfritt.</para>
+        </listitem>
+        <listitem>
+            <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Spara som</guimenuitem></menuchoice>.</para>
+        </listitem>
+        <listitem>
+            <para>Välj filnamnet och klicka på <guibutton>Ok</guibutton>.</para>
+        </listitem>
+        <listitem>
+           <para><application>gThumb</application> visar bildformatsdialogen från vilken du kan välja specifik filformatsalternativ. När du är nöjd med alternativen kan du klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> sparar bilden.</para>
+        </listitem>
+      </orderedlist></para>
+    </sect2>
+
+  <sect2 id="gthumb-image-open">
+  <title>Öppna en serie bilder med ett annat program</title>
+  <para>Genomför följande steg för att öppna en serie bilder med ett annat program: <orderedlist>
+      <listitem>
+        <para>Gå till mappen eller albumet där bilderna finns.</para>
+      </listitem>
+      <listitem>
+        <para>Markera bilderna och välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Öppna med</guimenuitem></menuchoice> för att visa dialogrutan <guilabel>Öppna</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Välj ett program från listan <guilabel>Tillgängliga program</guilabel> eller från listan <guilabel>Senaste program</guilabel>; eller ange ett kommando i fältet <guilabel>Program</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Öppna</guibutton>. <application>gThumb</application> öppnar bilderna.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <sect2 id="gthumb-image-rename">
+  <title>Byt namn på en bild</title>
+  <para>Genomför följande steg för att byta filnamn på en bild: <orderedlist>
+      <listitem>
+        <para>Gå till mappen eller albumet där bilden finns.</para>
+      </listitem>
+      <listitem>
+        <para>Markera bilden och välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Byt namn</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Ange det nya filnamnet och klicka på <guibutton>Byt namn</guibutton>. <application>gThumb</application> byter filnamnet på bilden.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <sect2 id="gthumb-image-delete">
+  <title>Ta bort en serie bilder</title>
+  <para>Genomför följande steg för att ta bort en serie bilder: <orderedlist>
+      <listitem>
+        <para>Gå till mappen eller albumet där bilderna finns.</para>
+      </listitem>
+      <listitem>
+        <para>Markera bilderna och välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Flytta till papperskorgen</guimenuitem></menuchoice>. <application>gThumb</application> tar bort bilderna genom att flytta dem till systemets papperskorg.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <sect2 id="gthumb-image-copy">
+  <title>Kopiera en serie bilder</title>
+  <para>Genomför följande steg för att kopiera en serie bilder: <orderedlist>
+      <listitem>
+        <para>Gå till mappen eller albumet där bilderna finns.</para>
+      </listitem>
+      <listitem>
+        <para>Markera bilderna och välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Kopiera</guimenuitem></menuchoice> för att visa dialogrutan <guilabel>Välj målmappen</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Välj en mapp från listan <guilabel>Tidigare</guilabel>, eller från listan <guilabel>Bokmärken</guilabel>; eller ange ett mappnamn i fältet <guilabel>Mapp</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> kopierar bilderna.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <sect2 id="gthumb-image-move">
+  <title>Flytta en serie bilder</title>
+  <para>Genomför följande steg för att flytta en serie bilder: <orderedlist>
+      <listitem>
+        <para>Gå till mappen eller albumet där bilderna finns.</para>
+      </listitem>
+      <listitem>
+        <para>Markera bilderna och välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Flytta</guimenuitem></menuchoice> för att visa dialogrutan <guilabel>Välj målmappen</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Välj en mapp från listan <guilabel>Tidigare</guilabel>, eller från listan <guilabel>Bokmärken</guilabel>; eller ange ett mappnamn i fältet <guilabel>Mapp</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> flyttar bilderna.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <!-- ============= Print ================================== -->
+  <sect2 id="gthumb-print-images">
+  <title>Skriv ut en serie bilder</title>
+  <para>Genomför följande steg för att skriva ut en serie bilder: <orderedlist>
+      <listitem>
+        <para>Gå till mappen eller albumet där bilderna finns.</para>
+      </listitem>
+      <listitem>
+        <para>Markera bilderna och välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Skriv ut</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>I dialogrutan <guilabel>Skriv ut</guilabel> finns det två taggar: <guilabel>Layout</guilabel> och <guilabel>Pappersdetaljer</guilabel>.</para>
+        <para>Från <guilabel>Layout</guilabel>-taggen kan du <itemizedlist>
+        <listitem>
+          <para>Välja antalet bilder per sida.</para>
+        </listitem>
+        <listitem>
+          <para>Inkludera bildkommentaren.</para>
+        </listitem>
+        <listitem>
+          <para>Rotera en bild genom att klicka på den.</para>
+        </listitem>
+        <listitem>
+          <para>Flytta en bild genom att klicka på den med vänstra musknappen och dra den.</para>
+        </listitem>
+        <listitem>
+          <para>Ändra storlek på bilden.</para>
+        </listitem>
+        <listitem>
+          <para>Centrera bilden på sidan med hjälp av knappen <guibutton>Centrera på sidan</guibutton>.</para>
+        </listitem>
+        </itemizedlist></para>
+        <para>Från <guilabel>Pappersdetaljer</guilabel>-taggen kan du <itemizedlist>
+        <listitem>
+          <para>Välja pappersformatet.</para>
+        </listitem>
+        <listitem>
+          <para>Välja sidorientering.</para>
+        </listitem>
+        </itemizedlist></para>
+      </listitem>
+      <listitem>
+        <para>När du är redo att skriva ut kan du klicka på <guibutton>Skriv ut</guibutton>. <application>gThumb</application> skriver ut bilderna.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Comments ================================== -->
+  <sect1 id="gthumb-comments">
+  <title>Kommentarer</title>
+  <para>Kommentarer är delar av information som kopplas till bilder. <note>
+      <title>VARNING</title>
+      <para>Kommentarer är inte inbäddade i bildfiler, de sparas separat. Det betyder att om du flyttar bilder eller mappar med andra program kommer du att förlora kommentarerna.</para>
+    </note><note>
+      <title>FÖR EXPERTER</title>
+      <para>Bildkommentaren sparas i en undermapp till bildmappen med namnet <filename>.comments</filename>.</para>
+    </note></para>
+  <sect2 id="gthumb-comment-add">
+  <title>Lägg till en kommentar</title>
+  <para>För att lägga till en kommentar till en bild kan du markera bilden och välja <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Redigera kommentar</guimenuitem></menuchoice> eller trycka på <keycombo><keycap>C</keycap></keycombo>.</para>
+  <para>Kommentarer är strukturerade i olika delar: <itemizedlist>
+      <listitem>
+        <para><guilabel>Kommentar</guilabel>: en text som beskriver bilden.</para>
+      </listitem>
+      <listitem>
+        <para><guilabel>Plats</guilabel>: platsen som bilden representerar.</para>
+      </listitem>
+      <listitem>
+        <para><guilabel>Datum</guilabel>: datumet när bilden togs.</para>
+      </listitem>
+    </itemizedlist></para>
+  <para>Bildkommentarer visas med kursiv text i bildlistan ovanför bildens filnamn. Om kommentaren är för lång kommer symbolen "[..]" att läggas till för den visade delen av kommentaren för att signalera att hela kommentaren inte är synlig. För att visa hela kommentaren kan du använda bildegenskapsdialogen som kan visas genom att välja kommandot <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Egenskaper </guimenuitem></menuchoice> eller genom att trycka på <keycombo><keycap>I</keycap></keycombo>.</para>
+    <!-- ==== Figure ==== -->
+    <figure id="comment-in-list-fig">
+      <title>En bildkommentar</title>
+      <screenshot>
+        <screeninfo>En bildkommentar</screeninfo>
+        <graphic format="PNG" fileref="figures/comment.png" srccredit="Me"/>
+      </screenshot>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  <sect3 id="gthumb-comment-add-multi">
+  <title>Lägg till en kommentar till flera bilder</title>
+  <para>För att lägga till en kommentar till flera bilder ska du markera bilderna och välja <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Redigera kommentar</guimenuitem></menuchoice> eller trycka på <keycombo><keycap>C</keycap></keycombo>.</para>
+  <para>Dialogrutan <guilabel>Kommentar</guilabel> kommer att fylla i de fält som har samma värde för alla bilderna och lämna de andra fälten tomma.</para>
+  <para>Du kan aktivera alternativet <guilabel>Spara endast ändrade fält </guilabel> (som är aktiverat som standard) för att ändra ett eller flera fält för flera kommentarer och lämna övriga fält oförändrade.</para>
+  </sect3>
+  </sect2>
+  <sect2 id="gthumb-comment-delete">
+  <title>Ta bort kommentarer</title>
+  <para>Genomför följande steg för att ta bort kommentarer: <orderedlist>
+      <listitem>
+        <para>Gå till mappen eller albumet där bilderna finns.</para>
+      </listitem>
+      <listitem>
+        <para>Markera bilderna och välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Ta bort kommentar</guimenuitem></menuchoice>. <application>gThumb</application> tar bort kommentarerna.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-comment-view">
+  <title>Visa en bildkommentar</title>
+  <para>För att visa en bildkommentar, använd dialogrutan <guilabel>Egenskaper</guilabel> (<xref linkend="gthumb-view-prop"/>) eller genomför följande steg: <orderedlist>
+        <listitem><para>Markera bilden.</para></listitem>
+        <listitem><para>Visa bilden genom att trycka på <keycap>Return</keycap> eller dubbelklicka på den.</para></listitem>
+        <listitem><para>Tryck på <keycap>I</keycap> eller välj <menuchoice><guimenu>Visa</guimenu><guisubmenu>Visa/dölj</guisubmenu><guimenuitem>Bildkommentar</guimenuitem></menuchoice>. <application>gThumb</application> visar bildkommentaren.</para></listitem>
+     </orderedlist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Categories ================================== -->
+  <sect1 id="gthumb-categories">
+  <title>Kategorier</title>
+  <para>Kategorier är nyckelord som tilldelas bilder och kan användas för att genomföra specifika sökningar, som beskrivs i <xref linkend="gthumb-finding"/>. <note>
+      <title>VARNING</title>
+      <para>Kategorier är inte inbäddade i bildfilerna, istället sparas de separat. Det betyder att om du flyttar bilder eller mappar med andra program kommer du att förlora dina kommentarer.</para>
+    </note><note>
+      <title>FÖR EXPERTER</title>
+      <para>Kategorier sparas i undermappen <filename>.comments</filename> i bildmappen och i samma fil där bildkommentarerna sparas.</para>
+    </note></para>
+  <sect2 id="gthumb-categories-add">
+  <title>Tilldela kategorier till en serie bilder</title>
+  <para>Genomför följande steg för att lägga till kategorier till en serie bilder: <orderedlist>
+      <listitem>
+        <para>Markera bilderna och välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Kategorier </guimenuitem></menuchoice>. <application>gThumb</application> visar dialogrutan <guilabel>Kategorier</guilabel>.</para>
+      </listitem>
+      <listitem>
+	<para>Kryssa i kategorierna i listan <guilabel>Tillgängliga kategorier </guilabel>. Du kan skapa nya kategorier genom att klicka på knappen <guilabel>Ny</guilabel> och ta bort kategorier från listan genom att klicka på knappen <guilabel>Ta bort</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Spara</guibutton>. <application>gThumb</application> tilldelar kategorierna till bilderna.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-categories-add-to-folder">
+  <title>Tilldela kategorier till en mapp</title>
+  <para>Istället för att tilldela kategorier till enstaka bilder kan du tilldela dem till en mapp. Det är samma sak som att tilldela kategorier till alla bilderna som finns i mappen och i alla dess undermappar.</para>
+  <para>Genomför följande steg för att lägga till kategorier till en mapp: <orderedlist>
+      <listitem>
+        <para>Gå till föräldramappen för att visa mappnamnet i mapplistpanelen, högerklicka på mappnamnet och välj kommandot <menuchoice><guimenuitem>Kategorier</guimenuitem></menuchoice>; alternativt kan du gå till mappen och välja kommandot <menuchoice><guimenu>Arkiv</guimenu><guisubmenu>Mapp</guisubmenu><guimenuitem>Kategorier</guimenuitem></menuchoice>. I båda fallen kommer <application>gThumb</application> att visa dialogrutan <guilabel>Kategorier</guilabel>.</para>
+      </listitem>
+      <listitem>
+	<para>Kryssa i kategorierna i listan <guilabel>Tillgängliga kategorier </guilabel>. Du kan skapa nya kategorier genom att klicka på knappen <guilabel>Ny</guilabel> och ta bort kategorier från listan genom att klicka på knappen <guilabel>Ta bort</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> tilldelar kategorierna till mappen.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-categories-remove">
+  <title>Ta bort kategorier från en bild eller mapp</title>
+  <para>För att ta bort kategorier från en bildserie eller en mapp kan du genomföra samma steg som beskrevs här ovan och kryssa bort de kategorier du vill ta bort. Klicka sedan på <guibutton>Ok</guibutton> för att bekräfta åtgärden.</para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Catalogs ================================== -->
+  <sect1 id="catalogs">
+  <title>Album</title>
+  <para>Album låter dig organisera bilder utan att flytta dem från en mapp till en annan. Tänk på dem som de vore "spellistor" fast för bilder.</para>
+  <para>Album kan organiseras i bibliotek. Ett bibliotek är som en mapp som kan innehålla album och andra bibliotek.</para>
+  <para>
+  <note>
+  <title>VARNING</title>
+  <para>Album uppdateras inte när du flyttar bilder. Om du vill få ett mer flexibelt album kan du använda sökningar som beskrivs i <xref linkend="gthumb-find"/>. Sökningar är album med angivna sökkriterier. Efter att du flyttat bilderna kan du göra om sökningen för att uppdatera albumet.</para>
+  </note>
+  <note>
+  <title>FÖR EXPERTER</title>
+  <para>Albumen sparas i mappen <filename>$(HOME)/.gnome2/gthumb/collections</filename>.</para>
+  </note>
+  </para>
+    <sect2 id="gthumb-catalog-view">
+    <title>Visa listan över album</title>
+        <para>Genomför följande steg för att visa listan över album: <orderedlist>
+        <listitem>
+          <para>Tryck <keycombo><keycap>Alt</keycap><keycap>2</keycap></keycombo> eller välj <menuchoice><guimenu>Visa</guimenu><guimenuitem>Album</guimenuitem></menuchoice>.</para>
+        </listitem>
+        </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-catalog-view-content">
+    <title>Visa ett album</title>
+        <para>Genomför följande steg för att visa innehållet i ett album: <orderedlist>
+        <listitem>
+          <para>Ställ in albumvyn (beskrivs i <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Välj albumet genom att klicka på albumnamnet.</para>
+        </listitem>
+       </orderedlist></para>
+       <para>Om du vill gå till bildmappen, markera bilden och använd kommandot <menuchoice><guimenu>Visa</guimenu><guisubmenu>Gå</guisubmenu><guimenuitem>Gå till bildmappen </guimenuitem></menuchoice> eller tryck på <keycombo action="simul"><keycap>Alt</keycap><keycap>End</keycap></keycombo>. <application>gThumb</application> kommer att visa bildmappen och kommer att rulla i bildlistan för att göra bilden synlig.</para>
+    </sect2>
+    <sect2 id="gthumb-catalog-add">
+    <title>Lägg till bilder till ett album</title>
+      <para>Genomför följande steg för att lägga till en serie bilder till ett album: <orderedlist>
+      <listitem>
+        <para>Markera bilderna som du vill lägga till i albumet och välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem> Lägg till i album</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Välj ett befintligt album eller skapa ett nytt.</para>
+      </listitem>
+      <listitem>
+        <para>Välj <guibutton>Ok</guibutton>. <application>gThumb</application> lägger till de markerade bilderna till albumet.</para>
+      </listitem>
+    </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-catalog-delete">
+    <title>Ta bort bilder från ett album</title>
+      <para>Genomför följande steg för att ta bort bilder från ett album: <orderedlist>
+        <listitem>
+          <para>Ställ in albumvyn (beskrivs i <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Markera albumet.</para>
+        </listitem>
+        <listitem>
+         <para>Markera bilderna som du vill ta bort och välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem> Ta bort från album</guimenuitem></menuchoice>. <application>gThumb</application> tar bort bilderna från albumet.</para>
+        </listitem>
+      </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-catalog-create">
+    <title>Skapa ett album</title>
+        <para>Genomför följande steg för att skapa ett album: <orderedlist>
+        <listitem>
+          <para>Ställ in albumvyn (beskrivs i <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Nytt album</guimenuitem></menuchoice>.</para>
+        </listitem>
+        <listitem>
+          <para>Ange albumets namn och klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> skapar albumet.</para>
+        </listitem>
+        </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-catalog-rename">
+    <title>Byt namn, ta bort eller flytta ett album</title>
+        <para>Genomför följande steg för att byta namn, ta bort eller flytta ett album: <orderedlist>
+        <listitem>
+          <para>Ställ in albumvyn (beskrivs i <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Markera albumet.</para>
+        </listitem>
+        <listitem>
+          <para>Välj motsvarande kommando i menyn <menuchoice><guimenu>Arkiv</guimenu><guisubmenu>Album</guisubmenu></menuchoice>, eller använd sammanhangsmenyn som kan visas genom att trycka på högra musknappen på albumets namn i albumlistan.</para>
+        </listitem>
+        </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-library-create">
+    <title>Skapa ett bibliotek över album</title>
+        <para>Genomför följande steg för att skapa ett albumbibliotek: <orderedlist>
+        <listitem>
+          <para>Ställ in albumvyn (beskrivs i <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Nytt bibliotek</guimenuitem></menuchoice>.</para>
+        </listitem>
+        <listitem>
+          <para>Ange biblioteksnamnet och klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> skapar biblioteket.</para>
+        </listitem>
+        </orderedlist></para>
+    </sect2>
+  </sect1>
+
+  <!-- ============= Find ================================== -->
+
+  <sect1 id="gthumb-finding">
+    <title>Sök efter bilder</title>
+    <sect2 id="gthumb-find">
+    <title>Sök efter bilder</title>
+      <para>För att hitta bilder på din hårddisk kan du välja <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Sök</guimenuitem></menuchoice>. <application>gThumb</application> visar dialogrutan <guilabel>Sök</guilabel>.</para>
+     <sect3 id="gthumb-simple-search">
+     <title>Gör en enkel sökning</title>
+      <para>I dialogrutan <guilabel>Sök</guilabel> kan du ange ett filnamn eller ett mönster i fältet <guilabel>Filnamn </guilabel>.</para>
+      <para>Exempel: <informaltable frame="all"><tgroup cols="2" colsep="1" rowsep="1"><colspec colname="COLSPEC0" colwidth="50.00*"/><colspec colname="COLSPEC1" colwidth="50.00*"/><thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Värde</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Förklaring</para></entry>
+            </row>
+          </thead><tbody>
+            <row valign="top">
+              <entry><para>
+                <userinput>foo.jpg</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder med namnet <filename>foo.jpg</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>*.png</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder med filändelsen <filename>png</filename>.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>*.gif; *.jpg</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder med filändelsen <filename>gif</filename> eller <filename>jpg</filename>.</para></entry>
+            </row>
+          </tbody></tgroup></informaltable></para>
+        <para>Klicka på <guibutton>Sök</guibutton> för att starta sökningen. När sökningen är färdig kommer du att se listan över bilder som matchade din sökning. Om du vill se dessa bilder kan du klicka på <guibutton>Visa</guibutton>. Om du vill göra en ny sökning kan du klicka på <guibutton>Ny sökning</guibutton>.</para>
+	<para>Om du väljer att visa bilderna kommer ett album med namnet <guilabel>Sökresultat</guilabel> att skapas och visas automatiskt. Ett album som skapas på det här sättet får en speciell ikon, ett förstorningsglas. Det är på grund av att du kan genomföra ytterligare två åtgärder på den här typen av album: <guibutton>Redigera sökning</guibutton> och <guibutton>Gör om sökning </guibutton>. Dessa åtgärder kan väljas från menyn <menuchoice><guimenu>Arkiv</guimenu><guisubmenu>Album</guisubmenu></menuchoice> eller från sammanhangsmenyn som visas när du trycker på högra musknappen på albumnamnet.</para>
+        <para>Kommandot <guilabel>Redigera sökning</guilabel> låter dig redigera sökvillkoren och <guilabel>Gör om sökning</guilabel> låter dig starta om sökningen. När sökningen är färdig kan du bestämma om du vill spara resultatet i albumet eller inte.</para>
+      </sect3>
+
+      <sect3 id="gthumb-other-search-opt">
+      <title>Andra sökalternativ</title>
+          <variablelist>
+	  <varlistentry>
+            <term><guilabel>Starta från</guilabel></term>
+	    <listitem>
+	      <para>Mappen där sökningen ska starta från.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+            <term><guilabel>Inkludera undermappar</guilabel></term>
+	    <listitem>
+	      <para>Huruvida sökningen även ska inkludera undermappar.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+            <term><guilabel>Kommentar</guilabel></term>
+	    <listitem>
+	     <para>En lista över fraser som bildens kommentar måste innehålla.</para>
+      <para>Exempel:</para>
+      <para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Värde</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Förklaring</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>
+                <userinput>daniel</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder som har "daniel" i kommentaren.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>min födelsedag</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder som har "daniel" i kommentaren.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>semester ; säffle</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder som har "semester" ELLER "säffle" i kommentaren.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>semester i säffle; min födelsedag</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder som har "semester i säffle" ELLER "min födelsedag" i kommentaren.</para></entry>
+            </row>
+
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+	     </para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+            <term><guilabel>Plats</guilabel></term>
+	    <listitem>
+	    <para>En lista över fraser som platsfältet i kommentaren måste innehålla.</para>
+         <para>Exempel:</para>
+
+         <para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Värde</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Förklaring</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>
+                <userinput>säffle</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder som har "säffle" i platsfältet.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>paris; säffle; london</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder som har "paris" ELLER "säffle" ELLER "london" i platsfältet.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+            </para>
+	  </listitem>
+
+	  </varlistentry>
+	  <varlistentry>
+	    <!-- -->
+            <term><guilabel>Datum</guilabel></term>
+	    <listitem>
+	    <para>Kriteriet som datumfältet i kommentaren måste uppfylla: <itemizedlist>
+	      <listitem>
+	        <para><guilabel>alla</guilabel>: datumfältet ignoreras.</para>
+              </listitem>
+
+	      <listitem>
+	        <para><guilabel>före, lika med, efter</guilabel>: datumet måste vara tidigare, lika med eller efter angivet datum.</para>
+              </listitem>
+
+	    </itemizedlist></para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <!-- -->
+            <term><guilabel>Kategorier</guilabel></term>
+	    <listitem>
+	    <para>Listan över kategorier som en bild måste tillhöra. Kategorier kan läggas till i bilder med kommandot <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Kategorier</guimenuitem></menuchoice> eller genom att trycka på <keycombo><keycap>K</keycap></keycombo>.</para>
+	    <para>Du kan välja att söka efter bilder som tillhör alla de angivna kategorierna eller åtminstone en av dem genom att kryssa för motsvarande alternativ.</para>
+            <para>Exempel:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Värde</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Förklaring</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>
+                <userinput>familj</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder med "familj" som ett av nyckelorden.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>jag; familj</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> söker efter bilder som innehåller "familj" och/eller "jag" i nyckelordslistan.</para></entry>
+            </row>
+
+          </tbody>
+        </tgroup>
+      </informaltable>
+	    </listitem>
+	  </varlistentry>
+          </variablelist>
+        <para>
+          <note>
+            <title>OBSERVERA</title>
+            <para>Om du använder fler än ett kriteria måste bilderna uppfylla alla.</para>
+          </note>
+          <note>
+            <title>OBSERVERA</title>
+            <para>Sökningen gör aldrig skillnad på versaler och gemener.</para>
+          </note>
+        </para>
+      </sect3>
+
+     </sect2>
+     <sect2 id="gthumb-find-dup">
+     <title>Sök efter dubletter av bilder</title>
+     <para>För att hitta dubletter av dina bilder kan du välja <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Sök efter dubletter</guimenuitem></menuchoice>.</para>
+     </sect2>
+  </sect1>
+
+  <!-- ============= Slideshow ================================== -->
+
+    <sect1 id="slideshow">
+      <title>Bildspel</title>
+      <para>Du kan starta ett bildspel för bilderna i den aktuella mappen genom att trycka på <keycombo action="simul"><keycap>s</keycap></keycombo> eller välja menyobjektet <menuchoice><guimenu>Visa </guimenu><guimenuitem>Bildspel</guimenuitem></menuchoice>. För att stoppa bildspelet kan du trycka på <keycombo action="simul"><keycap>S</keycap></keycombo> igen.</para>
+      <para>Om den aktuella markeringen innehåller två eller fler bilder kommer bildspelet endast att visa de markerade bilderna, annars kommer alla bilder i den aktuella mappen eller albumet att visas.</para>
+      <para>Växla till/från helskärmsläget stoppar inte bildspelet. Om alternativet <guilabel>Växla till helskärm</guilabel> är aktiverat kommer bildspelet att starta i helskärmsläget och bildspelet stoppas du lämnar det.</para>
+      <para>Bildspelet avbryts när du byter mapp eller läser om den aktuella mappen.</para>
+      <para>Med bildspelsverktyget och helskärmsläget kan du göra presentationer. Det finns två typer av presentationer: automatiska och manuella presentationer.</para>
+      <sect2 id="gthumb-auto-presentation">
+      <title>Hur man gör en automatisk presentation</title>
+      <para>Genomför följande steg för att göra en automatisk presentation:</para>
+      <orderedlist>
+        <listitem>
+          <para>Gå till mappen eller albumet som innehåller bilderna som du vill visa.</para>
+        </listitem>
+        <listitem>
+          <para>Markera bilderna som du vill visa i bildspelet eller markera ingen för att visa alla bilder i den aktuella mappen eller albumet.</para>
+        </listitem>
+        <listitem>
+          <para>Tryck på <keycombo action="simul"><keycap>S</keycap></keycombo> eller välj <menuchoice><guimenu>Visa</guimenu><guimenuitem>Bildspel </guimenuitem></menuchoice>. <application>gThumb</application> startar automatiskt en presentation av bilderna.</para>
+        </listitem>
+      </orderedlist>
+      <para>För att stoppa presentationen kan du trycka på <keycombo action="simul"><keycap>S</keycap></keycombo>, <keycombo action="simul"><keycap>Q</keycap></keycombo> eller <keycombo action="simul"><keycap>Esc</keycap></keycombo>.</para>
+      <para>Beteendet för bildspelet kan anpassas i dialogrutan <guilabel>Inställningar</guilabel> i <xref linkend="preferences-slideshow"/></para>
+      </sect2>
+      <sect2 id="gthumb-manual-presentation">
+      <title>Hur man gör en manuell presentation</title>
+      <para>Genomför följande steg för att göra en manuell presentation:</para>
+      <orderedlist>
+        <listitem>
+          <para>Gå till mappen eller albumet som innehåller bilderna som du vill visa.</para>
+        </listitem>
+        <listitem>
+          <para>Markera bilden från vilken du vill starta presentationen.</para>
+        </listitem>
+        <listitem>
+          <para>Tryck <keycombo action="simul"><keycap>F</keycap></keycombo>. <application>gThumb</application> visar bilden i helskärmsläget.</para>
+        </listitem>
+        <listitem>
+          <para>Tryck <keycombo action="simul"><keycap>Blanksteg</keycap></keycombo> eller <keycombo action="simul"><keycap>N</keycap></keycombo>. <application>gThumb</application> visar nästa bild.</para>
+        </listitem>
+        <listitem>
+          <para>Tryck på <keycombo action="simul"><keycap>Backsteg</keycap></keycombo> eller <keycombo action="simul"><keycap>B</keycap></keycombo>. <application>gThumb</application> visar föregående bild.</para>
+        </listitem>
+      </orderedlist>
+      <para>För att stoppa presentationen, tryck på <keycombo action="simul"><keycap>Q</keycap></keycombo> eller <keycombo action="simul"><keycap>Esc</keycap></keycombo>.</para>
+      </sect2>
+    </sect1>
+
+  <!-- ============= Tools ================================== -->
+  <sect1 id="gthumb-tools">
+  <title>Avancerade verktyg</title>
+
+    <sect2 id="gthumb-wallpaper">
+      <title>Ställ in skrivbordsbakgrunden</title>
+      <para>Om du vill ställa in en bild som skrivbordsbakgrund kan du markera bilden och välja menyn <menuchoice><guimenu>Verktyg</guimenu><guisubmenu>Ställ in bild som bakgrund</guisubmenu></menuchoice>. Den här menyn innehåller följande objekt: <itemizedlist>
+	  <listitem>
+	    <para><guilabel>Centrerad</guilabel>: Bilden kommer att centreras på skärmen.</para>
+	  </listitem>
+	  <listitem>
+	    <para><guilabel>Sida vid sida</guilabel>: Bilden kommer att dupliceras på skärmen som plattor på golvet.</para>
+	  </listitem>
+	  <listitem>
+	    <para><guilabel>Skalad</guilabel>: Bilden kommer att skalas för att fylla skärmen men upprätthåller aspektförhållandet.</para>
+	  </listitem>
+	  <listitem>
+	    <para><guilabel>Utsträckt</guilabel>: Bilden kommer att skalas för att fylla skärmen och ändra proportioner om det behövs.</para>
+	  </listitem>
+	</itemizedlist></para>
+      <para>Om du vill återställa den gamla bakgrundsbilden kan du välja <menuchoice><guimenu>Verktyg</guimenu><guisubmenu>Ställ in bild som bakgrund</guisubmenu><guimenuitem>Återställ</guimenuitem></menuchoice>.</para>
+    </sect2>
+    <sect2 id="gthumb-rotate-jpeg">
+      <title>Rotera bilder utan kvalitetsförsämring</title>
+      <para>Vanligtvis om du vill rotera en bild så måste du öppna bilden med en redigerare, rotera bilden och sedan spara den. Det fungerar bra för bildformat såsom PNG eller GIF, men resulterar i en kvalitetsförsämring för JPEG-bilder. (Roteringsfunktionerna i <menuchoice><guimenu>Bild</guimenu><guimenuitem>Transformera</guimenuitem></menuchoice> fungerar på det här sätter - utan försämring.)</para>
+      <para>Om du vill rotera JPEG-bilder utan att förlora bildkvalitet kan du markera bilderna som du vill rotera och välja <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Rotera bilder</guimenuitem></menuchoice>. <application>gThumb</application> kommer att visa dialogrutan <guilabel>Rotera bilder</guilabel>.</para>
+      <para>Klicka på <guibutton>Verkställ</guibutton> för att verkställa ändringarna. Filerna sparas automatiskt efter att du klickat på <guibutton>Verkställ</guibutton>.</para>
+      <para>Om du kryssade för alternativet <guilabel>Tillämpa på alla bilder</guilabel> kommer roteringen att tillämpas på den för närvarande visade bilden såväl som de återstående bilderna som du har markerat; om inte, när roteringen har genomförts på den aktuella bilden kommer nästa bild i markeringen att visas och du kan välja en annan typ av rotering. <note>
+        <title>OBSERVERA</title>
+        <para>Om markeringen innehåller några bilder som inte är JPEG-bilder kommer även de att roteras. (Inte alla filformat stöds dock.)</para>
+      </note></para>
+      <para>I allmänhet finns det två sätt att rotera en JPEG-bild på. Första sättet är att arrangera om bildpunkterna inne i bildfilen med en "fysisk" transformering. Det andra sättet är att inte röra bilddatat och helt enkelt ändra värdet för Exif-orienteringstaggen inne i huvudet för JPEG-filen. Inte alla JPEG-filer har Exif-taggar dock, och inte alla program har stöd för dem. Om din bild inte har Exif-taggar kommer bildpunkterna att automatiskt arrangeras om inne i bildfilen eftersom det är den enda möjliga metoden.</para>
+      <para>Om din bild har en Exif-orienteringstagg och kryssrutan <guilabel>Tillämpa fysisk transformering</guilabel> är aktiverad kommer den fysiska transformeringen att användas för att arrangera om bildens data, och Exif-orienteringstaggen kommer att nollställas till dess standardvärde, "övre-vänster".</para>
+      <para>Om din bild har en Exif-orienteringstagg och kryssrutan <guilabel>Tillämpa fysisk transformering</guilabel> inte är aktiverad kommer endast orienteringstaggen att ändras. Själva råbilddatat kommer inte att transformeras.  <note>
+        <title>OBSERVERA</title>
+        <para>För maximal kompatibilitet med andra program är det rekommenderat att kryssrutan <guilabel>Tillämpa fysisk transformering</guilabel> vanligtvis är aktiverad i både rotering- och importdialogrutorna.</para>
+      </note></para>
+      <para>Den fysiska transformeringen av bildpunktsdata inne i JPEG-filen kommer inte att försämra bildkvaliteten (alltså, den är ickeförstörande) i de flesta fall. Dock om bildens dimensioner (höjd och bredd) inte är multiplicerbara med 8 kan viss data skadas längs en eller två av kanterna av bilden. Om det finns en Exif-orienteringstagg kan du undvika det här problemet genom att inaktivera kryssrutan <guilabel>Tillämpa fysisk transformering</guilabel>. Om du måste använda den fysiska transformeringen med bilder vars dimensioner inte är multiplicerbara med 8, kommer <application>gThumb</application> att låta dig fortsätta även om det möjligen kan leda till bildproblem, men det kommer även att fråga dig om du vill trimma bilden lite (upp till 7 kolumner och/eller rader av bildpunkter) för att ta bort problemområden.</para>
+    </sect2>
+    <sect2 id="gthumb-reset-exif">
+      <title>Nollställ Exif-orienteringstaggen</title>
+      <para>Föregående avsnitt beskrev hur JPEG-bilder kan roteras med två olika metoder (fysisk transformering eller ändring av Exif-orienteringstaggen). <application>gThumb</application> har fullständigt stöd för båda metoderna sedan version 2.9.0. Vissa tidigare versioner av <application>gThumb</application> hade problem med automatiskt roterade bilder vid importering, genom att tillämpa en fysisk transformering utan att nollställa Exif-orienteringstaggen till "övre-vänster". Dessa tidigare versioner ignorerade orienteringstaggen när bilderna visades, så inga problem syntes (även om problemet var synligt om andra bildvisare användes för att visa samma bilder). Versionerna 2.9.0 och senare respekterar den här taggen så den felaktiga roteringen kommer att vara synlig.</para>
+      <para>Verktyget <guilabel>Nollställ Exif-orienteringstaggar</guilabel> tillhandahålls för att rätta till det här problemet. Markera helt enkelt de berörda bilderna och använd verktyget <guilabel>Nollställ Exif-orienteringstaggar</guilabel>. Det här kommer att nollställa Exif-orienteringstaggen till "övre-vänster".</para>
+    </sect2>
+    <sect2 id="gthumb-convert-format">
+      <title>Konvertera bildformatet</title>
+      <para>För att konvertera bildformatet, markera bilderna som du vill konvertera och välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Konvertera format</guimenuitem></menuchoice>.</para>
+      <para>Dialogrutan <guilabel>Konvertera format</guilabel> erbjuder dig följande alternativ: <itemizedlist>
+        <listitem>
+          <para><guilabel>Bildtyp</guilabel>: det här är formatet som du vill konvertera bilderna till.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Överskrivningsläge</guilabel>: en konverterad bild har samma namn som originalbilden förutom filändelsen som fastställs av det nya formatet, så en bild med det nya namnet kan redan finnas i målmappen. Det här alternativet låter dig bestämma vad som ska göras när en sådan situation uppstår. Om du väljer <guilabel>Hoppa över</guilabel> kommer den nya bilden inte att skapas; <guilabel>Byt namn</guilabel> kommer att fråga dig om att ange ett nytt namn; <guilabel>Fråga</guilabel> kommer att fråga dig om den gamla bilden ska skrivas över eller inte och <guilabel>Skriv över</guilabel> kommer att skriva över den gamla bilden utan att fråga.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Ta bort original</guilabel>: låter dig ta bort originalbilden. Om en bild inte konverteras på grund av ett fel kommer bilden inte att tas bort.</para>
+        </listitem>
+	</itemizedlist></para>
+      <para>Klicka på <guibutton>Konvertera</guibutton> för att genomföra konverteringen.</para>
+    </sect2>
+    <sect2 id="gthumb-scale-series">
+      <title>Skala en serie bilder</title>
+      <para>För att skala flera bilder till en mindre storlek kan du markera bilderna som du vill skala ner och välja <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Skala bilder</guimenuitem></menuchoice>.</para>
+      <para>Dialogrutan <guilabel>Skala bilder</guilabel> erbjuder dig följande alternativ: <itemizedlist>
+        <listitem>
+          <para><guilabel>Bredd</guilabel>: Den önskade maximala bredden för de skalade bilderna.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Höjd</guilabel>: Den önskade maximala höjden för de skalade bilderna.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Behåll aspektförhållande</guilabel>: Om den här kryssrutan inte är aktiverad kan bilden sträckas ut med olika faktorer i både horisontal och vertikal riktning, för att uppnå både angiven bredd och höjd. Det här kan resultera i en felaktig bild. Om den här kryssrutan är aktiverad kommer bilden att skalas med samma faktor i båda riktningarna. Skalfaktorn kommer att beräknas så att bredd och höjd på resultatbilden är lika med eller mindre än angivna värden i respektive rutor, <guilabel>Bredd</guilabel> och <guilabel>Höjd</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Bildtyp</guilabel>: det här är formatet som du vill spara de skalade bilderna som.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Överskrivningsläge</guilabel>: en skalad bild har samma namn som den ursprungliga bilden förutom filändelsen som fastställs av det nya formatet, därför kanske en bild med det nya namnet redan finns i målmappen. Det här alternativet låter dig bestämma vad som ska göras om en sådan situation uppstår. Om du väljer <guilabel>Hoppa över</guilabel> kommer den nya bilden inte att skapas; <guilabel>Byt namn</guilabel> kommer att fråga dig om att ange ett nytt namn; <guilabel>Fråga</guilabel> kommer att fråga dig om den gamla bilden ska skrivas över eller inte och <guilabel>Skriv över</guilabel> kommer att skriva över den gamla bilden utan att fråga.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Ta bort original</guilabel>: låter dig ta bort originalbilden. Om en bild inte konverteras på grund av ett fel kommer bilden inte att tas bort.</para>
+        </listitem>
+        </itemizedlist></para>
+      <para>Klicka på <guibutton>Skala</guibutton> för att genomföra skalningen.</para>
+    </sect2>
+    <sect2 id="gthumb-rename-series">
+      <title>Byt namn på en serie bilder</title>
+      <para>För att byta namn på en serie bilder angivna med en namnmall, välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Byt namn på serier</guimenuitem></menuchoice>.</para>
+      <para>Namnmallen är helt enkelt ett namn som måste användas för alla bilder. Du kan även använda vissa specialtecken för att göra att de nya namnen skiljer sig från varandra:</para>
+        <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Symbol</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Beskrivning</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><keycap>#</keycap></para></entry>
+              <entry align="left">
+                <para>Den här symbolen kommer att ersättas med värdet för en räknare som ökar sig själv med 1 från en bild till en annan. Om du anger den här symbolen i en sekvens kommer du att få inledande noller om räknarens värde har ett mindre antal siffror, till exempel ### kommer att producera sekvensen: 001, 002, 003, etc..</para></entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><keycap>%f</keycap></para></entry>
+              <entry align="left">
+                <para>Den här symbolen kommer att ersättas med bildens originalnamn, undantaget filändelsen.</para></entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><keycap>%e</keycap></para></entry>
+              <entry align="left">
+                <para>Den här symbolen kommer att ersättas med bildens ursprungliga filändelse.</para></entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><keycap>%d</keycap></para></entry>
+              <entry align="left">
+                <para>Den här symbolen kommer att ersättas med bildens ändringsdatum.</para></entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><keycap>%s</keycap></para></entry>
+              <entry align="left">
+                <para>Den här symbolen kommer att ersättas med bildens dimensioner.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>Listan i nederkant av dialogrutan visar hur filnamnen kommer att byta namn.</para>
+      <para>För att byta namn på bilderna, klicka på <guibutton>Byt namn</guibutton>.</para>
+      <para>Om namnbytet för en bild kan skriva över en redan befintlig bild så kommer du att bli tillfrågad vad som ska göras. Fem alternativ finns tillgängliga: skriv över bilden; skriv inte över bilden; skriv alltid över; skriv aldrig över; ange ett nytt namn.</para>
+    </sect2>
+    <sect2 id="gthumb-change-date">
+      <title>Ändra bilddata</title>
+      <para>Om du vill ändra datumet för senaste ändringen i en serie bilder kan du markera bilderna och välja <menuchoice><guimenu> Verktyg</guimenu><guimenuitem>Ändra datum</guimenuitem></menuchoice>.</para>
+      <para>Välj det nya datumet.</para>
+      <para>Klicka på <guibutton>Ok</guibutton>. <application>gThumb</application> ändrar datumet.</para>
+    </sect2>
+    <sect2 id="gthumb-index-image">
+      <title>Skapa en indexbild</title>
+      <para>En indexbild är en bild som innehåller små förhandsvisningar av en serie bilder. Om du vill skapa en indexbild kan du markera bilderna som du vill infoga och välja <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Skapa indexbild</guimenuitem></menuchoice>.</para>
+    </sect2>
+    <sect2 id="gthumb-web-album">
+      <title>Skapa ett webbalbum</title>
+       <para>För att skapa ett webbalbum kan du visa en mapp eller ett album och markera de bilder som du vill inkludera i ditt album. (De vanliga markeringsmetoderna gäller - du kan klicka för att markera en bild, Skift+klick eller Skift+piltangent för att expandera markeringen, Ctrl+klick för att lägga till bilder en och en, Ctrl+A för att markera allt.) Använd sedan funktionen <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Skapa webbalbum</guimenuitem></menuchoice>.</para>
+       <para>Webbalbumet kommer att generersa i mappen <guilabel>Mål</guilabel>. Startsidan för albumet kommer att anges av inställningen <guilabel>Indexfil</guilabel> - "index.html" används vanligtvis.</para>
+       <para>Alla webbalbum kommer att innehålla en eller flera "indexsidor" (som visar en serie små miniatyrbilder) och en eller flera "bildsidor" (som visar en bild åt gången). Om kryssrutan <guilabel>Kopiera originalbilder till mål</guilabel> är aktiverad kommer bilden som visas i bildsidorna att länka till en kopia av originalbilden. Om du klickar på den här länken kommer råbilden att läsas in i din webbläsare (utan någon medföljande HTML).</para>
+       <para>Om du vill kan bilderna skalas ned om de överstiger en viss storlek som definieras i rutan <guilabel>Ändra storlek om större än</guilabel>.</para>
+       <para>Antalet miniatyrbilder som visas på varje indexsida i webbalbumet styrs av rad- och kolumnrutorna <guilabel>Storlek</guilabel>. Alternativt kan alla bilder tvingas till en enda indexsida genom att aktivera kryssrutan <guilabel>använd en enda indexsida</guilabel>.</para>
+       <para>De flesta teman kommer att respektera inställningarna för rad och kolumn som du anger, därfär att de baserade på HTML-tabeller. Dock kan andra teman (exempelvis temat BestFit) använda Cascading Style Sheets som automatiskt placerar om bilderna för att använda utrymmet på bästa sätt. (Om du ändrar storlek på webbläsarfönstret kommer bilderna själva att placera om sig!) Dessa teman kommer inte att respektera inställningarna för rad och kolumn men de kommer att hålla antalet bilder per indexsida till maximalt RAD x KOLUMNER (såvida inte kryssrutan <guilabel>använd en enda indexsida</guilabel> är aktiverad).</para>
+       <para>Ett <guilabel>Sidhuvud</guilabel> och <guilabel>Sidfot</guilabel> kan definieras. Dessa etiketter kommer att visas i överkant och nederkant på varje sida i albumet. HTML-markup kan användas i sidhuvudet och sidfoten, så länge som varje "&gt;", "&lt;" och "&amp;" inleds med ett bakåtstreck. Till exempel måste "&lt;hr/&gt;" skrivas som "\&lt;hr/\&gt;". Sekvensen "%d" kommer att ersättas av det aktuella datumet. För att göra så att ett bakåtstreck ("\") eller procentsymbol ("%") visas i utdata måste de anges som "\\" eller "%%" i fältet sidhuvud eller sidfot.</para>
+       <para>Ett <guilabel>Tema</guilabel> måste anges. <guilabel>Tema</guilabel> styr det övergripande utseendet för ditt webbalbum. För att välja ett <guilabel>Tema</guilabel> kan du trycka på knappen <guibutton>...</guibutton> och välja ett från listan. Dialogrutorna <guilabel>Miniatyrbildstext</guilabel> och <guilabel>Bildtext</guilabel> låter dig ange vilken textinformation (bilddatum, bildstorlek, kameramodell, etc) som ska visas vid varje bild i index- och bildsidorna.</para>
+    </sect2>
+    <sect2 id="gthumb-import-photos">
+      <title>Importera foton från en digitalkamera</title>
+       <para>För att importera foton från en digitalkamera kan du välja <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Importera bilder </guimenuitem></menuchoice>.</para>
+       <para>Flera alternativ visas i dialogrutan <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Importera bilder </guimenuitem></menuchoice>.</para>
+       <para>Målmappen kan väljas genom rutan <guilabel>Mål</guilabel>. Bilderna kommer att importeras till en undermapp till mappen <guilabel>Mål</guilabel>. Namnet på undermappen ställs in av rutan <guilabel>Film</guilabel>. Om ingen "Film"-mapp anges kommer namnet på undermappen att automatiskt genereras baserat på importerat data och tid.</para>
+       <para><guilabel>Kategorier</guilabel> kan anges för de importerade bilderna med hjälp av rutan <guilabel>Kategorier</guilabel>.</para>
+       <para>Om kryssrutan <guilabel>Ta bort importerade bilder från kameran</guilabel> är aktiverad kommer bilderna att tas bort från kameran efter att de har importerats.</para>
+       <para><application>gThumb</application> kommer att byta namn på bilderna (i numerisk ordning) när de importeras, såvida inte kryssrutan <guilabel>Behåll ursprungliga filnamn</guilabel> är aktiverad.</para>
+       <para>Om kryssrutan <guilabel>Rotera bilder fysiskt</guilabel> är aktiverad, och de importerade bilderna innehåller en Exif-orienteringsstagg, kommer bilddatat att fysiskt transformeras (ickeförstörande) så att de visade bilderna ser likadana ut som tidigare men orienteringstaggen är nollställd till "övre-vänster". Om den här kryssrutan inte är aktiverad kommer bilddatat och orienteringstaggen förbli orörda. Bilden kommer att visas identisk av gthumb för båda möjligheterna, men för maximal kompatibilitet med andra program bör den här kryssrutan vara aktiverad.</para>
+       <sect3 id="gthumb-select-camera">
+	<title>Val av kameramodell</title>
+         <para><application>gThumb</application> bör automatiskt identifiera din kamera (om den är påslagen) när du startar dialogrutan <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Importera bilder </guimenuitem></menuchoice>. Om den gör det kommer en kameraikon att visas i dialogrutan. Om inte kommer en kamera med ett "X" över sig att visas.</para>
+         <para>Om fel kamera har identifierats kan du klicka på kameraikonen för att välja en annan. En rullgardinsruta som listar alla automatiskt identifierade kameror kommer att visas. Om kryssrutan <guilabel>Använd manuellt val istället</guilabel> är aktiverad kan användaren manuellt ställa in kameramodellen och porten.</para>
+       </sect3>
+    </sect2>
+    <sect2 id="gthumb-write-to-cd">
+      <title>Skriv bilder till en cd eller dvd</title>
+       <para>Genomför följande steg för att skriva en serie bilder till en cd- eller dvd-skiva: <orderedlist>
+        <listitem>
+          <para>Markera bilderna som du vill skriva och välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Skriv till cd </guimenuitem></menuchoice>, <application>gThumb</application> visar dialogrutan <guilabel>Skriv till cd</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Klicka på <guilabel>Aktuell mapp</guilabel> om du vill skriva alla bilderna i den aktuella mappen och dess undermappar. Klicka på <guilabel>Markerade bilder</guilabel> för att endast skriva den aktuella markeringen.</para>
+        </listitem>
+        <listitem>
+          <para>Klicka på <guibutton>Ok</guibutton>. <application>gThumb</application>, efter förberedelse av bilderna för skrivning till cd/dvd, visar platsen <filename>burn:///</filename> med <guilabel>Nautilus</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Klicka på knappen <guilabel>Skriv till cd</guilabel> i verktygsraden eller välj <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Skriv till cd </guimenuitem></menuchoice>. Bilderna skrivs till cd- eller dvd-skivan.</para>
+        </listitem>
+       </orderedlist></para>
+    </sect2>
+  </sect1>
+
+ <!-- ============= Preferences ================================== -->
+ <sect1 id="preferences">
+  <title>Inställningar</title>
+  <para>Konfigurera <application>gThumb</application> genom att öppna dialogrutan <guilabel>Inställningar</guilabel> genom att välja <menuchoice><guimenu>Redigera</guimenu><guisubmenu>Inställningar</guisubmenu></menuchoice>.</para>
+  <para>Den här dialogrutan innehåller fyra flikar som beskrivs mer i detalj här nedan. I nederkant av dialogrutan hittar du följande knappar:</para>
+  <itemizedlist>
+    <listitem>
+      <para><guibutton>Hjälp</guibutton>: visar den här handboken.</para>
+    </listitem>
+    <listitem>
+      <para><guibutton>Stäng</guibutton>: stänger dialogrutan.</para>
+    </listitem>
+  </itemizedlist>
+  <para>Kom ihåg att när du ändrar ett alternativ kommer det automatiskt att börja gälla. Det är därför inte knapparna <guibutton>Ok</guibutton> eller <guibutton>Verkställ</guibutton> finns.</para>
+
+<!-- ########### General Tab ################## -->
+    <sect2 id="preferences-general">
+      <title>Fliken Allmänt</title>
+      <para>Den här fliken låter dig ställa in följande alternativ:</para>
+      <itemizedlist>
+	<listitem>
+	<para>Välj layout för huvudfönstret i <application>gThumb</application>, t.ex. positionerna för kataloglistfönstret, bildlistfönstret (miniatyrbild) och bildvisarfönstret.</para>
+	</listitem>
+	<listitem>
+	  <para>Verktygsradsstil</para>
+	</listitem>
+	<listitem>
+	  <para>Katalog att visa vid uppstart</para>
+	</listitem>
+	<listitem>
+	  <para>Fråga efter bekräftelse innan bilder eller album tas bort.</para>
+	</listitem>
+	<listitem>
+	  <para>Fråga huruvida ändrade bilder ska sparas.</para>
+	</listitem>
+      </itemizedlist>
+    </sect2>
+
+<!-- ########### Browser Tab ################## -->
+    <sect2 id="preferences-browser">
+      <title>Fliken Bläddrare</title>
+      <para>I den här fliken kan du konfigurera följande alternativ:</para>
+      <variablelist>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Visa filnamn</guilabel></term>
+	  <listitem>
+	    <para>Det här alternativet styr huruvida <application>gThumb</application> ska visa bildfilnamn.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Visa kommentarer</guilabel></term>
+	  <listitem>
+	    <para>Det här alternativet styr huruvida <application>gThumb</application> ska visa kommentarer (inklusive datum och plats) i bildlistan. Som standard visar <application>gThumb</application> kommentaren som en text under miniatyrbilden.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Visa miniatyrbilder</guilabel></term>
+	  <listitem>
+	    <para>Det här alternativet (som du kan aktivera genom att trycka på <keycombo><keycap>T</keycap></keycombo>) styr huruvida <application>gThumb</application> ska visa miniatyrbilder.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Annat</guilabel></term>
+	  <listitem>
+	    <para>Här kan du välja huruvida byte av mapp ska ske genom ett enkelklick eller dubbelklick på mappnamnet. Enkelklick kan vara användbart om du är van vid att snabbt bläddra på din hårddisk när du söker efter bilder. Standardbeteendet är att följa policyn för filhanteraren Nautilus. Du kan även välja huruvida <application>gThumb</application> ska fastställa bildtypen genom att se på filändelsen eller genom att se på filens innehåll. Fastställa filtypen från innehållet är mer tillförlitligt (vissa program kan skapa filer med en filändelse som inte matchar den faktiska filtypen) men är långsammare. Om du har ett snabbt system kan du välja <guilabel>Fastställ bildtyp från innehåll</guilabel>.</para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+
+    </sect2>
+<!-- ########### Viewer Tab ################## -->
+    <sect2 id="preferences-viewer">
+      <title>Fliken Visare</title>
+      <para>Den här fliken innehåller alternativ för visarfönstret:</para>
+      <variablelist>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>När en bild är inläst</guilabel></term>
+	  <listitem>
+	    <para>Styr initial zoomnivå för en bild.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Transparenstyp</guilabel></term>
+	  <listitem>
+	    <para>Styr vilken bakgrund som ska användas för delvis transparenta bilder. Som standard ersätt den transparenta delen av bilden med fönstrets bakgrundsfärg. Det är alternativet <guilabel>Ingen</guilabel>.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+        <varlistentry>
+          <term><guilabel>Zoomkvalitet</guilabel></term>
+          <listitem>
+            <para>Den här styr metoden som ska användas för att visa omskalade bilder. Möjliga val är hög kvalitet (långsam på äldre maskiner eller när stora bilder visas) och låg kvalitet (alltid snabb).</para>
+          </listitem>
+        </varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Rullistens positioner efter Nästa/Föregående använts</guilabel></term>
+	  <listitem>
+	    <para>Beroende på vald zoomnivå kan dina bilder vara större än visningsfönstret. Om det händer kommer de vertikala och/eller horisontella rullisterna att finnas kvar och låter dig visa olika områden av din bild.</para>
+	    <para>När du navigerar från en sida till en annan med Nästa/Föregående kan positionerna för rullisterna bibehållas eller så kan de nollställas till standardpositionen.</para>
+	    <para>Om du visar sidor med inläst text, till exempel, vill du antagligen ställa in det här till <guilabel>Återställ till övre-vänster av bilden</guilabel> så att övre delen av sidan visas när du går till en ny bild.</para>
+	    <para>Om du försöker jämföra små områden på flera stora bilder (kanske för att jämföra liknande bilder tagna på olika tidpunkter, såsom foton tagna i ett "kontinuerligt" läge med en digitalkamera, eller satellitbilder på samma område på olika datum) är kanske läget <guilabel>Behåll samma position</guilabel> mer lämpligt för dig.</para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+
+    </sect2>
+<!-- ########### Slide Show Tab ################## -->
+    <sect2 id="preferences-slideshow">
+      <title>Fliken Bildspel</title>
+      <para>Den här fliken innehåller alternativ för att styra bildspelsläget (som du kan starta genom att välja <menuchoice><guimenu>Verktyg</guimenu><guisubmenu>Bildspel</guisubmenu></menuchoice> eller genom att använda genvägen <keycombo><keycap>S</keycap></keycombo>). Alternativen inkluderar riktning (framåt/omvänd/slumpmässig) och fördröjning mellan bilder. Du kan även ange huruvida bildspelet ska starta om (t.ex. börja om från början efter visning av sista bilden) och automatiskt växla till helskärmsläget.</para>
+     </sect2>
+
+<!-- ########### Hot Keys Tab ################## -->
+    <sect2 id="preferences-hotkeys">
+      <title>Fliken Snabbtangenter</title>
+      <para>Den här fliken innehåller skalskriptsdefinitioner som styr snabbtangenterna 0-9 på det numeriska tangentbordet.</para>
+      <para>När en användare trycker på en av dessa tangenter kommer ett externt skalskript att startas. Vissa koder kan inkluderas i skriptet. Dessa koder kommer att ersättas av <application>gThumb</application> när skriptet startas upp. Här är en förklaring:</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="20.00*"/>
+          <colspec colname="COLSPEC1" colwidth="80.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Kod</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Förklaring</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>%F</para></entry>
+	      <entry align="left"><para>alla markerade filnamn på en rad, blankstegsavgränsade</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>%f</para></entry>
+              <entry align="left"><para>ett enda filnamn, inklusive sökväg</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>%n</para></entry>
+              <entry align="left"><para>ett enda filnamn, inklusive sökväg, utan filändelse</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>%e</para></entry>
+              <entry align="left"><para>en enda filändelse (börjar med en punkt)</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>%p</para></entry>
+              <entry align="left"><para>föräldramappen för en enda fil</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>Skript med koden %F kommer att köras en gång, oavsett antalet markerade filer. Alla andra skript kommer att köras en gång per markerad fil.</para>
+      <para>Flera standardskript tillhandahålls. Dessa kan ersättas av användaren om så önskas. Standardskripten förklaras här nedanför:</para>
+      <itemizedlist>
+	  <listitem>
+	    <para>
+		<command>gimp-remote %F</command>
+            </para>
+	    <para>Det här skriptet talar om för GNU Image Manipulation Program (gimp) att öppna alla markerade filer. Det är mest effektivt om vi inkluderar alla filnamnen på en rad istället för att anropa <command>gimp-remote</command> en gång för varje fil så vi måste använda koden %F.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>convert %f -font Helvetica -pointsize 20 -fill white -box '#00000080' -gravity South -annotate +0+5 ' Copyright 2007, Ditt namn här ' %n-copyright%e</command>
+            </para>
+            <para>Det här skriptet skapar en kopia av din bildfil och lägger till en copyrightnotis till den. Kommandot "convert" är en del av paketet ImageMagick. Om originalfilen har namnet exempel.jpg kommer den nya filen att få namnet exempel-copyright.jpg.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>mkdir -p %p/godkända ; cp %f %p/godkända/</command>
+            </para>
+            <para>Det här skriptet skapar en ny undermapp kallad "godkända", om den inte redan finns. Den kopierar sedan de markerade filerna till undermappen "godkända".</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>uuencode %f %f | mail -s Foton din@e-postadress.se</command>
+            </para>
+            <para>Det här skriptet kodar bildfiler i en format som är lämpligt för e-postbilagor, och sedan skickar varje bild via e-post till den angivna adressen. Ett e-postmeddelande per bild skickas.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>rm ~/mittarkiv.zip; zip -j ~/mittarkiv %F</command>
+            </para>
+            <para>Det här skriptet skriver över en befintlig zip-fil, om den finns, med en ny zip-fil som innehåller de markerade bilderna.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>rm ~/mittarkiv.zip; zip -j ~/mittarkiv %F; uuencode ~/mittarkiv.zip ~/mittarkiv.zip | mail -s Foton din@e-postadress.se</command>
+            </para>
+            <para>Den här kombinerar de föregående två skripten så att de markerade bilderna kombineras i en enda zip-fil som sedan skickas via e-post.</para>
+          </listitem>
+      </itemizedlist>
+     </sect2>
+
+  </sect1>
+
+  <!-- ============= Keyboard Shortcuts ================================== -->
+  <sect1 id="shortcuts">
+  <title>Snabbreferens: Tangentbordsgenvägar</title>
+  <para><xref linkend="gthumb-TBL-keyword-shortcuts-browser"/>, <xref linkend="gthumb-TBL-keyword-shortcuts-viewer"/>, <xref linkend="gthumb-TBL-keyword-shortcuts-other"/> och <xref linkend="gthumb-TBL-keyword-shortcuts-fullscreen"/> tillhandahåller en snabbreferens för alla genvägar i <application>gThumb</application>. Leta i menyerna efter andra genvägar.</para>
+  <para>
+      <table id="gthumb-TBL-keyword-shortcuts-browser" frame="topbot">
+      <title>Tangentbordsgenvägar för att navigera bland mappar</title>
+      <tgroup cols="3" colsep="1" rowsep="1">
+      	<colspec colname="COLSPEC0" colwidth="50*"/>
+	<colspec colname="COLSPEC1" colwidth="50*"/>
+	<colspec colname="COLSPEC2" colwidth="50*"/>
+	<thead>
+	  <row valign="top" rowsep="1">
+	    <entry colname="COLSPEC0">
+	    	<para>Genväg</para></entry>
+	    <entry colname="COLSPEC1">
+                <para>Beskrivning</para></entry>
+            <entry colname="COLSPEC2">
+                <para>Tillgänglig i helskärmsläget</para></entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row valign="top">
+            <entry>
+	      <para><keycombo><keycap>n</keycap></keycombo>, <keycombo action="simul"><keycap>Blanksteg</keycap></keycombo> eller <keycombo action="simul"><keycap>Page Down</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Visa nästa bild.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo action="simul"><keycap>b</keycap></keycombo>, <keycombo><keycap>Backsteg</keycap></keycombo> eller <keycombo action="simul"><keycap>Page Up</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Visa föregående bild.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Home</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Visa första bilden.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>End</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Visa sista bilden.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo action="simul"><keycap>Alt</keycap><keycap>Home </keycap></keycombo> eller <keycombo action="simul"><keycap>h</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Gå till din hemmapp.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Alt</keycap><keycap>Vänster</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Gå till den tidigare besökta mappen.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para><keycombo action="simul"><keycap>Alt</keycap><keycap>Upp </keycap></keycombo> eller <keycombo action="simul"><keycap>u</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Gå upp en nivå.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>Esc</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Avbryt skapandet av miniatyrbilder.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Ctrl</keycap><keycap>D</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Lägg till aktuell plats till bokmärken.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Return</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Visa/dölj bläddraren.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>q</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ändra innehåll i bildegenskapspanelen eller visa panelen om den inte är synlig.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Ctrl</keycap><keycap>1</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ställ in bildförhandsvisning som innehåll i bildegenskapspanelen eller dölj panelen om innehållstypen redan är synlig.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Ctrl</keycap><keycap>2</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ställ in bildens exif-data som innehåll i bildegenskapspanelen eller dölj panelen om innehållstypen redan är synlig.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Ctrl</keycap><keycap>3</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ställ in bildkommentar som innehåll i bildegenskapspanelen eller dölj panelen om innehållstypen redan är synlig.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>t</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Visa/dölj miniatyrbilderna.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>F2</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Byt namn på aktuell bild.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>o</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Öppna de markerade bilderna med ett program.</para>
+	    </entry>
+            <entry>
+	      <para>Nej</para>
+	    </entry>
+	  </row>
+          <row rowsep="0">
+            <entry>
+              <para>
+                <keycombo><keycap>g</keycap></keycombo>
+              </para>
+            </entry>
+            <entry>
+              <para>Öppna de markerade bilder med GIMP, om installerat.</para>
+            </entry>
+            <entry>
+              <para>Nej</para>
+            </entry>
+          </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>Delete</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ta bort de markerade bilderna.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	</tbody>
+      </tgroup>
+      </table>
+  </para>
+
+  <para>
+  </para>
+
+    <table id="gthumb-TBL-keyword-shortcuts-viewer" frame="topbot">
+    <title>Tangentbordsgenvägar för att visa bilder</title>
+    <tgroup cols="3" colsep="1" rowsep="1">
+      	<colspec colname="COLSPEC0" colwidth="50*"/>
+	<colspec colname="COLSPEC1" colwidth="50*"/>
+	<colspec colname="COLSPEC2" colwidth="50*"/>
+	<thead>
+	  <row valign="top">
+	    <entry colname="COLSPEC0">
+              <para>Genväg</para></entry>
+	    <entry colname="COLSPEC1">
+              <para>Beskrivning</para></entry>
+	    <entry colname="COLSPEC2">
+              <para>Tillgänglig i helskärmsläget</para></entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row valign="top">
+            <entry>
+	      <para><keycombo><keycap>v</keycap></keycombo>, <keycombo><keycap>f</keycap></keycombo> eller <keycombo><keycap>F11</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Aktivera/inaktivera helskärmsläget.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo><keycap>+</keycap></keycombo> eller <keycombo><keycap>=</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Zooma in.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>-</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Zooma ut.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo><keycap>1</keycap></keycombo> eller <keycombo><keycap>z</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Naturlig storlek.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>x</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Zooma för att passa.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>l</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Vänd bilden.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>m</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Spegelvänd bilden.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>r</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Rotera bilden 90 grader medsols utan att spara.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>e</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Rotera bilden 90 grader motsols utan att spara.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>]</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Rotera 90 grader medsols och spara bilden. Roteringen är icke-förstörande för jpeg-bilder.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>[</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Rotera 90 grader motsols och spara bilden. Roteringen är icke-förstörande för jpeg-bilder.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>a</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Starta/stoppa animeringen</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>j</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Visa nästa bildruta för en stoppad animering.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>Piltangenter</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Rulla bilden.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Skift</keycap><keycap>Piltangenter</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Rulla bilden snabbare.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	</tbody>
+     </tgroup>
+   </table>
+
+  <para>
+  </para>
+
+  <table id="gthumb-TBL-keyword-shortcuts-other" frame="topbot">
+    <title>Övriga tangentbordsgenvägar.</title>
+    <tgroup cols="3" colsep="0" rowsep="0">
+      	<colspec colname="COLSPEC0" colwidth="50*"/>
+	<colspec colname="COLSPEC1" colwidth="50*"/>
+	<colspec colname="COLSPEC2" colwidth="50*"/>
+	<thead>
+	  <row valign="top" rowsep="1">
+	    <entry colname="COLSPEC0">
+                <para>Genväg</para></entry>
+	    <entry colname="COLSPEC1">
+                <para>Beskrivning</para></entry>
+            <entry colname="COLSPEC2">
+                <para>Tillgänglig i helskärmsläget</para></entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row valign="top">
+            <entry>
+	      <para>
+		<keycombo><keycap>s</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Starta/stoppa bildspelet.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>c</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Lägg till en kommentar till de markerade bilderna.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>k</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Tilldela kategorier till de markerade bilderna.</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>i</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Dölj/visa bildkommentaren och egenskaperna</para>
+	    </entry>
+            <entry>
+	      <para>Ja</para>
+	    </entry>
+	  </row>
+	</tbody>
+     </tgroup>
+  </table>
+  <para>
+  </para>
+  <table id="gthumb-TBL-keyword-shortcuts-fullscreen" frame="topbot">
+    <title>Tangentbordsgenvägar endast tillgängliga i helskärmsläget</title>
+    <tgroup cols="2" colsep="0" rowsep="0">
+      	<colspec colwidth="20.00*"/>
+	<colspec colwidth="20.00*"/>
+	<thead>
+	  <row rowsep="1">
+	    <entry><para>Genväg</para></entry>
+	    <entry><para>Beskrivning</para></entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>p</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Pausa/spela upp ett bildspel.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo><keycap>Escape</keycap></keycombo>, <keycombo><keycap>f</keycap></keycombo>, <keycombo><keycap>v</keycap></keycombo>, <keycombo><keycap>F11</keycap></keycombo> eller <keycombo><keycap>q</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Lämna helskärmsläget.</para>
+	    </entry>
+	  </row>
+	</tbody>
+     </tgroup>
+  </table>
+  </sect1>
+
+</article>

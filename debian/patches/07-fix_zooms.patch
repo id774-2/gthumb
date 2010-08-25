@@ -1,0 +1,45 @@
+--- gthumb.orig/src/gth-window-actions-entries.h
++++ gthumb/src/gth-window-actions-entries.h
+@@ -214,12 +214,12 @@
+ 	{ "View_ZoomFit", GTK_STOCK_ZOOM_FIT,
+ 	  N_("Fit"), "",
+ 	  N_("Zoom to fit window"),
+-	  G_CALLBACK (gth_window_activate_action_view_zoom_fit_if_larger) },
++	  G_CALLBACK (gth_window_activate_action_view_zoom_fit) },
+ 
+         { "View_ZoomWidth", GTHUMB_STOCK_ZOOM_WIDTH,
+           N_("Width"), "",
+           N_("Zoom to fit width"),
+-          G_CALLBACK (gth_window_activate_action_view_zoom_to_width) },
++          G_CALLBACK (gth_window_activate_action_view_zoom_to_width_always) },
+ 
+ 	{ "View_StepAnimation", NULL,
+ 	  N_("Step A_nimation"), "",
+--- gthumb.orig/src/gth-window-actions-callbacks.c
++++ gthumb/src/gth-window-actions-callbacks.c
+@@ -591,6 +591,15 @@
+ 
+ 
+ void
++gth_window_activate_action_view_zoom_to_width_always (GtkAction *action,
++                                               gpointer   data)
++{
++        GthWindow *window = GTH_WINDOW (data);
++	image_viewer_set_fit_mode (gth_window_get_image_viewer (window), GTH_FIT_WIDTH);
++}
++
++
++void
+ gth_window_activate_action_view_zoom_out (GtkAction *action,
+ 					  gpointer   data)
+ {
+--- gthumb.orig/src/gth-window-actions-callbacks.h
++++ gthumb/src/gth-window-actions-callbacks.h
+@@ -63,6 +63,7 @@
+ DEFINE_ACTION(gth_window_activate_action_view_zoom_fit)
+ DEFINE_ACTION(gth_window_activate_action_view_zoom_fit_if_larger)
+ DEFINE_ACTION(gth_window_activate_action_view_zoom_to_width)
++DEFINE_ACTION(gth_window_activate_action_view_zoom_to_width_always)
+ DEFINE_ACTION(gth_window_activate_action_view_fullscreen)
+ DEFINE_ACTION(gth_window_activate_action_view_exit_fullscreen)
+ DEFINE_ACTION(gth_window_activate_action_wallpaper_centered)

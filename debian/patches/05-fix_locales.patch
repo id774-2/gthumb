@@ -1,0 +1,31 @@
+--- gthumb.orig/po/ru.po
++++ gthumb/po/ru.po
+@@ -1967,7 +1967,7 @@
+ 
+ #: ../data/gthumb.desktop.in.h:1
+ msgid "Image Viewer"
+-msgstr "Просмотр изображений"
++msgstr "Просмотр изображений gThumb"
+ 
+ #: ../data/gthumb.desktop.in.h:2
+ msgid "View and organize your images"
+@@ -1975,7 +1975,7 @@
+ 
+ #: ../data/gthumb.desktop.in.h:3
+ msgid "gThumb Image Viewer"
+-msgstr "Просмотр изображений"
++msgstr "Просмотр изображений gThumb"
+ 
+ #: ../data/gthumb.schemas.in.h:1
+ msgid ""
+--- gthumb.orig/po/de.po
++++ gthumb/po/de.po
+@@ -127,7 +127,7 @@
+ #: ../components/image-viewer/GNOME_GThumb_Viewer.xml.in.h:20 ../src/ui.h:44
+ #: ../src/ui.h:681
+ msgid "_Image"
+-msgstr "_Bild"
++msgstr "B_ild"
+ 
+ #: ../components/image-viewer/GNOME_GThumb_Viewer.xml.in.h:21 ../src/ui.h:333
+ msgid "_Mirror"

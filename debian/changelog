@@ -1,0 +1,732 @@
+gthumb (3:2.10.8-1+lenny2+774) stable-proposed-updates; urgency=low
+
+  * New forked from original
+
+ -- 774 <idnanashi@gmail.com>  Fri, 8 Jun 2010 01:16:46 +0900
+
+gthumb (3:2.10.8-1+lenny2) stable-proposed-updates; urgency=low
+
+  * debian/patches/:
+    - 10-dont_follow_symlinks_on_dups_search.patch added, makes the
+      duplicates search dialog not report the same image as duplicate,
+      just because it's in two symlinked directories (Closes: #533641)
+
+ -- David Paleino <d.paleino@gmail.com>  Sat, 20 Jun 2009 12:23:40 +0200
+
+gthumb (3:2.10.8-1+lenny1) stable-proposed-updates; urgency=low
+
+  * debian/patches/:
+    - 08-fix_missing_include.patch added: unistd.h was missing,
+      conditional include added
+    - 09-fix_infinite_loop_dragging_parent_dir.patch added: see
+      patch description for more info
+  * debian/control:
+    - fixed Build-Dependencies on debhelper (needed higher version for
+      dh_icons) and libexif-dev (removed revision from version)
+
+ -- David Paleino <d.paleino@gmail.com>  Sun, 22 Feb 2009 21:28:53 +0100
+
+gthumb (3:2.10.8-1) unstable; urgency=low
+
+  * Package adopted by me (Closes: #457591)
+  * New upstream release (Closes: #457509):
+    - fixes crash trying to print (Closes: #457350, #454298, #446413)
+    - fixes command line options parsing (Closes: #298881)
+  * debian/compat bumped to 5
+  * debian/control:
+    - Standards-Version 3.7.3
+    - dependencies updated (and wrapped)
+    - depending on unversioned scrollkeeper (Closes: #456602, #457021)
+    - recommending yelp (Closes: #340820)
+    - changed the Maintainer field
+    - added Homepage field (removing old pseudo-field)
+    - added Vcs-Svn and Vcs-Browser fields
+    - added Conflicts: gthumb (<< 3:2.10.8-1) to gthumb-data because of
+      conflicting files with older packages.
+  * debian/patches: converted to quilt
+    - 02-preserve_gnome-doc-utils.make added (compilation failed otherwise)
+    - 04-fix_gnome.desktop.in added (removing Encoding line)
+    - 06-fix_locales.patch added (Closes: #403736, #404086)
+    - 07-add_keybinding_DoNotSave.patch added (Closes: #310095)
+    - 08-fix_zooms.patch added (Closes: #452929)
+  * debian/copyright fixed.
+
+ -- David Paleino <d.paleino@gmail.com>  Sun, 27 Jan 2008 10:26:18 +0100
+
+gthumb (3:2.10.5-2) unstable; urgency=low
+
+  * Update debian/watch file for gthumb 2.10 series (closes: #404647)
+
+ -- Remco van de Meent <remco@debian.org>  Wed, 15 Aug 2007 09:36:49 +0200
+
+gthumb (3:2.10.5-1) unstable; urgency=low
+
+  * New upstream release
+  * Enable libiptcdata (closes: #426909)
+
+ -- Remco van de Meent <remco@debian.org>  Tue, 14 Aug 2007 11:14:16 +0200
+
+gthumb (3:2.10.2-4) unstable; urgency=low
+
+  * Rebuild scrollkeeper-db after upgrade from version in which
+    /var/lib/scrollkeeper files were provided (closes: #417593)
+
+ -- Remco van de Meent <remco@debian.org>  Thu, 24 May 2007 09:22:51 +0200
+
+gthumb (3:2.10.2-3) unstable; urgency=low
+
+  * Disable install of scrollkeeper files (closes: #417593)
+
+ -- Remco van de Meent <remco@debian.org>  Wed, 23 May 2007 22:27:23 +0200
+
+gthumb (3:2.10.2-2) unstable; urgency=low
+
+  * Upload to unstable instead of experimental.
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 04 May 2007 15:37:51 +0200
+
+gthumb (3:2.10.2-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 04 May 2007 13:40:14 +0200
+
+gthumb (3:2.10.0-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Tue, 20 Mar 2007 15:33:55 +0100
+
+gthumb (3:2.9.3-2) experimental; urgency=low
+
+  * Fix dependency on libcairo2 (closes: #414577)
+
+ -- Remco van de Meent <remco@debian.org>  Wed, 14 Mar 2007 19:57:06 +0000
+
+gthumb (3:2.9.3-1) experimental; urgency=low
+
+  * New upstream release  (closes: #306189)
+
+ -- Remco van de Meent <remco@debian.org>  Mon,  5 Mar 2007 09:29:05 +0100
+
+gthumb (3:2.9.2-2) experimental; urgency=low
+
+  * Adding versioned build-depends where necessary (closes: #412685)
+
+ -- Remco van de Meent <remco@debian.org>  Tue, 27 Feb 2007 13:35:23 +0100
+
+gthumb (3:2.9.2-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 26 Feb 2007 13:03:54 +0100
+
+gthumb (3:2.9.1-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Thu, 25 Jan 2007 09:09:49 +0100
+
+gthumb (3:2.8.0-2) unstable; urgency=low
+
+  * Minor cleanups
+
+ -- Remco van de Meent <remco@debian.org>  Mon,  4 Dec 2006 21:16:13 +0100
+
+gthumb (3:2.8.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Acknowledge changes in previous NMU (closes: #372582)
+  * Bump standards version to 3.7.2
+
+ -- Remco van de Meent <remco@debian.org>  Wed, 29 Nov 2006 09:34:09 +0100
+
+gthumb (3:2.6.9-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Drop the makefile-install-rule gconf snippet from the postinst completely
+    as it was never triggerred (since dh_gconf moved the schema out of /etc).
+    [debian/postinst]
+  * Add a makefile-uninstall-rule gconf snippet in postinst to remove cruft
+    left over from versions prior to this version. (Closes: #369866)
+
+ -- Loic Minier <lool@dooz.org>  Sat, 10 Jun 2006 13:12:46 +0200
+
+gthumb (3:2.6.9-3) unstable; urgency=low
+
+  * Fix gthumb module dir location (closes: #360122)
+
+ -- Remco van de Meent <remco@debian.org>  Thu, 30 Mar 2006 22:06:00 +0200
+
+gthumb (3:2.6.9-2) unstable; urgency=low
+
+  * Add libtool as Build-Depends, fixes compile problems
+
+ -- Remco van de Meent <remco@debian.org>  Wed, 29 Mar 2006 10:29:36 +0200
+
+gthumb (3:2.6.9-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Tue, 28 Mar 2006 15:05:41 +0200
+
+gthumb (3:2.6.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Depend on libexif >= 0.6.12 (closes: #321311)
+
+ -- Remco van de Meent <remco@debian.org>  Wed, 10 Aug 2005 23:50:04 +0200
+
+gthumb (3:2.6.5-1) unstable; urgency=low
+
+  * New upstream release
+  * No more 05_libtool.dpatch at compile-time
+  * German PO file correction (closes: #314058, thanks to Jens Seidel)
+  * Various packaging fixes: updated menu label, xpm icon, new package
+    description, install gconf scheme correctly, use dh_desktop (closes:
+    #306166, thanks to Dan Korostelev)
+
+ -- Remco van de Meent <remco@debian.org>  Thu, 23 Jun 2005 18:00:01 +0200
+
+gthumb (3:2.6.3-1.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * High-urgency upload for sarge-targetted RC bugfix
+  * Rebuild debian/patches/05_libtool.dpatch after running automake, to
+    avoid macro skew when automake has to be run at build time
+    (closes: #300424).
+
+ -- Steve Langasek <vorlon@debian.org>  Sat, 26 Mar 2005 16:28:59 -0800
+
+gthumb (3:2.6.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Thu, 10 Feb 2005 15:38:22 +0100
+
+gthumb (3:2.6.2-1) unstable; urgency=low
+
+  * New upstream release (closes: #286326)
+  * New upstream version resolves SVG bug (closes: #288242)
+
+ -- Remco van de Meent <remco@debian.org>  Thu,  6 Jan 2005 11:45:06 +0100
+
+gthumb (3:2.6.1-3) unstable; urgency=high
+
+  * Automake-1.9. Run only once. Should fix build problems on ia64
+
+ -- Remco van de Meent <remco@debian.org>  Wed,  1 Dec 2004 15:36:46 +0100
+
+gthumb (3:2.6.1-2) unstable; urgency=high
+
+  * Added Build-Dep on dpatch
+
+ -- Remco van de Meent <remco@debian.org>  Wed,  1 Dec 2004 13:45:26 +0100
+
+gthumb (3:2.6.1-1) unstable; urgency=high
+
+  * New upstream release (fixes some crashes in previous versions)
+  * Build cleanup
+
+ -- Remco van de Meent <remco@debian.org>  Wed,  1 Dec 2004 10:04:05 +0100
+
+gthumb (3:2.6.0.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Sat, 13 Nov 2004 11:44:15 +0100
+
+gthumb (3:2.5.1-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Thu,  2 Sep 2004 22:14:43 +0200
+
+gthumb (3:2.4.1-5) unstable; urgency=high
+
+  * High-urgency because this is a release-critical bug
+  * Fix automake braindamage while building by adding AM_MAINTAINER_MODE
+    to configure.in (closes: #268303) (thanks to Steve Langasek for
+    providing a patch)
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 27 Aug 2004 17:27:21 +0200
+
+gthumb (3:2.4.1-4) unstable; urgency=low
+
+  * Minor build clean ups
+  * Move from libpng10 to libpng12
+
+ -- Remco van de Meent <remco@debian.org>  Thu, 12 Aug 2004 16:43:13 +0200
+
+gthumb (3:2.4.1-3) unstable; urgency=medium
+
+  * Some fixes in build process. 
+  * Priority medium because of the libtiff3->4 transition
+  * Added debian/watch file
+
+ -- Remco van de Meent <remco@debian.org>  Thu,  5 Aug 2004 11:10:45 +0200
+
+gthumb (3:2.4.1-2) unstable; urgency=low
+
+  * gthumb now depends on libtiff4 instead of libtiff3
+  * Closes: #260156: addition to man page to mention --import-photos 
+    option
+
+ -- Remco van de Meent <remco@debian.org>  Thu, 29 Jul 2004 17:22:14 +0200
+
+gthumb (3:2.4.1-1) unstable; urgency=low
+
+  * New upstream release (closes: #230411)
+  * Add image/svg+xml to data/gthumb.applications, as gthumb can also
+    view SVG files (closes: #257207)
+
+ -- Remco van de Meent <remco@debian.org>  Fri,  9 Jul 2004 13:22:00 +0200
+
+gthumb (3:2.4.0-3) unstable; urgency=low
+
+  * Rebuild with libexif10
+
+ -- Remco van de Meent <remco@debian.org>  Sat, 19 Jun 2004 23:30:46 +0200
+
+gthumb (3:2.4.0-2) unstable; urgency=low
+
+  * png.h could not be found on various archs. resolve by setting
+    CPPFLAGS before ./configure is run in debian/rules
+
+ -- Remco van de Meent <remco@debian.org>  Sat,  5 Jun 2004 11:20:20 +0200
+
+gthumb (3:2.4.0-1) unstable; urgency=low
+
+  * New upstream release
+  * depends on shared-mime-info, not gnome-mime-data (closes: #240804)
+  * accented character problem fixed in upstream version (closes:
+    #241800)
+  * Put libgthumb.so in /usr/lib/gthumb instead of /usr/lib (cf. policy
+    manual ch. 10)
+
+ -- Remco van de Meent <remco@debian.org>  Thu,  3 Jun 2004 23:41:43 +0200
+
+gthumb (3:2.3.3-2) unstable; urgency=low
+
+  * Recompile for GNOME 2.6, and add dependency on gnome-mime-data
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 30 May 2004 13:18:55 +0200
+
+gthumb (3:2.3.3-1) unstable; urgency=low
+
+  * New upstream release
+  * Fixes problem when saving images (closes: #249938)
+  * Upgraded to Standards Version 3.6.1
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 21 May 2004 16:33:46 +0200
+
+gthumb (3:2.3.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Quote strings in debian/menu
+  * Run ldconfig in post{inst,rm}
+  * Window layout options work in this version (closes: #234493)
+  * Moving multiple images works in this version (closes: #232901)
+  * Enable import photo feature (closes: #231943)
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 28 Mar 2004 15:46:23 +0200
+
+gthumb (3:2.3.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated debian/copyright file with new upstream source location
+  * Thanks Christian Marillat for pointing out new upstream release
+    (closes: #229349)
+  * Fix French translation problem (closes: #226272)
+  * (Once again) reworked 02_fPIC patch
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 26 Jan 2004 20:42:30 +0100
+
+gthumb (3:2.2.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Reworked -fPIC patch
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 29 Dec 2003 19:15:04 +0100
+
+gthumb (3:2.1.9-2) unstable; urgency=low
+
+  * Move libgthumb.so from /usr/lib/gthumb back to /usr/lib (closes:
+    #223559)
+
+ -- Remco van de Meent <remco@debian.org>  Sat, 13 Dec 2003 11:05:45 +0100
+
+gthumb (3:2.1.9-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Mon,  8 Dec 2003 20:47:45 +0100
+
+gthumb (3:2.1.8-1) unstable; urgency=low
+
+  * New upstream release
+  * No more depends on liblincl (closes: #217669)
+  * Remove patches/03_gettext.dpatch (no longer necessary)
+
+ -- Remco van de Meent <remco@debian.org>  Tue,  4 Nov 2003 15:10:49 +0100
+
+gthumb (3:2.1.6-1) unstable; urgency=low
+
+  * New upstream release (closes: #214762)
+  * Add a few words to Description of gthumb package
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 10 Oct 2003 09:51:23 +0200
+
+gthumb (3:2.1.5-1) unstable; urgency=low
+
+  * Accepting all changes by Christian Marillat (closes: #158437, #205605,
+    #204285, #176886, #201276, #204741, #204491, #205219, #205245, #176886)
+  * There is no much more to say about gthumb than a one-line description
+    (closes: #209621)
+
+ -- Remco van de Meent <remco@debian.org>  Tue,  7 Oct 2003 14:16:34 +0200
+
+gthumb (3:2.1.5-0.1) unstable; urgency=low
+
+  * New patch 03_gettext, why .mo files are installed in /usr/lib/locale and
+    gthumb don' want to read these files in /usr/share/locale ?
+  * Toolbar can be displayed or not (Closes: #158437)
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 21 Aug 2003 13:01:16 +0200
+
+gthumb (3:2.1.5-0.0) unstable; urgency=low
+
+  * NMU
+  * New upstream release.
+  * Improve 02_fPIC patch to link against -lpng10 (Closes: #205605)
+  * Entries in the View menu are finally working (Closes: #204285)
+
+ -- Christian Marillat <marillat@debian.org>  Tue, 19 Aug 2003 16:21:47 +0200
+
+gthumb (3:2.1.4-0.2) unstable; urgency=low
+
+  * NMU
+  * Improve 02_fPIC patch to fix linking problems
+  * Fix French translation (Closes: #176886)
+
+ -- Christian Marillat <marillat@debian.org>  Fri, 15 Aug 2003 16:40:49 +0200
+
+gthumb (3:2.1.4-0.1) unstable; urgency=low
+
+  * NMU
+  * Apparently gthumb doesn't like libpng12-0-dev, then little hack to build
+    against libpng10-dev and change Build-Depends (patch 01_configure)
+  * Add scrollkeeper in Build-Depends (Closes: #205245)
+  * Build modules with -fPIC (patch 02_fPIC) (Closes: #205219)
+  * Remove broken entries in that file ?
+
+ -- Christian Marillat <marillat@debian.org>  Thu, 14 Aug 2003 09:40:02 +0200
+
+gthumb (3:2.1.4-0.0) unstable; urgency=low
+
+  * NMU
+  * New upstream release (Closes: #201276)
+  * Build against latest libexif-dev (Closes: #204741, #204491)
+  * debian/control use dh_scrollkeeper and thus remove debian/postrm and
+    update debian/postinst and Build-Depends on debhelper (>= 4.1.54) (Closes: #202707)
+  * Package upstream changelog (Closes: #147548)
+  * Use debian/compat
+  * Upgraded standards version to 3.6.0
+  * Remove generated files, may be dangerous.
+
+ -- Christian Marillat <marillat@debian.org>  Wed, 13 Aug 2003 11:50:44 +0200
+
+gthumb (3:2.1.2-2) unstable; urgency=low
+
+  * Changed section to gnome
+  * Add -fPIC to {src/jpegutils,libgthumb}/Makefile.in CFLAGS (shared lib)
+
+ -- Remco van de Meent <remco@debian.org>  Sat, 21 Jun 2003 21:51:03 +0200
+
+gthumb (3:2.1.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated to standards version 3.5.10
+  * Fix linking problems in libgthumb/Makefile.in LDFLAGS (closes: #193779)
+  * Fix problems with Nautilus embedding (closes: #191759)
+
+ -- Remco van de Meent <remco@debian.org>  Sun,  8 Jun 2003 22:51:12 +0200
+
+gthumb (3:2.1.1-2) unstable; urgency=low
+
+  * Replace #!/bin/sh -e with the better #!/bin/sh; set -e  pair
+  * Do not mention schema as conffile twice
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 21 Mar 2003 23:09:45 +0100
+
+gthumb (3:2.1.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Upgraded standards version to 3.5.9
+  * Removed config.guess and config.sub
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 21 Mar 2003 16:16:00 +0100
+
+gthumb (3:2.1.0-1) unstable; urgency=low
+
+  * New upstream release (closes: #174911)
+  * Fix (build-)dependencies (closes: #178199, #180359, #180167, #182139)
+  * Rename gthumb2 to gthumb, Debian GNOME policy (closes: #182813)
+
+ -- Remco van de Meent <remco@debian.org>  Mon,  3 Mar 2003 10:59:38 +0100
+
+gthumb2 (2.0.1-4) unstable; urgency=low
+
+  * More fixes to overcome build problems...
+
+ -- Remco van de Meent <remco@debian.org>  Fri,  7 Feb 2003 10:17:37 +0100
+
+gthumb2 (2.0.1-3) unstable; urgency=low
+
+  * More fixes in build-deps
+
+ -- Remco van de Meent <remco@debian.org>  Wed,  5 Feb 2003 13:08:25 +0100
+
+gthumb2 (2.0.1-2) unstable; urgency=low
+
+  * Added build-deps (gnomeprint, makeinfo)
+
+ -- Remco van de Meent <remco@debian.org>  Wed,  5 Feb 2003 11:50:59 +0100
+
+gthumb2 (2.0.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Tue,  4 Feb 2003 10:13:22 +0100
+
+gthumb2 (1.107-1) unstable; urgency=low
+
+  * New upstream release
+  * Changes to debian/rules to fix some building problems.
+  * Fix debian/copyright to include link to GPL etc.
+
+ -- Remco van de Meent <remco@debian.org>  Thu,  2 Jan 2003 09:35:57 +0000
+
+gthumb2 (1.105-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 18 Nov 2002 19:32:32 +0000
+
+gthumb2 (1.104-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Tue,  1 Oct 2002 13:58:25 +0000
+
+gthumb2 (1.103-3) unstable; urgency=low
+
+  * Put gthumb-image-viewer in /usr/lib/gthumb (closes: #162687)
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 30 Sep 2002 10:55:38 +0000
+
+gthumb2 (1.103-2) unstable; urgency=low
+
+  * Convert LC_MESSAGES UTF-8 format (closes: #157981)
+  * ./usr/libexec/gthumb-image-viewer -> /usr/bin/gthumb-image-viewer
+    (closes: #162687, #160639)
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 30 Sep 2002 09:24:32 +0000
+
+gthumb2 (1.103-1) unstable; urgency=low
+
+  * New upstream release
+  * Rebuild for newer imlib/libpng (closes: #157126)
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 18 Aug 2002 10:42:06 +0000
+
+gthumb2 (1.102-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Tue, 16 Jul 2002 12:12:49 +0000
+
+gthumb2 (1.101-4) unstable; urgency=low
+
+  * Fixed yet another build depends problem (closes: #151447)
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 30 Jun 2002 16:05:34 +0000
+
+gthumb2 (1.101-3) unstable; urgency=low
+
+  * Fix build depends
+  * Fixed debian/dirs
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 30 Jun 2002 15:10:58 +0000
+
+gthumb2 (1.101-2) unstable; urgency=low
+
+  * Really fix docbook bug (closes: #149078)
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 23 Jun 2002 12:57:42 +0000
+
+gthumb2 (1.101-1) unstable; urgency=low
+
+  * New upstream release
+  * Fix menu file (closes: #149453)
+  * Catch possible scrollkeeper-rebuilddb error in postinst (closes:
+    #149078)
+  * Recompile to solve binary compatibility problems with libbonobo
+    (closes: #150563)
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 21 Jun 2002 18:52:41 +0000
+
+gthumb2 (1.100-2) unstable; urgency=low
+
+  * Renamed to gthumb2
+
+ -- Remco van de Meent <remco@debian.org>  Sat, 25 May 2002 18:06:42 +0000
+
+gthumb (1.100-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated build-depends; Gnome2 compatible (closes: #147467)
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 20 May 2002 11:41:00 +0000
+
+gthumb (0.13-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Sat, 18 May 2002 20:35:49 +0200
+
+gthumb (0.12-3) unstable; urgency=low
+
+  * Added orbit build-dep
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 21 Apr 2002 22:42:08 +0200
+
+gthumb (0.12-2) unstable; urgency=low
+
+  * Added src dep for bison
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 21 Apr 2002 18:18:38 +0200
+
+gthumb (0.12-1) unstable; urgency=low
+
+  * New upstream release (closes: #142986, #119182, #112363)
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 15 Apr 2002 14:20:22 +0200
+
+gthumb (0.9.8-1) unstable; urgency=low
+
+  * New upstream release
+  * Added build-depends libgnomeprint-dev
+  * Upgraded to standards-version 3.5.6
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 17 Dec 2001 19:53:40 +0100
+
+gthumb (0.9.5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 14 Oct 2001 19:40:44 +0200
+
+gthumb (0.9.4-1) unstable; urgency=low
+
+  * New upstream release (closes: #109271)
+
+ -- Remco van de Meent <remco@debian.org>  Tue,  4 Sep 2001 12:51:09 +0200
+
+gthumb (0.9-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed build-depends on libc6-dev
+
+ -- Remco van de Meent <remco@debian.org>  Mon,  9 Jul 2001 17:24:27 +0200
+
+gthumb (0.8.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Tue, 19 Jun 2001 19:44:56 +0200
+
+gthumb (0.8-2) unstable; urgency=low
+
+  * Added build-depends for libgnome-vfs-dev (closes: #100570)
+
+ -- Remco van de Meent <remco@debian.org>  Tue, 12 Jun 2001 11:55:40 +0200
+
+gthumb (0.8-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 10 Jun 2001 20:18:15 +0200
+
+gthumb (0.7.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Sat,  2 Jun 2001 15:04:22 +0200
+
+gthumb (0.7.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Sat, 19 May 2001 22:26:09 +0200
+
+gthumb (0.7-2) unstable; urgency=low
+
+  * Added build-depends for gettext (closes: #97843)
+
+ -- Remco van de Meent <remco@debian.org>  Thu, 17 May 2001 22:27:19 +0200
+
+gthumb (0.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Sat, 12 May 2001 23:57:31 +0200
+
+gthumb (0.6.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Sun, 29 Apr 2001 18:53:46 +0200
+
+gthumb (0.6-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Mon, 23 Apr 2001 23:08:08 +0200
+
+gthumb (0.5.1-2) unstable; urgency=low
+
+  * Fixed build-depends (closes: #94583)
+  * Added manual page gthumb.1 (closes: #92599)
+
+ -- Remco van de Meent <remco@debian.org>  Fri, 20 Apr 2001 09:42:38 +0200
+
+gthumb (0.5.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Remco van de Meent <remco@debian.org>  Wed, 18 Apr 2001 22:36:52 +0200
+
+gthumb (0.4-1) unstable; urgency=low
+
+  * New upstream release
+  * Added menu entry (closes: #92600)
+
+ -- Remco van de Meent <remco@debian.org>  Sat,  7 Apr 2001 19:55:47 +0200
+
+gthumb (0.3-1) unstable; urgency=low
+
+  * New upstream release
+  * Added build-depends for libglade-gnome0-dev (closes: #92567)
+
+ -- Remco van de Meent <remco@debian.org>  Mon,  2 Apr 2001 16:08:34 +0200
+
+gthumb (0.2-1) unstable; urgency=low
+
+  * Initial Release (closes: #91926)
+
+ -- Remco van de Meent <remco@debian.org>  Tue, 27 Mar 2001 21:36:31 +0200
+
+Local variables:
+mode: debian-changelog
+End:

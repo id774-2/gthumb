@@ -1,0 +1,2281 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "2.10.8">
+<!ENTITY manualversion "2.10.8">
+<!ENTITY date "October 2006">
+<!ENTITY appname "gThumb">
+<!ENTITY app "<application>gThumb</application>">
+<!-- replace version above with actual application version number --><!--  Template Version: 1.0.1  (do not remove this line) -->]>
+<!-- =============Document Header ============================= -->
+<article id="index" lang="fr"> <!-- please do not change the id -->
+
+  <articleinfo>
+    <title><application>gThumb</application> Manual V2.10.8</title>
+    <copyright>
+      <year>2001</year>
+      <year>2002</year>
+      <year>2003</year>
+      <year>2004</year>
+      <year>2006</year>
+      <holder>Paolo Bacchilega</holder>
+    </copyright><copyright><year>2007.</year><holder>Bruno Brouard (annoa.b@gmail.com)</holder></copyright><copyright><year>2007.</year><holder>Claude Paroz (claude@2xlibre.net)</holder></copyright>
+
+    <!-- translators: uncomment this:
+
+    <copyright>
+     <year>2000</year>
+     <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+
+    -->
+
+    <!-- An address can be added to the publisher information.  If a role is
+     not specified, the publisher/author is the same for all versions of the
+     document.  -->
+    <publisher>
+      <publishername>Projet de documentation GNOME</publishername>
+    </publisher>
+
+       <legalnotice id="legalnotice">
+         <para>Permission vous est donnée de copier, distribuer et/ou modifier ce document selon les termes de la Licence GNU Free Documentation License, Version 1.1 ou ultérieure publiée par la Free Software Foundation sans section inaltérable, sans texte de première page de couverture ni texte de dernière page de couverture. Vous trouverez un exemplaire de cette licence en suivant ce <ulink type="help" url="ghelp:fdl">lien</ulink> ou dans le fichier COPYING-DOCS fourni avec le présent manuel.</para>
+          <para>Ce manuel fait partie de la collection de manuels GNOME distribués selon les termes de la licence de documentation libre GNU. Si vous souhaitez distribuer ce manuel indépendamment de la collection, vous devez joindre un exemplaire de la licence au document, comme indiqué dans la section 6 de celle-ci.</para>
+ 
+         <para>La plupart des noms utilisés par les entreprises pour distinguer leurs produits et services sont des marques déposées. Lorsque ces noms apparaissent dans la documentation GNOME et que les membres du projet de Documentation GNOME sont informés de l'existence de ces marques déposées, soit ces noms entiers, soit leur première lettre est en majuscule.</para>
+ 
+         <para>LE PRÉSENT DOCUMENT ET SES VERSIONS MODIFIÉES SONT FOURNIS SELON LES TERMES DE LA LICENCE DE DOCUMENTATION LIBRE GNU SACHANT QUE : <orderedlist>
+                 <listitem>
+                   <para>LE PRÉSENT DOCUMENT EST FOURNI « TEL QUEL », SANS AUCUNE GARANTIE, EXPRESSE OU IMPLICITE, Y COMPRIS, ET SANS LIMITATION, LES GARANTIES DE MARCHANDABILITÉ, D'ADÉQUATION À UN OBJECTIF PARTICULIER OU DE NON INFRACTION DU DOCUMENT OU DE SA VERSION MODIFIÉE. L'UTILISATEUR ASSUME TOUT RISQUE RELATIF À LA QUALITÉ, À LA PERTINENCE ET À LA PERFORMANCE DU DOCUMENT OU DE SA VERSION DE MISE À JOUR. SI LE DOCUMENT OU SA VERSION MODIFIÉE S'AVÉRAIT DÉFECTUEUSE, L'UTILISATEUR (ET NON LE RÉDACTEUR INITIAL, L'AUTEUR, NI TOUT AUTRE PARTICIPANT) ENDOSSERA LES COÛTS DE TOUTE INTERVENTION, RÉPARATION OU CORRECTION NÉCESSAIRE. CETTE DÉNÉGATION DE RESPONSABILITÉ CONSTITUE UNE PARTIE ESSENTIELLE DE CETTE LICENCE. AUCUNE UTILISATION DE CE DOCUMENT OU DE SA VERSION MODIFIÉE N'EST AUTORISÉE AUX TERMES DU PRÉSENT ACCORD, EXCEPTÉ SOUS CETTE DÉNÉGATION DE RESPONSABILITÉ ; ET</para>
+                 </listitem>
+                 <listitem>
+                   <para>EN AUCUNE CIRCONSTANCE ET SOUS AUCUNE INTERPRÉTATION DE LA LOI, QU'IL S'AGISSE D'UN DÉLIT CIVIL (Y COMPRIS LA NÉGLIGENCE), CONTRACTUEL OU AUTRE, L'AUTEUR, LE RÉDACTEUR INITIAL, TOUT PARTICIPANT OU TOUT DISTRIBUTEUR DE CE DOCUMENT OU DE SA VERSION MODIFIÉE, OU TOUT FOURNISSEUR DE L'UNE DE CES PARTIES NE POURRA ÊTRE TENU RESPONSABLE À L'ÉGARD DE QUICONQUE POUR TOUT DOMMAGE DIRECT, INDIRECT, PARTICULIER, OU ACCIDENTEL DE TOUT TYPE Y COMPRIS, SANS LIMITATION, LES DOMMAGES LIÉS À LA PERTE DE CLIENTÈLE, À UN ARRÊT DE TRAVAIL, À UNE DÉFAILLANCE OU UN MAUVAIS FONCTIONNEMENT INFORMATIQUE, OU À TOUT AUTRE DOMMAGE OU PERTE LIÉE À L'UTILISATION DU DOCUMENT ET DE SES VERSIONS MODIFIÉES, MÊME SI LADITE PARTIE A ÉTÉ INFORMÉE DE L'ÉVENTUALITÉ DE TELS DOMMAGES.</para>
+                 </listitem>
+           </orderedlist></para>
+   </legalnotice>
+ 
+
+    <authorgroup>
+      <author role="maintainer">
+        <firstname>Paolo</firstname>
+	<surname>Bacchilega</surname>
+	<affiliation>
+	  <address> <email>paolo.bacchilega@libero.it</email> </address>
+        </affiliation>
+      </author>
+      <author>
+	<firstname>Alexander</firstname>
+	<surname>Kirillov</surname>
+	<affiliation>
+	  <orgname>Projet de documentation GNOME</orgname>
+	  <address> <email>kirillov@math.sunysb.edu</email> </address>
+	</affiliation>
+      </author>
+    </authorgroup>
+    <!-- do not put authorname in the header except in copyright - use
+         section "authors" below -->
+    <revhistory>
+      <revision>
+	<revnumber>2.10.8</revnumber>
+	<date>Octobre 2006</date>
+	<revdescription>
+	  <para role="author">Paolo Bacchilega</para>
+	  <para role="publisher">Projet de documentation GNOME</para>
+	</revdescription>
+      </revision>
+    </revhistory>
+
+
+    <!-- this is version of manual, not application -->
+    <releaseinfo>
+      This is manual describes version 2.10.8 of gThumb
+    </releaseinfo>
+    <abstract role="description"><para><application>gThumb</application> est un navigateur et visionneur d'images de l'environnement GNOME</para></abstract>
+  </articleinfo>
+
+  <indexterm>
+    <primary>gThumb</primary>
+  </indexterm>
+  <indexterm>
+    <primary>visionneur d'images</primary>
+  </indexterm>
+  <indexterm>
+    <secondary>visionneur</secondary>
+  </indexterm>
+
+  <!-- ============= Document Body ============================= -->
+
+  <!-- ============= Introduction ============================== -->
+
+  <sect1 id="intro">
+    <title>Introduction</title>
+    <para><application>gThumb</application> est un navigateur et visionneur d'images écrit pour l'environnement GNOME. Il vous permet de naviguer sur votre disque dur en montrant des aperçus des images et de regarder des images uniques dans de nombreux formats.</para>
+    <para>Les formats d'image les plus fréquents sont JPEG et GIF. Le format JPEG est bon pour les images de taille moyenne ou grande parce qu'il possède un taux de compression élevé tout en conservant une bonne qualité d'image. Le format GIF est utilisé sur les pages Web pour afficher des petites animations ou des petites images statiques. Un autre format d'image important est PNG, ce format est très fréquent sur les plates-formes Unix et est considéré comme un remplacement du format GIF.</para>
+    <para><application>gThumb</application> prend en charge tous ces formats ainsi que beaucoup d'autres ; il affiche également les animations GIF.</para>
+    <para><application>gThumb</application> permet non seulement d'afficher des images, mais il présente d'autres possibilités telles que : ajouter des commentaires aux images, organiser les images dans des catalogues, imprimer les images, afficher un diaporama, choisir l'arrière-plan du bureau et bien d'autres.</para>
+  </sect1>
+
+  <!-- ============= Getting Started ==============================  -->
+  <sect1 id="gthumb-getting-started">
+  <title>Premiers pas</title>
+  <para>Cette section explique comment démarrer <application>gThumb</application> et décrit la fenêtre principale de l'interface.</para>
+  <sect2 id="get-start">
+    <title>Démarrage de <application>gThumb</application></title>
+    <para>Vous pouvez démarrer <application>gThumb</application> des deux manières suivantes :</para>
+      <variablelist>
+        <varlistentry>
+          <term>Menu <guimenu>Applications</guimenu></term>
+          <listitem>
+            <para>Choisissez <menuchoice><guisubmenu>Images</guisubmenu><guimenuitem>Visionneur d'images gThumb</guimenuitem></menuchoice>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Ligne de commande</term>
+          <listitem>
+            <para>Tapez <command>gthumb</command>, puis <keycap>Entrée</keycap>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    <para>Si vous démarrez <application>gThumb</application> en ligne de commande, vous pouvez spécifier les options suivantes :</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Commande</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Explication</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para><command>gthumb <replaceable>dossier</replaceable></command></para></entry>
+              <entry align="left"><para>Démarre <application>gThumb</application> dans le dossier spécifié</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>gthumb <replaceable>nom.jpg</replaceable></command></para></entry>
+              <entry align="left"><para>Affiche l'image <filename>nom.jpg</filename>.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>gthumb <replaceable>*.jpg</replaceable></command></para></entry>
+              <entry align="left"><para>Affiche toutes les images qui possèdent l'extension <filename>.jpg</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+  </sect2>
+  <sect2 id="gthumb-main-window">
+  <title>Quand <application>gThumb</application> démarre</title>
+    <para>Quand <application>gThumb</application> démarre, la fenêtre suivante apparaît : <figure id="main-win-fig">
+    <title>La fenêtre principale</title>
+    <screenshot>
+      <screeninfo>La fenêtre principale</screeninfo>
+      <graphic format="PNG" fileref="figures/main-win.png" srccredit="Me"/>
+    </screenshot>
+    </figure> La <guilabel>fenêtre</guilabel> <application>gThumb</application> contient les éléments suivants : <variablelist>
+      <varlistentry> <term>Barre de menus</term>
+        <listitem>
+          <para>Les menus de la barre de menus contiennent toutes les commandes que vous pouvez utiliser dans <application>gThumb</application>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry> <term>Barre d'outils</term>
+        <listitem>
+           <para>La barre d'outils contient un sous-ensemble des commandes accessibles à partir de la barre de menus.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry> <term>Barre d'adresse</term>
+        <listitem>
+          <para>La barre d'adresse contient le nom du dossier actuel.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry> <term>Liste des dossiers</term>
+      <listitem>
+        <para>La liste des dossiers montre les sous-dossiers contenus dans le dossier actuel.</para>
+      </listitem>
+      </varlistentry>
+      <varlistentry> <term>Liste des images</term>
+      <listitem>
+        <para>La liste des images affiche les images du dossier actuel.</para>
+      </listitem>
+      </varlistentry>
+      <varlistentry> <term>Barre d'état</term>
+      <listitem>
+        <para>Dans la barre d'état, vous pouvez lire : <orderedlist>
+	    <listitem>
+              <para>le nombre total d'images contenues dans le dossier actuel et leur taille totale,</para>
+	    </listitem>
+	    <listitem>
+	      <para>le nombre d'images sélectionnées et leur taille,</para>
+	    </listitem>
+	    <listitem>
+	      <para>des propriétes de l'image actuellement sélectionnée.</para>
+	    </listitem>
+	  </orderedlist></para>
+      </listitem>
+      </varlistentry>
+    </variablelist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Browsing Folders ==============================  -->
+  <sect1 id="gthumb-browsing">
+  <title>Navigation parmi les dossiers</title>
+    <para>Les options du navigateur se trouvent à la <xref linkend="preferences-browser"/> de la boîte de dialogue des <guilabel>Préférences</guilabel>.</para>
+    <para>Les raccourcis clavier pour naviguer dans les dossiers sont décrits dans le <xref linkend="gthumb-TBL-keyword-shortcuts-browser"/>.</para>
+    <sect2 id="gthumb-change-folder">
+    <title>Changement de dossier</title>
+    <para>Si vous voulez changer de dossier, vous avez deux possibilités : <orderedlist>
+	<listitem>
+	  <para>Cliquez sur le nom du dossier dans la liste des dossiers.</para>
+        </listitem>
+        <listitem>
+	  <para>Saisissez le nom du dossier dans la barre d'adresse.</para>
+        </listitem>
+      </orderedlist></para>
+    <para>Quand vous utilisez la zone d'adresse, vous pouvez utiliser la touche <keycombo><keycap>Tab</keycap></keycombo> pour essayer de compléter automatiquement le nom du dossier, ce qui simplifie la saisie des noms longs. Vous pouvez activer rapidement la zone d'adresse en tapant <keycombo><keycap>Ctrl</keycap><keycap>L</keycap></keycombo>.</para>
+    <para>Pour se rendre dans un dossier déjà visité, vous pouvez utiliser le bouton <guilabel>Précédent</guilabel> de la barre d'outils.</para>
+    <para>Les autres commandes de navigation sont situées dans le menu <menuchoice><guimenu>Aller à</guimenu></menuchoice>.</para>
+  </sect2>
+  <sect2 id="gthumb-sort">
+  <title>Tri des images</title>
+    <para>Pour trier les images dans un ordre différent, utilisez le sous-menu <guimenuitem>Trier les images</guimenuitem> du menu <guimenu>Affichage</guimenu>. Tapez <keycombo><keycap>Ctrl</keycap><keycap>R</keycap></keycombo> pour recharger le dossier actuel, tapez <keycombo><keycap>T</keycap></keycombo> pour montrer ou cacher les vignettes de la liste des images.</para>
+  </sect2>
+  <sect2 id="gthumb-bookmarks">
+  <title>Ajout d'un dossier dans les signets</title>
+  <para>Les dossiers utilisés fréquemment peuvent être ajoutés à la liste des signets pour un accès rapide. Allez dans le dossier que vous voulez ajouter aux signets et tapez <keycombo action="simul"><keycap>Ctrl</keycap><keycap>D</keycap></keycombo> ou utilisez la commande <menuchoice><guimenu>Signets</guimenu><guimenuitem>Ajouter un signet</guimenuitem></menuchoice>. Pour supprimer ou réarranger les signets dans un ordre différent, utilisez la commande <menuchoice><guimenu>Signets</guimenu><guimenuitem>Éditer les signets</guimenuitem></menuchoice>.</para>
+  </sect2>
+  </sect1>
+  <sect1 id="gthumb-folders">
+    <title>Gestion des dossiers</title>
+    <para><application>gThumb</application> offre des fonctionnalités pour gérer les dossiers. <note>
+        <title>ATTENTION</title>
+        <para>Il est fortement suggéré de déplacer et copier les dossiers d'images avec <application>gThumb</application>. La raison est que si vous déplacez ou copiez les dossiers avec <application>gThumb</application>, les commentaires d'image restent liés aux images, comme attendu, alors que si vous déplacez ou copiez les dossiers avec le gestionnaire de fichiers ou avec d'autres applications, vous perdez vos commentaires.</para>
+      </note></para>
+    <sect2 id="gthumb-create-folder">
+    <title>Création d'un dossier</title>
+    <para>Pour créer un nouveau dossier, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier dans lequel le nouveau dossier sera créé.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Nouveau dossier</guimenuitem></menuchoice> pour afficher la boîte de dialogue <guilabel>Nouveau dossier</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Saisissez le nom du nouveau dossier.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Créer</guibutton>. <application>gThumb</application> crée un nouveau dossier.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-open-folder">
+    <title>Ouverture d'un dossier</title>
+    <para>Pour ouvrir un dossier avec le gestionnaire de fichiers, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier que vous voulez ouvrir.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guisubmenu>Dossier</guisubmenu><guimenuitem>Ouvrir avec le gestionnaire de fichiers</guimenuitem></menuchoice>. <application>gThumb</application> ouvre le dossier avec le gestionnaire de fichiers.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-rename-folder">
+    <title>Changement de nom d'un dossier</title>
+    <para>Pour renommer un dossier, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier que vous voulez renommer.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guisubmenu>Dossier</guisubmenu><guimenuitem>Renommer</guimenuitem></menuchoice> pour afficher la boîte de dialogue <guilabel>Renommer un dossier</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Saisissez le nom du nouveau dossier.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Renommer</guibutton>. <application>gThumb</application> renomme le dossier.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-move-to-trash-folder">
+    <title>Suppression d'un dossier</title>
+    <para>Pour supprimer un dossier, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier que vous voulez supprimer.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guisubmenu>Dossier</guisubmenu><guimenuitem>Mettre à la corbeille</guimenuitem></menuchoice>. <application>gThumb</application> met le dossier à la corbeille.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-copy-folder">
+    <title>Copie d'un dossier</title>
+    <para>Pour copier un dossier dans un endroit différent, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier que vous voulez copier.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guisubmenu>Dossier</guisubmenu><guimenuitem>Copier</guimenuitem></menuchoice> pour afficher la boîte de dialogue <guilabel>Copier un dossier</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>La boîte de dialogue <guilabel>Copier un dossier</guilabel> est utilisée pour choisir le dossier de destination. Vous pouvez saisir le nom du dossier dans le champ <guilabel>Dossier</guilabel>, ou cliquez sur <guibutton>Parcourir</guibutton> pour choisir un dossier sur votre disque. La liste <guilabel>Dossiers récents</guilabel> contient la liste des dossiers de destination récemment choisis, tandis que la liste <guilabel>Signets</guilabel> contient les dossiers pour lesquels vous avez un signet. Cliquez sur un dossier dans ces listes pour insérer le nom du dossier dans le champ <guilabel>Dossier</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> copie le dossier vers le dossier de destination.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-move-folder">
+    <title>Déplacement d'un dossier</title>
+    <para>Pour déplacer un dossier dans un endroit différent, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier que vous voulez déplacer.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guisubmenu>Dossier</guisubmenu><guimenuitem>Déplacer</guimenuitem></menuchoice> pour afficher la boîte de dialogue <guilabel>Déplacer un dossier</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>La boîte de dialogue <guilabel>Déplacer un dossier</guilabel> est utilisée pour choisir le dossier de destination. Vous pouvez saisir le nom du dossier dans le champ <guilabel>Dossier</guilabel>, ou cliquez sur <guibutton>Parcourir</guibutton> pour choisir un dossier sur votre disque. La liste <guilabel>Dossiers récents</guilabel> contient la liste des dossiers de destination récemment choisis, tandis que la liste <guilabel>Signets</guilabel> contient les dossiers pour lesquels vous avez un signet. Cliquez sur un dossier dans ces listes pour insérer le nom du dossier dans le champ <guilabel>Dossier</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> déplace le dossier vers le dossier de destination.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Viewing ================================== -->
+  <sect1 id="gthumb-image-viewing">
+  <title>Consultation des images</title>
+  <para>Les raccourcis clavier pour afficher les images sont décrits dans le <xref linkend="gthumb-TBL-keyword-shortcuts-browser"/>.</para>
+  <sect2 id="gthumb-view-images">
+  <title>Affichage d'une image</title>
+    <para>Afin d'afficher une image, il suffit de cliquer sur sa vignette et l'image sera affichée dans le panneau d'affichage. Si l'image n'est pas ajustée au panneau d'affichage, vous pouvez agrandir le panneau en masquant le navigateur, ce qui peut être réalisé en double-cliquant sur les vignettes ou en tapant sur la touche <keycap>Entrée</keycap>. En tapant à nouveau sur la touche <keycap>Entrée</keycap>, le navigateur est réaffiché. Une autre manière d'afficher une grande image est de l'afficher dans le mode plein écran ; tapez <keycombo><keycap>F</keycap></keycombo> pour activer/désactiver le mode plein écran.</para>
+    <para>Opérations à la souris :</para>
+      <informaltable frame="topbot">
+        <tgroup cols="2" colsep="0" rowsep="0"><colspec colname="COLSPEC0" colwidth="30.65*"/>
+        <colspec colname="COLSPEC1" colwidth="69.35*"/>
+        <tbody>
+          <row>
+            <entry>
+              <para>Appuyer sur le bouton gauche et déplacer la souris</para></entry>
+            <entry>
+              <para>Déplace l'image.</para></entry>
+          </row>
+          <row>
+            <entry>
+              <para>Cliquer sur le bouton gauche</para></entry>
+            <entry>
+              <para>Affiche l'image suivante.</para></entry>
+          </row>
+          <row>
+            <entry>
+              <para>Cliquer sur le bouton du milieu</para></entry>
+            <entry>
+              <para>Affiche l'image précédente.</para></entry>
+          </row>
+          <row>
+            <entry>
+              <para>Cliquer sur le bouton droit</para></entry>
+            <entry>
+              <para>Fait surgir le menu de l'image.</para></entry>
+          </row>
+        </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Une autre manière de déplacer les images est d'utiliser le bouton de navigation : <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/nav-button.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </screenshot> situé dans le coin inférieur droit de la fenêtre d'affichage, quand l'image n'est pas ajustée à la fenêtre. Un aperçu de l'image apparaît lorsque vous cliquez sur ce bouton avec la souris, en maintenant le bouton enfoncé. En bougeant la souris, l'image se déplace à la position souhaitée.</para>
+   </sect2>
+   <sect2 id="gthumb-view-prop">
+   <title>Affichage des propriétés d'une image</title>
+     <para>Pour afficher les propriétés de l'image, effectuez les opérations suivantes : <orderedlist>
+          <listitem>
+            <para>Sélectionnez l'image.</para>
+          </listitem>
+          <listitem>
+            <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Propriétés</guimenuitem></menuchoice>. <application>gThumb</application> affiche la boîte de dialogue des <guilabel>Propriétés</guilabel>.</para>
+          </listitem>
+        </orderedlist></para>
+   </sect2>
+  <!-- ============= EXIF ================================== -->
+  <sect2 id="gthumb-exif">
+  <title>Affichage des données EXIF d'une image</title>
+  <para>Pour afficher les données EXIF d'une image, utilisez la boîte de dialogue <guilabel>Propriétés</guilabel> (<xref linkend="gthumb-view-prop"/>) ou effectuez les opérations suivantes : <orderedlist>
+        <listitem><para>Sélectionnez l'image.</para></listitem>
+        <listitem><para>Affichez l'image en appuyant sur <keycap>Entrée</keycap> ou en double-cliquant sur elle.</para></listitem>
+        <listitem><para>Choisissez le menu <menuchoice><guimenu>Affichage</guimenu><guisubmenu>Afficher/Cacher</guisubmenu><guimenuitem>Commentaire</guimenuitem></menuchoice> ou tapez sur <keycap>I</keycap>. <application>gThumb</application> affiche les données EXIF.</para></listitem>
+     </orderedlist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= working with images ================================== -->
+  <sect1 id="gthumb-image-working">
+  <title>Manipulation des images</title>
+   <sect2 id="gthumb-alter-images">
+   <title>Modification d'une image</title>
+      <para>Il existe de nombreuses façons de modifier l'image actuelle. Les commandes utilisées pour modifier une image sont situées dans le menu <guimenu>Image</guimenu>.</para>
+      <informaltable frame="topbot">
+        <tgroup cols="2" colsep="0" rowsep="0"><colspec colname="COLSPEC0" colwidth="30.65*"/>
+        <colspec colname="COLSPEC1" colwidth="69.35*"/>
+        <tbody>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Améliorer</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Améliore l'image en ajustant le niveau des couleurs.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Redimensionner</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Redimensionne l'image.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Rogner</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Découpe l'image.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Transformer</guisubmenu>
+		<guimenuitem>Pivoter sur la droite</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Tourne l'image à 90 degrés dans le sens horaire.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Transformer</guisubmenu>
+		<guimenuitem>Pivoter sur la gauche</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Tourne l'image à 90 degrés dans le sens anti-horaire.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Transformer</guisubmenu>
+		<guimenuitem>Retourner</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Crée une image miroir en effectuant une réflexion de l'image dans la direction verticale.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Transformer</guisubmenu>
+		<guimenuitem>Miroir</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Crée une image miroir en effectuant une réflexion de l'image dans la direction horizontale (comme dans un miroir).</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Désaturer</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Affiche l'image en niveaux de gris.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Négatif</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Affiche le négatif de l'image.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Balance des couleurs</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Modifie la balance des couleurs.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Teinte-Saturation</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Modifie la teinte, le niveau de saturation et la luminosité de l'image.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Correction des yeux rouges</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Corrige les yeux rouges causés par les flashs médiocres. Consultez <xref linkend="gthumb-redeye"/> pour plus d'informations.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Luminosité-Contraste</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Modifie la luminosité et le contraste de l'image.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guimenuitem>Postériser</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Réduit le nombre de couleurs.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Auto</guisubmenu>
+		<guimenuitem>Normaliser l'histogramme</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Améliore l'image en normalisant son histogramme.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Auto</guisubmenu>
+		<guimenuitem>Normalise</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Normalise automatiquement le contraste.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <menuchoice>
+		<guisubmenu>Auto</guisubmenu>
+		<guimenuitem>Étire le contraste</guimenuitem>
+	        </menuchoice>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Étire automatiquement le contraste.</para>
+	    </entry>
+	  </row>
+	</tbody>
+      </tgroup>
+      </informaltable>
+      <para>Quand une image est modifiée, le libellé « [Modifié] » est affiché à côté du nom du fichier de l'image. <note>
+        <title>NOTE</title>
+        <para>Notez que ces modifications n'altèrent pas le fichier image. Si vous voulez afficher l'image originale, cliquez simplement sur sa vignette à nouveau ou utilisez la commande <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Rétablir</guimenuitem></menuchoice>.</para>
+      </note></para>
+      <para>Vous pouvez enregistrer les images modifiées, voir <xref linkend="gthumb-save-images"/> pour plus d'informations.</para>
+    <sect3 id="gthumb-redeye">
+    <title>Correction des yeux rouges</title>
+      <para>De nombreux appareils photo bon marché possèdent un flash qui est trop proche de la lentille de l'appareil. La conséquence est que la lumière du flash peut partir de l'appareil photo, se réfléchir en partie sur la rétine du sujet et retourner directement vers la lentille de l'appareil. C'est la cause des « yeux rouges ».</para>
+      <para><application>gThumb</application> fournit un outil pour retirer les yeux rouges indésirables. Quand vous trouvez une image avec des yeux rouges, choisissez <menuchoice><guimenu>Image</guimenu><guimenuitem>Retirer les yeux rouges</guimenuitem></menuchoice>. Une nouvelle fenêtre apparaît. Placez le pointeur de la souris au-dessus de la zone des yeux rouges, puis cliquez dessus ou près d'elle. Cela devrait effacer la zone rouge en la remplaçant par une zone plus foncée. Si vous n'êtes pas satisfait du résultat, cliquez simplement sur <guibutton>Défaire</guibutton> pour annuler le résultat (un clic sur <guibutton>Annuler</guibutton> permet d'abandonner toutes les modifications réalisées et de fermer la fenêtre). Une fois que vous êtes satisfait du résultat, vous pouvez cliquer sur d'autres zones avec des yeux rouges ou cliquer sur <guibutton>Enregistrer</guibutton> ou <guibutton>Appliquer</guibutton> pour fermer la fenêtre.</para>
+      <para>Si vous cliquez sur <guibutton>Appliquer</guibutton>, après avoir utilisé <menuchoice><guimenu>Image</guimenu><guimenuitem>Retirer les yeux rouges</guimenuitem></menuchoice>, l'image doit être ré-enregistrée comme vous le faites d'habitude. Voir <xref linkend="gthumb-save-images"/> pour plus d'informations.</para>
+      <para>Les boutons <guibutton>Zoom avant</guibutton>, <guibutton>Zoom arrière</guibutton>, <guibutton>Taille réelle</guibutton> et <guibutton>Ajusté à la fenêtre</guibutton> permettent de zoomer sur les zones intéressantes. La molette de la souris peut également être utilisée pour zoomer en avant ou en arrière.</para>
+    </sect3>
+    </sect2>
+    <sect2 id="gthumb-save-images">
+    <title>Enregistrement d'une image</title>
+      <para>Pour enregistrer une image, effectuez les opérations suivantes : <orderedlist>
+        <listitem>
+           <para>Affichez l'image.</para>
+        </listitem>
+        <listitem>
+           <para>Modifiez l'image (voir la <xref linkend="gthumb-alter-images"/>). Bien sûr, cette étape est facultative.</para>
+        </listitem>
+        <listitem>
+            <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Enregistrer sous</guimenuitem></menuchoice>.</para>
+        </listitem>
+        <listitem>
+            <para>Choisissez un nom de fichier et cliquez sur <guibutton>Enregistrer</guibutton>.</para>
+        </listitem>
+        <listitem>
+           <para><application>gThumb</application> affiche la boîte de dialogue à partir de laquelle vous pouvez choisir parmi les options spécifiques au format du fichier. Une fois que vous êtes d'accord avec les options, cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> enregistre l'image.</para>
+        </listitem>
+      </orderedlist></para>
+    </sect2>
+
+  <sect2 id="gthumb-image-open">
+  <title>Ouverture d'une série d'images avec un autre programme</title>
+  <para>Pour ouvrir une série d'images avec un autre programme, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier ou le catalogue où se trouvent les images.</para>
+      </listitem>
+      <listitem>
+        <para>Sélectionnez les images et choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Ouvrir avec</guimenuitem></menuchoice> pour faire apparaître la boîte de dialogue <guilabel>Ouvrir</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez une application dans la liste <guilabel>Applications disponibles</guilabel> ou dans la liste <guilabel>Applications récentes</guilabel> ou saisissez le nom d'une commande dans le champ <guilabel>Application</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Ouvrir</guibutton>. <application>gThumb</application> ouvre les images.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <sect2 id="gthumb-image-rename">
+  <title>Changement du nom d'une image</title>
+  <para>Pour changer le nom de fichier d'une image, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier ou le catalogue où se trouve l'image.</para>
+      </listitem>
+      <listitem>
+        <para>Sélectionnez l'image et choisissez le menu <menuchoice><guimenu>Édition</guimenu><guimenuitem>Renommer</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Saisissez le nouveau nom de fichier et cliquez sur <guibutton>Renommer</guibutton>. <application>gThumb</application> renomme le fichier de l'image.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <sect2 id="gthumb-image-delete">
+  <title>Suppression d'une série d'images</title>
+  <para>Pour supprimer une série d'images, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier ou le catalogue où se trouvent les images.</para>
+      </listitem>
+      <listitem>
+        <para>Sélectionnez les images et choisissez le menu <menuchoice><guimenu>Édition</guimenu><guimenuitem>Mettre à la corbeille</guimenuitem></menuchoice>. <application>gThumb</application> supprime les images en les mettant à la corbeille.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <sect2 id="gthumb-image-copy">
+  <title>Copie d'une série d'images</title>
+  <para>Pour copier une série d'images, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier ou le catalogue où se trouvent les images.</para>
+      </listitem>
+      <listitem>
+        <para>Sélectionnez les images et choisissez le menu <menuchoice><guimenu>Édition</guimenu><guimenuitem>Copier</guimenuitem></menuchoice> pour faire apparaître la boîte de dialogue <guilabel>Choisissez le dossier de destination</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez un dossier dans la liste <guilabel>Dossiers récents</guilabel> ou dans la liste <guilabel>Signets</guilabel> ou saisissez un nom de dossier dans le champ <guilabel>Dossier</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> copie les images.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <sect2 id="gthumb-image-move">
+  <title>Déplacement d'une série d'images</title>
+  <para>Pour déplacer une série d'images, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier ou le catalogue où se trouvent les images.</para>
+      </listitem>
+      <listitem>
+        <para>Sélectionnez les images et choisissez le menu <menuchoice><guimenu>Édition</guimenu><guimenuitem>Déplacer</guimenuitem></menuchoice> pour faire apparaître la boîte de dialogue <guilabel>Choisissez le dossier de destination</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez un dossier dans la liste <guilabel>Dossiers récents</guilabel> ou dans la liste <guilabel>Signets</guilabel> ou saisissez un nom de dossier dans le champ <guilabel>Dossier</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> déplace les images.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+
+  <!-- ============= Print ================================== -->
+  <sect2 id="gthumb-print-images">
+  <title>Impression d'une série d'images</title>
+  <para>Pour imprimer une série d'images, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier ou le catalogue où se trouvent les images.</para>
+      </listitem>
+      <listitem>
+        <para>Sélectionnez les images et choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Imprimer</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>La boîte de dialogue <guilabel>Imprimer</guilabel> présente deux onglets : <guilabel>Agencement</guilabel> et <guilabel>Détails du papier</guilabel>.</para>
+        <para>À partir de l'onglet <guilabel>Agencement</guilabel>, vous pouvez <itemizedlist>
+        <listitem>
+          <para>Choisir le nombre d'images par page.</para>
+        </listitem>
+        <listitem>
+          <para>Inclure le commentaire des images.</para>
+        </listitem>
+        <listitem>
+          <para>Faire pivoter une image en cliquant dessus.</para>
+        </listitem>
+        <listitem>
+          <para>Déplacer une image en cliquant dessus avec le bouton gauche et en la faisant glisser.</para>
+        </listitem>
+        <listitem>
+          <para>Redimensionner une image.</para>
+        </listitem>
+        <listitem>
+          <para>Recentrer l'image sur la page en utilisant le bouton <guibutton>Centrer sur la page</guibutton>.</para>
+        </listitem>
+        </itemizedlist></para>
+        <para>À partir de l'onglet <guilabel>Détails du papier</guilabel>, vous pouvez <itemizedlist>
+        <listitem>
+          <para>Choisir le format du papier.</para>
+        </listitem>
+        <listitem>
+          <para>Choisir l'orientation du papier.</para>
+        </listitem>
+        </itemizedlist></para>
+      </listitem>
+      <listitem>
+        <para>Quand vous êtes prêt à imprimer, cliquez sur <guibutton>Imprimer</guibutton>. <application>gThumb</application> imprime les images.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Comments ================================== -->
+  <sect1 id="gthumb-comments">
+  <title>Commentaires</title>
+  <para>Les commentaires font partie des informations liées aux images. <note>
+      <title>ATTENTION</title>
+      <para>Les commentaires ne sont pas intégrés dans les fichiers images, ils sont enregistrés séparément. Cela signifie que si vous déplacez des images ou des dossiers avec d'autres programmes, vous perdez les commentaires.</para>
+    </note><note>
+      <title>POUR LES EXPERTS</title>
+      <para>Le commentaire de l'image est enregistré dans un sous-dossier du dossier de l'image appelé <filename>.comments</filename>.</para>
+    </note></para>
+  <sect2 id="gthumb-comment-add">
+  <title>Ajout d'un commentaire</title>
+  <para>Pour ajouter un commentaire à une image, sélectionnez l'image et choisissez le menu <menuchoice><guimenu>Édition</guimenu><guimenuitem>Commentaire</guimenuitem></menuchoice> ou tapez <keycombo><keycap>C</keycap></keycombo>.</para>
+  <para>Les commentaires sont structurés en plusieurs parties : <itemizedlist>
+      <listitem>
+        <para><guilabel>Commentaire</guilabel> : un texte libre décrivant l'image.</para>
+      </listitem>
+      <listitem>
+        <para><guilabel>Lieu</guilabel> : le lieu correspondant à l'image.</para>
+      </listitem>
+      <listitem>
+        <para><guilabel>Date</guilabel> : la date de la prise de l'image.</para>
+      </listitem>
+    </itemizedlist></para>
+  <para>Les commentaires des images sont affichés dans la liste des images en italique sous le nom de fichier de l'image. Si le commentaire est trop long, le symbole « [..] » est ajouté à la fin de la partie affichée des commentaires, pour vous signaler que le commentaire n'est pas entièrement visible. Pour afficher le commentaire au complet, utilisez la boîte de dialogue des propriétés de l'image qui peut être affichée en utilisant la commande <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Propriétés </guimenuitem></menuchoice> ou en tapant <keycombo><keycap>I</keycap></keycombo>.</para>
+    <!-- ==== Figure ==== -->
+    <figure id="comment-in-list-fig">
+      <title>Un commentaire d'image</title>
+      <screenshot>
+        <screeninfo>Un commentaire d'image</screeninfo>
+        <graphic format="PNG" fileref="figures/comment.png" srccredit="Me"/>
+      </screenshot>
+    </figure>
+    <!-- ==== End of Figure ==== -->
+
+  <sect3 id="gthumb-comment-add-multi">
+  <title>Ajout d'un commentaire à plusieurs images</title>
+  <para>Pour ajouter un commentaire à plusieurs images, sélectionnez les images et choisissez le menu <menuchoice><guimenu>Édition</guimenu><guimenuitem>Commentaire</guimenuitem></menuchoice> ou tapez <keycombo><keycap>C</keycap></keycombo>.</para>
+  <para>La boîte de dialogue <guilabel>Commentaire</guilabel> complète les champs qui ont la même valeur pour toutes les images, laissant les autres champs vides.</para>
+  <para>Activez l'option <guilabel>Enregistrer uniquement les champs modifiés </guilabel> (qui est active par défaut), pour modifier un ou plusieurs champs de plusieurs commentaires en laissant intacts les autres champs.</para>
+  </sect3>
+  </sect2>
+  <sect2 id="gthumb-comment-delete">
+  <title>Suppression de commentaires</title>
+  <para>Pour supprimer les commentaires, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez dans le dossier ou le catalogue où se trouvent les images.</para>
+      </listitem>
+      <listitem>
+        <para>Sélectionnez les images et choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Supprimer le commentaire</guimenuitem></menuchoice>. <application>gThumb</application> supprime les commentaires.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-comment-view">
+  <title>Affichage du commentaire d'une image</title>
+  <para>Pour afficher le commentaire d'une image, utilisez la boîte de dialogue <guilabel>Propriétés</guilabel> (<xref linkend="gthumb-view-prop"/>) ou effectuez les opérations suivantes : <orderedlist>
+        <listitem><para>Sélectionnez l'image.</para></listitem>
+        <listitem><para>Affichez l'image en appuyant sur <keycap>Entrée</keycap> ou en double-cliquant sur elle.</para></listitem>
+        <listitem><para>Tapez <keycap>I</keycap> ou choisissez <menuchoice><guimenu>Affichage</guimenu><guisubmenu>Afficher/Cacher</guisubmenu><guimenuitem>Commentaire de l'image</guimenuitem></menuchoice>. <application>gThumb</application> affiche le commentaire de l'image.</para></listitem>
+     </orderedlist></para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Categories ================================== -->
+  <sect1 id="gthumb-categories">
+  <title>Catégories</title>
+  <para>Les catégories sont des mots-clés attribués aux images et peuvent être utilisées pour faire des recherches affinées comme décrit à la section <xref linkend="gthumb-finding"/>. <note>
+      <title>ATTENTION</title>
+      <para>Les catégories ne sont pas intégrées dans les fichiers images, mais elles sont enregistrées séparément. Cela signifie que si vous déplacez des images ou des dossiers avec d'autres programmes, vous perdez vos catégories.</para>
+    </note><note>
+      <title>POUR LES EXPERTS</title>
+      <para>Les catégories sont enregistrées dans le sous-dossier <filename>.comments</filename> du dossier de l'image et dans le même fichier que celui utilisé pour le commentaire de l'image.</para>
+    </note></para>
+  <sect2 id="gthumb-categories-add">
+  <title>Attribution de catégories à une série d'images</title>
+  <para>Pour attribuer des catégories à une série d'images, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Sélectionnez les images et choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Catégories </guimenuitem></menuchoice> <application>gThumb</application> affiche la boîte de dialogue <guilabel>Catégories</guilabel>.</para>
+      </listitem>
+      <listitem>
+	<para>Cochez les catégories dans la liste <guilabel>Catégories disponibles</guilabel>. Vous pouvez créer de nouvelles catégories en cliquant sur le bouton <guilabel>Nouveau</guilabel> et supprimer des catégories de la liste en cliquant sur le bouton <guilabel>Supprimer</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> attribue les catégories aux images.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-categories-add-to-folder">
+  <title>Attribution de catégories à un dossier</title>
+  <para>Au lieu d'attribuer des catégories à une image unique, vous pouvez les attribuer à un dossier. Cela équivaut à attribuer les catégories à toutes les images contenues dans le dossier et dans tous ses sous-dossiers.</para>
+  <para>Pour attribuer des catégories à un dossier, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Allez au dossier parent afin d'afficher le nom du dossier dans le volet contenant la liste des dossiers, cliquez avec le bouton droit sur le nom du dossier et choisissez la commande <menuchoice><guimenuitem>Catégories</guimenuitem></menuchoice>  ; vous pouvez également aller dans le dossier et choisir la commande <menuchoice><guimenu>Fichier</guimenu><guisubmenu>Dossier</guisubmenu><guimenuitem>Catégories</guimenuitem></menuchoice>. Dans les deux cas, <application>gThumb</application> affiche la boîte de dialogue <guilabel>Catégories</guilabel>.</para>
+      </listitem>
+      <listitem>
+	<para>Cochez les catégories dans la liste <guilabel>Catégories disponibles</guilabel>. Vous pouvez créer de nouvelles catégories en cliquant sur le bouton <guilabel>Nouveau</guilabel> et supprimer des catégories de la liste en cliquant sur le bouton <guilabel>Supprimer</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> attribue les catégories au dossier.</para>
+      </listitem>
+    </orderedlist></para>
+  </sect2>
+  <sect2 id="gthumb-categories-remove">
+  <title>Suppression de catégories d'une image ou d'un dossier</title>
+  <para>Pour supprimer des catégories d'une série d'images ou d'un dossier, effectuez les mêmes opérations décrites ci-dessus et décochez les catégories que vous voulez supprimer. Cliquez sur <guibutton>Valider</guibutton> pour confirmer l'opération.</para>
+  </sect2>
+  </sect1>
+
+  <!-- ============= Catalogs ================================== -->
+  <sect1 id="catalogs">
+  <title>Catalogues</title>
+  <para>Les catalogues vous permettent d'organiser les images sans les déplacer d'un dossier à un autre. On peut les considérer comme des « listes de lecture » d'images.</para>
+  <para>Les catalogues peuvent être organisés comme des bibliothèques. Une bibliothèque est comme un dossier qui peut contenir des catalogues et d'autres bibliothèques.</para>
+  <para>
+  <note>
+  <title>ATTENTION</title>
+  <para>Les catalogues ne sont pas mis à jour quand vous déplacez les images. Si vous voulez un catalogue plus souple, vous pouvez utiliser les recherches décrites à la <xref linkend="gthumb-find"/>. Les recherches sont des catalogues auxquels des critères de recherche sont attachés. Après un déplacement d'images, vous pouvez recommencer la recherche pour obtenir un catalogue mis à jour.</para>
+  </note>
+  <note>
+  <title>POUR LES EXPERTS</title>
+  <para>Les catalogues sont enregistrés dans le dossier <filename>$(HOME)/.gnome2/gthumb/collections</filename>.</para>
+  </note>
+  </para>
+    <sect2 id="gthumb-catalog-view">
+    <title>Affichage de la liste des catalogues</title>
+        <para>Pour afficher la liste des catalogues, effectuez les opérations suivantes : <orderedlist>
+        <listitem>
+          <para>Tapez <keycombo><keycap>Alt</keycap><keycap>2</keycap></keycombo> ou choisissez <menuchoice><guimenu>Affichage</guimenu><guimenuitem>Catalogues</guimenuitem></menuchoice>.</para>
+        </listitem>
+        </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-catalog-view-content">
+    <title>Affichage d'un catalogue</title>
+        <para>Pour afficher le contenu d'un catalogue, effectuez les opérations suivantes : <orderedlist>
+        <listitem>
+          <para>Affichez les catalogues (comme décrit dans la <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Sélectionnez le catalogue en cliquant sur le nom du catalogue.</para>
+        </listitem>
+       </orderedlist></para>
+       <para>Si vous voulez vous rendre dans le dossier de l'image, sélectionnez l'image et utilisez la commande <menuchoice><guimenu>Aller à</guimenu><guimenuitem>Aller dans ce dossier d'images </guimenuitem></menuchoice> ou tapez <keycombo action="simul"><keycap>Alt</keycap><keycap>Fin</keycap></keycombo>. <application>gThumb</application> affiche le dossier de l'image et fait défiler la liste des images afin de rendre l'image visible.</para>
+    </sect2>
+    <sect2 id="gthumb-catalog-add">
+    <title>Ajout d'images à un catalogue</title>
+      <para>Pour ajouter une série d'images à un catalogue, effectuez les opérations suivantes : <orderedlist>
+      <listitem>
+        <para>Sélectionnez les images que vous voulez ajouter au catalogue et choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem> Ajouter au catalogue</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Sélectionnez un catalogue existant ou créez-en un nouveau.</para>
+      </listitem>
+      <listitem>
+        <para>Choisissez <guibutton>Valider</guibutton>. <application>gThumb</application> ajoute les images sélectionnées au catalogue.</para>
+      </listitem>
+    </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-catalog-delete">
+    <title>Suppression d'images d'un catalogue</title>
+      <para>Pour supprimer des images d'un catalogue, effectuez les opérations suivantes : <orderedlist>
+        <listitem>
+          <para>Affichez les catalogues (comme décrit dans la <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Sélectionnez le catalogue.</para>
+        </listitem>
+        <listitem>
+         <para>Sélectionnez les images que vous voulez supprimer et choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Supprimer du catalogue</guimenuitem></menuchoice>. <application>gThumb</application> supprime les images du catalogue.</para>
+        </listitem>
+      </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-catalog-create">
+    <title>Création d'un catalogue</title>
+        <para>Pour créer un catalogue, effectuez les opérations suivantes : <orderedlist>
+        <listitem>
+          <para>Affichez les catalogues (comme décrit dans la <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Nouveau catalogue</guimenuitem></menuchoice>.</para>
+        </listitem>
+        <listitem>
+          <para>Saisissez le nom du catalogue et cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> crée le catalogue.</para>
+        </listitem>
+        </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-catalog-rename">
+    <title>Changement du nom, suppression ou déplacement d'un catalogue</title>
+        <para>Pour renommer, supprimer ou déplacer un catalogue, effectuez les opérations suivantes : <orderedlist>
+        <listitem>
+          <para>Affichez les catalogues (comme décrit dans la <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Sélectionnez le catalogue.</para>
+        </listitem>
+        <listitem>
+          <para>Choisissez la commande correspondante dans le menu <menuchoice><guimenu>Fichier</guimenu><guisubmenu>Catalogue</guisubmenu></menuchoice> ou utilisez le menu contextuel qui apparaît en cliquant avec le bouton droit sur le nom du catalogue dans la liste des catalogues.</para>
+        </listitem>
+        </orderedlist></para>
+    </sect2>
+    <sect2 id="gthumb-library-create">
+    <title>Création d'une bibliothèque de catalogues</title>
+        <para>Pour créer une bibliothèque de catalogues, effectuez les opérations suivantes : <orderedlist>
+        <listitem>
+          <para>Affichez les catalogues (comme décrit dans la <xref linkend="gthumb-catalog-view"/>).</para>
+        </listitem>
+        <listitem>
+          <para>Choisissez le menu <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Nouvelle bibliothèque</guimenuitem></menuchoice>.</para>
+        </listitem>
+        <listitem>
+          <para>Saisissez le nom de la bibliothèque et cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> crée la bibliothèque.</para>
+        </listitem>
+        </orderedlist></para>
+    </sect2>
+  </sect1>
+
+  <!-- ============= Find ================================== -->
+
+  <sect1 id="gthumb-finding">
+    <title>Recherche d'images</title>
+    <sect2 id="gthumb-find">
+    <title>Recherche d'images</title>
+      <para>Pour rechercher des images sur votre disque dur, choisissez <menuchoice><guimenu>Édition</guimenu><guimenuitem>Rechercher</guimenuitem></menuchoice> <application>gThumb</application> affiche la boîte de dialogue <guilabel>Rechercher</guilabel>.</para>
+     <sect3 id="gthumb-simple-search">
+     <title>Recherche simple</title>
+      <para>À partir de la boîte de dialogue <guilabel>Rechercher</guilabel>, vous pouvez spécifier un nom ou un modèle de nom de fichier dans le champ <guilabel>Nom du fichier</guilabel>.</para>
+      <para>Exemples: <informaltable frame="all"><tgroup cols="2" colsep="1" rowsep="1"><colspec colname="COLSPEC0" colwidth="50.00*"/><colspec colname="COLSPEC1" colwidth="50.00*"/><thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Valeur</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Explication</para></entry>
+            </row>
+          </thead><tbody>
+            <row valign="top">
+              <entry><para>
+                <userinput>toto.jpg</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> cherche les images appelées <filename>toto.jpg</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>*.png</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> cherche les images qui possèdent l'extension <filename>png</filename>.</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>*.gif; *.jpg</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> cherche les images qui possèdent l'extension <filename>gif</filename> ou <filename>jpg</filename>.</para></entry>
+            </row>
+          </tbody></tgroup></informaltable></para>
+        <para>Cliquez sur <guibutton>Rechercher</guibutton> pour lancer la recherche. Une fois que la recherche est terminée, une liste d'images qui correspond à votre recherche apparaît. Si vous voulez afficher ces images, cliquez sur <guibutton>Afficher</guibutton>. Si vous voulez faire une autre recherche, cliquez sur <guibutton>Nouvelle recherche</guibutton>.</para>
+	<para>Si vous choisissez d'afficher les images, un catalogue appelé <guilabel>Résultat de la recherche</guilabel> est créé et affiché automatiquement. Un catalogue créé de cette façon possède une icône particulière : une loupe. La raison est que sur ce type de catalogue, vous pouvez réaliser deux opérations supplémentaires : <guibutton>Éditer la requête de recherche</guibutton> et <guibutton>Relancer la recherche</guibutton>. Ces opérations peuvent être sélectionnées à partir du menu <menuchoice><guimenu>Fichier</guimenu><guisubmenu>Catalogue</guisubmenu></menuchoice> ou du menu contextuel du catalogue (clic avec bouton droit).</para>
+        <para>La commande <guibutton>Éditer la requête de recherche</guibutton> vous permet d'éditer à nouveau les règles de la recherche, tandis que <guibutton>Relancer la recherche </guibutton> vous permet de relancer la recherche. À la fin de la recherche, vous pouvez décider d'enregistrer ou non le résultat dans le catalogue.</para>
+      </sect3>
+
+      <sect3 id="gthumb-other-search-opt">
+      <title>Autres options de recherche</title>
+          <variablelist>
+	  <varlistentry>
+            <term><guilabel>Commencer à</guilabel></term>
+	    <listitem>
+	      <para>Le dossier à partir duquel la recherche va commencer.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+            <term><guilabel>Inclure les sous-dossiers</guilabel></term>
+	    <listitem>
+	      <para>Indique s'il faut également rechercher dans les sous-dossiers.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+            <term><guilabel>Commentaire</guilabel></term>
+	    <listitem>
+	     <para>Une liste de termes que le commentaire de l'image doit contenir.</para>
+      <para>Exemples :</para>
+      <para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Valeur</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Explication</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>
+                <userinput>paolo</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> recherche les images dont le commentaire contient « paolo ».</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>PAOLO</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> recherche les images dont le commentaire contient « paolo ».</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>Vacances; Rome</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> recherche les images dont le commentaire contient « Vacances » ou « Rome ».</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>vacances à Rome; mon anniversaire</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> recherche les images dont le commentaire contient « vacances à Rome» OU « mon anniversaire ».</para></entry>
+            </row>
+
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+	     </para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+            <term><guilabel>Lieu</guilabel></term>
+	    <listitem>
+	    <para>Un liste de termes que le champ lieu du commentaire doit contenir.</para>
+         <para>Exemples :</para>
+
+         <para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Valeur</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Explication</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>
+                <userinput>Rome</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> recherche les images dont le champ lieu contient « Rome ».</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>Paris; Rome; Londres</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> recherche les images dont le champ lieu contient « Paris » OU « Rome » OU « Londres ».</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+            </para>
+	  </listitem>
+
+	  </varlistentry>
+	  <varlistentry>
+	    <!-- -->
+            <term><guilabel>Date</guilabel></term>
+	    <listitem>
+	    <para>Les critères que le champ date du commentaire doit respecter : <itemizedlist>
+	      <listitem>
+	        <para><guilabel>Toutes</guilabel> : la date est ignorée.</para>
+              </listitem>
+
+	      <listitem>
+	        <para><guilabel>Avant le, Égale à, Après le</guilabel> : la date doit être moins récente, égale à ou plus récente que la date spécifiée.</para>
+              </listitem>
+
+	    </itemizedlist></para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <!-- -->
+            <term><guilabel>Catégories</guilabel></term>
+	    <listitem>
+	    <para>La liste des catégories auxquelles les images doivent appartenir. Les catégories peuvent être attribuées en utilisant la commande <menuchoice><guimenu>Édition</guimenu><guimenuitem>Catégories</guimenuitem></menuchoice> ou en tapant <keycombo><keycap>K</keycap></keycombo>.</para>
+	    <para>Vous pouvez choisir de rechercher les images qui appartiennent à toutes les catégories sélectionnées ou au moins à l'une d'elles en cochant l'option correspondante.</para>
+            <para>Exemples :</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Valeur</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Explication</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>
+                <userinput>Famille</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> recherche les images qui appartiennent au moins à la catégorie « Famille ».</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>
+                <userinput>moi; Famille</userinput>
+              </para></entry>
+              <entry align="left"><para><application>gThumb</application> recherche les images qui appartiennent à la catégorie « Famille » et/ou « moi ».</para></entry>
+            </row>
+
+          </tbody>
+        </tgroup>
+      </informaltable>
+	    </listitem>
+	  </varlistentry>
+          </variablelist>
+        <para>
+          <note>
+            <title>NOTE</title>
+            <para>Si vous utilisez plus d'un critère, les images doivent les respecter tous.</para>
+          </note>
+          <note>
+            <title>NOTE</title>
+            <para>La recherche est toujours insensible à la casse des lettres.</para>
+          </note>
+        </para>
+      </sect3>
+
+     </sect2>
+     <sect2 id="gthumb-find-dup">
+     <title>Recherche d'images en double</title>
+     <para>Pour rechercher les images en double, choisissez la commande <menuchoice><guimenu>Édition</guimenu><guimenuitem>Rechercher les doublons</guimenuitem></menuchoice>.</para>
+     </sect2>
+  </sect1>
+
+  <!-- ============= Slideshow ================================== -->
+
+    <sect1 id="slideshow">
+      <title>Diaporamas</title>
+      <para>Vous pouvez démarrer un diaporama des images contenues dans le dossier actuel en tapant <keycombo action="simul"><keycap>S</keycap></keycombo> ou en choisissant le menu <menuchoice><guimenu>Affichage </guimenu><guimenuitem>Diaporama</guimenuitem></menuchoice>. Pour arrêter le diaporama, tapez à nouveau <keycombo action="simul"><keycap>S</keycap></keycombo>.</para>
+      <para>Si la sélection actuelle contient deux images (ou plus), le diaporama sera uniquement effectué avec les images sélectionnées, sinon toutes les images du dossier ou du catalogue actuel seront affichées.</para>
+      <para>Le passage du mode plein écran au mode normal n'arrête pas le diaporama. Si l'option <guilabel>Passer en mode plein écran</guilabel> est validée, alors le diaporama démarre en mode plein écran, et la sortie du mode plein écran arrête le diaporama.</para>
+      <para>Le diaporama est interrompu quand vous changez de dossier ou rechargez le dossier actuel.</para>
+      <para>Avec l'outil diaporama et le mode plein écran, vous pouvez réaliser des présentations. Il y a deux types de présentations : les présentations automatiques et les présentations manuelles.</para>
+      <sect2 id="gthumb-auto-presentation">
+      <title>Présentation automatique</title>
+      <para>Pour faire une présentation automatique, effectuez les opérations suivantes :</para>
+      <orderedlist>
+        <listitem>
+          <para>Allez dans le dossier ou le catalogue contenant les images que vous voulez présenter.</para>
+        </listitem>
+        <listitem>
+          <para>Sélectionnez les images que vous voulez afficher dans le diaporama ou n'en sélectionnez pas pour afficher toutes les images du dossier ou du catalogue actuel.</para>
+        </listitem>
+        <listitem>
+          <para>Tapez <keycombo action="simul"><keycap>S</keycap></keycombo> ou choisissez <menuchoice><guimenu>Affichage</guimenu><guimenuitem>Diaporama </guimenuitem></menuchoice>. <application>gThumb</application> démarre une présentation automatique des images.</para>
+        </listitem>
+      </orderedlist>
+      <para>Pour arrêter la présentation, tapez <keycombo action="simul"><keycap>S</keycap></keycombo> ou <keycombo action="simul"><keycap>Q</keycap></keycombo> ou <keycombo action="simul"><keycap>Échap</keycap></keycombo>.</para>
+      <para>Le comportement du diaporama peut être personnalisé à partir de la boîte de dialogue <guilabel>Préférences</guilabel>, comme indiqué dans la <xref linkend="preferences-slideshow"/>.</para>
+      </sect2>
+      <sect2 id="gthumb-manual-presentation">
+      <title>Présentation manuelle</title>
+      <para>Pour faire une présentation manuelle, effectuez les opérations suivantes :</para>
+      <orderedlist>
+        <listitem>
+          <para>Allez dans le dossier ou le catalogue contenant les images que vous voulez présenter.</para>
+        </listitem>
+        <listitem>
+          <para>Sélectionnez l'image à partir de laquelle vous voulez commencer la présentation.</para>
+        </listitem>
+        <listitem>
+          <para>Tapez <keycombo action="simul"><keycap>F</keycap></keycombo>. <application>gThumb</application> affiche l'image dans le mode plein écran.</para>
+        </listitem>
+        <listitem>
+          <para>Tapez <keycombo action="simul"><keycap>Espace</keycap></keycombo> ou <keycombo action="simul"><keycap>N</keycap></keycombo>. <application>gThumb</application> affiche l'image suivante.</para>
+        </listitem>
+        <listitem>
+          <para>Tapez <keycombo action="simul"><keycap>Retour arrière</keycap></keycombo> ou <keycombo action="simul"><keycap>B</keycap></keycombo>. <application>gThumb</application> affiche l'image précédente.</para>
+        </listitem>
+      </orderedlist>
+      <para>Pour arrêter la présentation, tapez <keycombo action="simul"><keycap>Q</keycap></keycombo> ou <keycombo action="simul"><keycap>Échap</keycap></keycombo>.</para>
+      </sect2>
+    </sect1>
+
+  <!-- ============= Tools ================================== -->
+  <sect1 id="gthumb-tools">
+  <title>Outils avancés</title>
+
+    <sect2 id="gthumb-wallpaper">
+      <title>Choix du papier peint du bureau</title>
+      <para>Si vous voulez utiliser l'image comme papier peint du bureau, sélectionnez l'image et choisissez le menu <menuchoice><guimenu>Outils</guimenu><guisubmenu>Utiliser l'image comme papier peint</guisubmenu></menuchoice>. Ce menu contient les commandes suivantes : <itemizedlist>
+	  <listitem>
+	    <para><guilabel>Centré</guilabel> : l'image sera centrée à l'écran.</para>
+	  </listitem>
+	  <listitem>
+	    <para><guilabel>Mosaïque</guilabel> : l'image sera dupliquée à l'écran comme des pavés sur un sol.</para>
+	  </listitem>
+	  <listitem>
+	    <para><guilabel>Redimensionné</guilabel> : l'image sera redimensionnée pour remplir l'écran en gardant les proportions.</para>
+	  </listitem>
+	  <listitem>
+	    <para><guilabel>Étiré</guilabel> : l'image sera redimensionnée pour remplir l'écran, en modifiant si nécessaire ses proportions.</para>
+	  </listitem>
+	</itemizedlist></para>
+      <para>Si vous voulez restaurer l'ancien papier peint, choisissez le menu <menuchoice><guimenu>Outils</guimenu><guisubmenu>Utiliser l'image comme papier peint</guisubmenu><guimenuitem>Restaurer</guimenuitem></menuchoice>.</para>
+    </sect2>
+    <sect2 id="gthumb-rotate-jpeg">
+      <title>Rotation d'images sans perte de qualité</title>
+      <para>En général, si vous voulez pivoter une image, vous devez ouvrir l'image avec un éditeur, faire pivoter l'image, puis l'enregistrer. Cela fonctionne bien pour les formats d'images tels que PNG ou GIF, mais cela conduit à une perte de qualité pour les images JPEG (les fonctions de rotation du menu <menuchoice><guimenu>Image</guimenu><guimenuitem>Transformer</guimenuitem></menuchoice> fonctionnent de cette façon, avec perte).</para>
+      <para>Si vous voulez faire pivoter des images JPEG sans perte de qualité d'image, sélectionnez les images que vous voulez faire pivoter et choisissez <menuchoice><guimenu>Outils</guimenu><guimenuitem>Pivoter les images</guimenuitem></menuchoice>. <application>gThumb</application> affiche la boîte de dialogue <guilabel>Pivoter l'image</guilabel>.</para>
+      <para>Cliquez sur <guibutton>Appliquer</guibutton> pour valider les modifications. Les fichiers sont automatiquement enregistrés après avoir cliqué sur <guibutton>Appliquer</guibutton>.</para>
+      <para>Si vous cochez l'option <guilabel>Appliquer à toutes les images</guilabel>, la rotation est appliquée aussi bien à l'image actuelle qu'à toutes les images sélectionnées restantes, sinon, une fois que l'image actuelle a été tournée, l'image suivante dans la sélection est affichée et vous pouvez choisir un autre type de rotation. <note>
+        <title>NOTE</title>
+        <para>Si la sélection contient des images non JPEG, elles sont pivotées également (néanmoins, tous les formats de fichiers ne sont pas pris en charge).</para>
+      </note></para>
+      <para>En général, il existe deux façons de faire pivoter une image JPEG. La première consiste à réarranger les pixels à l'intérieur de l'image en utilisant une transformation « physique ». La seconde consiste à ne pas toucher aux données de l'image et à simplement changer la valeur de l'étiquette d'orientation Exif dans l'en-tête du fichier JPEG. Néanmoins, tous les fichiers JPEG ne possèdent pas d'étiquette Exif et celles-ci ne sont pas prises en charge par toutes les applications. Si votre image ne possède pas d'étiquette Exif, les pixels sont réarrangés à l'intérieur du fichier image automatiquement, puisque c'est la seule méthode possible.</para>
+      <para>Si votre image possède une étiquette d'orientation Exif et que la case à cocher <guilabel>Appliquer les transformations physiques</guilabel> est activée, la transformation physique est utilisée pour réarranger les données de l'image et l'étiquette d'orientation Exif est réinitialisée à sa valeur « haut-gauche » par défaut.</para>
+      <para>Si votre image possède une étiquette d'orientation Exif et que la case à cocher <guilabel>Appliquer les transformations physiques</guilabel> n'est pas activée, alors seule l'étiquette d'orientation est modifiée. Les données brutes de l'image elle-même ne sont pas modifiées. <note>
+        <title>NOTE</title>
+        <para>Pour un maximum de compatibilité avec les autres applications, il est recommandé que la case à cocher <guilabel>Appliquer les transformations physiques</guilabel> soit normalement activée dans les deux boîtes de dialogue rotation et importation.</para>
+      </note></para>
+      <para>Dans la plupart des cas, la transformation physique des données des pixels à l'intérieur du fichier JPEG ne dégrade pas la qualité de l'image (c'est-à-dire, est sans perte). Néanmoins, si les dimensions de l'image (hauteur et largeur) ne sont pas des multiples de 8, il se produit quelques altérations de données sur un ou deux des côtés de l'image. S'il y a une étiquette d'orientation Exif, vous pouvez éviter ce problème en désactivant la case à cocher <guilabel>Appliquer les transformations physiques</guilabel>. Si vous devez utiliser l'approche transformation physique avec des images dont les dimensions ne sont pas des multiples de 8, <application>gThumb</application> vous permet de continuer malgré la distorsion possible de l'image, mais il vous demande également si vous désirez rogner l'image légèrement (de 7 colonnes et/ou 7 lignes de pixels maximum) pour éliminer les zones problématiques.</para>
+    </sect2>
+    <sect2 id="gthumb-reset-exif">
+      <title>Réinitialisation de l'étiquette d'orientation Exif</title>
+      <para>La section précédente décrit comment les images JPEG peuvent être pivotées en utilisant deux méthodes (transformation physique ou modification de l'étiquette d'orientation Exif). <application>gThumb</application> gère correctement les deux méthodes depuis la version 2.9.0. Des versions précédentes de <application>gThumb</application> font pivoter automatiquement les images de manière incorrecte au cours d'une importation, en réalisant une transformation physique sans réinitialiser l'étiquette d'orientation Exif à la valeur « haut-gauche ». Ces versions précédentes ignorent l'étiquette d'orientation quand les images sont affichées, il n'y avait donc apparement pas de problème (bien que le problème était visible si d'autres visionneurs d'images étaient utilisés pour afficher les mêmes images). Les versions 2.9.0 et plus récentes respectent cette étiquette, donc la rotation incorrecte est visible.</para>
+      <para>L'outil <guilabel>Réinitialiser l'orientation Exif</guilabel> est fourni pour résoudre ce problème. Sélectionnez simplement les images en question et utilisez l'outil <guilabel>Réinitialiser l'orientation Exif</guilabel>. L'étiquette d'orientation Exif est réinitialisée à « haut-gauche ».</para>
+    </sect2>
+    <sect2 id="gthumb-convert-format">
+      <title>Modification du format d'image</title>
+      <para>Pour changer de format d'image, sélectionnez les images que vous voulez convertir et choisissez <menuchoice><guimenu>Outils</guimenu><guimenuitem>Convertir le format</guimenuitem></menuchoice>.</para>
+      <para>La boîte de dialogue <guilabel>Conversion de format</guilabel> propose les options suivantes : <itemizedlist>
+        <listitem>
+          <para><guilabel>Type d'image</guilabel> : c'est le format vers lequel vous voulez convertir l'image.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Mode d'écrasement</guilabel> : une image convertie possède le même nom que l'image originale mis à part son extension qui est déterminée par le nouveau format. Donc, une image possédant le nouveau nom peut déjà exister dans le dossier de destination. Cette option vous permet de décider quoi faire quand cela se produit. Si vous choisissez <guilabel>Sauter</guilabel>, la nouvelle image n'est pas créée ; <guilabel>Renommer</guilabel>, un nouveau nom de fichier vous est demandé ; <guilabel>Demander</guilabel>, l'ancienne image est écrasée après confirmation de votre part et <guilabel>Écraser</guilabel>, l'ancienne image est écrasée sans vous demander confirmation.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Supprimer l'original</guilabel> : permet de supprimer l'image d'origine. Si une image n'est pas convertie à cause d'une erreur, elle n'est pas supprimée.</para>
+        </listitem>
+	</itemizedlist></para>
+      <para>Pour réaliser la conversion, cliquez sur <guibutton>Convertir</guibutton>.</para>
+    </sect2>
+    <sect2 id="gthumb-scale-series">
+      <title>Redimensionnement d'une série d'images</title>
+      <para>Pour redimensionner la taille de nombreuses images, sélectionnez les images que vous voulez redimensionner et choisissez <menuchoice><guimenu>Outils</guimenu><guimenuitem>Redimensionner les images</guimenuitem></menuchoice>.</para>
+      <para>La boîte de dialogue <guilabel>Redimensionner les images</guilabel> propose les options suivantes : <itemizedlist>
+        <listitem>
+          <para><guilabel>Largeur</guilabel> : la largeur maximale souhaitée pour les images redimensionnées.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Hauteur</guilabel> : la hauteur maximale souhaitée pour les images redimensionnées.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Conserver le ratio d'aspect</guilabel> : si cette case à cocher n'est pas activée, l'image peut être étirée d'un facteur différent suivant les directions horizontale et verticale afin d'obtenir à la fois la largeur et la hauteur indiquées. Vous pouvez obtenir une image distordue. Si cette case à cocher est activée, l'image est redimensionnée d'un même facteur dans les deux directions. Le facteur d'échelle est calculé de manière à ce que la largeur et la hauteur soient toutes les deux inférieures ou égales aux valeurs spécifiées dans les cases <guilabel>Largeur</guilabel> et <guilabel>Hauteur</guilabel> respectivement.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Type d'image</guilabel> : c'est le format dans lequel vous voulez enregistrer les images redimensionnées.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Mode d'écrasement</guilabel> : une image redimensionnée possède le même nom que l'image originale mis à part son extension qui est déterminée par le nouveau format. Donc, une image possédant le nouveau nom peut déjà exister dans le dossier de destination. Cette option vous permet de décider quoi faire quand cela se produit. Si vous choisissez <guilabel>Sauter</guilabel>, la nouvelle image n'est pas créée ; <guilabel>Renommer</guilabel>, un nouveau nom de fichier vous est demandé ; <guilabel>Demander</guilabel>, l'ancienne image est écrasée après confirmation de votre part et <guilabel>Écraser</guilabel>, l'ancienne image est écrasée sans vous demander confirmation.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Supprimer l'original</guilabel> : permet de supprimer l'image d'origine. Si une image n'est pas convertie à cause d'une erreur, elle n'est pas supprimée.</para>
+        </listitem>
+        </itemizedlist></para>
+      <para>Pour effectuer le redimensionnement, cliquez sur <guibutton>Redimensionner</guibutton>.</para>
+    </sect2>
+    <sect2 id="gthumb-rename-series">
+      <title>Changement de nom d'une série d'images</title>
+      <para>Pour renommer une série d'images en spécifiant un modèle de nom, choisissez <menuchoice><guimenu>Outils</guimenu><guimenuitem>Renommer les images</guimenuitem></menuchoice>.</para>
+      <para>Le modèle de nom est simplement un nom qui est utilisé pour toutes les images, de plus vous pouvez utiliser des caractères spéciaux afin que les noms de fichiers diffèrent entre eux.</para>
+        <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50.00*"/>
+          <colspec colname="COLSPEC1" colwidth="50.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Symbole</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Description</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><keycap>#</keycap></para></entry>
+              <entry align="left">
+                <para>Ce symbole est remplacé par la valeur d'un compteur qui s'incrémente de 1 en passant d'une image à une autre. Si vous placez ce symbole plusieurs fois à la suite, vous obtenez des zéros non significatifs si la valeur du compteur possède moins de chiffres ; par exemple, ### produit la suite : 001, 002, 003, etc.</para></entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><keycap>%f</keycap></para></entry>
+              <entry align="left">
+                <para>Ce symbole est remplacé par le nom original de l'image sans son extension.</para></entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><keycap>%e</keycap></para></entry>
+              <entry align="left">
+                <para>Ce symbole est remplacé par l'extension du nom de fichier original de l'image.</para></entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><keycap>%d</keycap></para></entry>
+              <entry align="left">
+                <para>Ce symbole est remplacé par la date de modification de l'image.</para></entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><keycap>%s</keycap></para></entry>
+              <entry align="left">
+                <para>Ce symbole est remplacé par les dimensions de l'image.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>La liste en bas de la boîte de dialogue montre comment les noms de fichiers sont renommés.</para>
+      <para>Pour renommer les images, cliquez sur <guibutton>Renommer</guibutton>.</para>
+      <para>Si le fait de renommer une image peut écraser une image déjà existante, cinq manières de procéder vous sont proposées : écraser l'image, ne pas écraser l'image, toujours écraser, ne jamais écraser ou donner un nouveau nom.</para>
+    </sect2>
+    <sect2 id="gthumb-change-date">
+      <title>Modification de la date des images</title>
+      <para>Si vous voulez changer la date de dernière modification d'une série d'images, sélectionnez les images et choisissez <menuchoice><guimenu> Outils</guimenu><guimenuitem>Modifier la date</guimenuitem></menuchoice></para>
+      <para>Choisissez la nouvelle date.</para>
+      <para>Cliquez sur <guibutton>Valider</guibutton>. <application>gThumb</application> modifie la date.</para>
+    </sect2>
+    <sect2 id="gthumb-index-image">
+      <title>Création d'une image d'index</title>
+      <para>Une image d'index est une image qui contient des petites vignettes d'une série d'images. Si vous voulez créer une image d'index, sélectionnez les images que vous voulez insérer et choisissez <menuchoice><guimenu>Outils</guimenu><guimenuitem>Créer une image d'index</guimenuitem></menuchoice>.</para>
+    </sect2>
+    <sect2 id="gthumb-web-album">
+      <title>Création d'un album Web</title>
+       <para>Pour créer un album Web, affichez un dossier ou un catalogue et sélectionnez les images que vous voulez inclure dans votre album (les méthodes usuelles pour sélectionner fonctionnent : vous pouvez cliquer pour sélectionner une image, Maj+clic ou Maj+flèche pour étendre la sélection de manière continue, Ctrl+clic pour ajouter des images une par une, Ctrl+A pour tout sélectionner). Ensuite, utilisez la fonction <menuchoice><guimenu>Outils</guimenu><guimenuitem>Créer un album Web</guimenuitem></menuchoice>.</para>
+       <para>L'album Web est généré dans le dossier <guilabel>Destination</guilabel>. La page de départ de l'album est donnée par le champ <guilabel>Fichier d'index</guilabel>, « index.html » est généralement utilisé.</para>
+       <para>Tous les albums Web consistent en une ou plusieurs « pages d'index » (qui affichent une série de petites vignettes) et d'une ou plusieurs « pages image » (qui affichent une seule image à la fois). Si la case <guilabel>Copier les images originales vers la destination</guilabel> est cochée, la photo affichée sur les pages image est liée à une copie de la photo originale. Si vous cliquez sur ce lien, l'image brute est chargée dans votre navigateur (sans HTML).</para>
+       <para>Si vous le voulez, les images peuvent être réduites quand elles excèdent une certaine taille définie dans la boîte <guilabel>Redimensionner si l'image est plus grande que</guilabel>.</para>
+       <para>Vous contrôlez le nombre de vignettes affichées sur chaque page d'index de l'album Web à l'aide des boîtes « colonnes » et « lignes » sous <guilabel>Taille</guilabel>. Autrement, il est possible d'imposer que toutes les images soient sur une page d'index unique en cochant la case <guilabel>utiliser une page d'index unique</guilabel>.</para>
+       <para>La plupart des thèmes respectent les réglages ligne et colonne que vous avez indiqués, parce qu'ils sont basés sur des tableaux HTML. Cependant, certains thèmes (comme le thème BestFit, par exemple) utilisent des feuilles de style en cascade qui espacent automatiquement les images pour gérer de la meilleure façon la place disponible (si vous redimensionnez la fenêtre du navigateur, les images se repositionnent d'elles-même !). Ces thèmes ne respectent pas les paramétrages ligne et colonne, mais ils gardent le nombre total d'images par page d'index à un maximum de LIGNE x COLONNE (à moins que la case <guilabel>Utiliser une page d'index unique</guilabel> ne soit cochée).</para>
+       <para>Un <guilabel>En-tête</guilabel> et un <guilabel>Pied de page</guilabel> peuvent être définis. Ces libellés apparaissent en haut et en bas de chaque page de l'album. Des balises HTML peuvent être utilisées dans les en-têtes et les pieds de page tant que chaque caractère « &gt; », « &lt; » et « &amp; » est précédé par une barre oblique inverse. Par exemple, « &lt;hr/&gt; » doit être écrit « \&lt;hr/\&gt; ». De la même façon, la séquence « %d » est remplacée par la date courante. Pour faire apparaître de manière littérale une barre oblique inverse (« \ ») ou un symbole pourcentage (« % ») à la sortie, ils doivent être tapés de la manière suivante « \\ » ou « %% » dans les champs en-tête et pied de page.</para>
+       <para>Un <guilabel>Thème</guilabel> doit être indiqué. Le <guilabel>Thème</guilabel> contrôle l'apparence globale de votre album Web. Pour choisir un <guilabel>Thème</guilabel>, cliquez sur le bouton <guibutton>...</guibutton> et sélectionnez-en un dans la liste. La boîte de dialogue <guilabel>Légende des vignettes</guilabel> et <guilabel>Légende des images</guilabel> permet de choisir quelle information textuelle (date de la photo, dimensions de l'image, modèle d'appareil photo, …) est affichée à côté de chaque image dans l'index et sur les pages image, respectivement.</para>
+    </sect2>
+    <sect2 id="gthumb-import-photos">
+      <title>Importation de photos à partir d'un appareil photo numérique</title>
+       <para>Pour importer des photos d'un appareil photo numérique, choisissez <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Importer des photos</guimenuitem></menuchoice>.</para>
+       <para>Plusieurs options sont présentées dans la boîte de dialogue <guilabel>Importer des photos</guilabel>.</para>
+       <para>Le dossier de destination peut être choisi grâce au champ <guilabel>Destination</guilabel>. Les photos seront importées dans un sous-dossier du dossier <guilabel>Destination</guilabel>. Le nom du sous-dossier est défini par le champ <guilabel>Film</guilabel>. Si aucun dossier « Film » n'est fourni, un nom de sous-dossier sera automatiquement généré avec les données et la date d'importation.</para>
+       <para>La zone <guilabel>Catégories</guilabel> permet d'indiquer des <guilabel>catégories</guilabel> pour les photos importées.</para>
+       <para>Si la case <guilabel>Supprimer les images importées de l'appareil</guilabel> est cochée, les photos seront supprimées de l'appareil photo après avoir été importées.</para>
+       <para><application>gThumb</application> renomme les images (re-numérotation) quand elles sont importées à moins que la case <guilabel>Conserver les noms de fichiers originaux</guilabel> ne soit cochée.</para>
+       <para>Si la case <guilabel>Pivoter physiquement l'image</guilabel> est cochée et que la photo importée contient une étiquette d'orientation Exif, les données de l'image seront physiquement transformées (sans perte) afin que l'image conserve son apparence, mais l'étiquette d'orientation est réinitialisée à « haut-gauche ». Si cette case n'est pas cochée, les données de l'image et l'étiquette d'orientation ne sont pas touchées. Dans les deux cas, l'image s'affiche de la même manière dans gThumb, mais pour une compatibilité maximale avec d'autres applications, cette case devrait être cochée.</para>
+       <sect3 id="gthumb-select-camera">
+	<title>Choix du modèle d'appareil photo</title>
+         <para><application>gThumb</application> devrait détecter automatiquement votre appareil photo (s'il est allumé) quand vous lancez la boîte de dialogue <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Importer des photos</guimenuitem></menuchoice>. S'il y parvient, une icône d'appareil photo apparaît dans la boîte de dialogue. Sinon, un appareil photo barré d'un trait rouge est affiché.</para>
+         <para>Si un mauvais appareil photo est détecté, cliquez sur l'icône de l'appareil pour en sélectionner un autre. Une liste déroulante affiche la liste de tous les appareils photos détectés automatiquement. Si la case <guilabel>Choisir parmi le catalogue</guilabel> est cochée, l'utilisateur peut définir manuellement le port et le modèle d'appareil photo.</para>
+       </sect3>
+    </sect2>
+    <sect2 id="gthumb-write-to-cd">
+      <title>Enregistrement d'images sur un CD ou un DVD</title>
+       <para>Pour graver une série d'images sur un CD ou un DVD, effectuez les opérations suivantes : <orderedlist>
+        <listitem>
+          <para>Sélectionnez les images que vous voulez graver et choisissez <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Graver sur un CD</guimenuitem></menuchoice>. <application>gThumb</application> affiche la boîte de dialogue <guilabel>Graver sur un CD</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Cliquez sur <guilabel>Dossier courant</guilabel> si vous voulez graver toutes les images du dossier actuel et ses sous-dossiers. Cliquez sur <guilabel>Images sélectionnées</guilabel> pour graver uniquement la sélection actuelle.</para>
+        </listitem>
+        <listitem>
+          <para>Cliquez sur <guibutton>Valider</guibutton>. Après avoir préparé les images pour une gravure de CD/DVD, <application>gThumb</application> affiche l'emplacement <filename>Créateur de CD/DVD</filename> de <guilabel>Nautilus</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Cliquez sur le bouton <guilabel>Graver sur un disque</guilabel> de la barre d'outils ou choisissez <menuchoice><guimenu>Fichier</guimenu><guimenuitem>Graver un disque</guimenuitem></menuchoice>. Les images sont gravées sur un CD ou un DVD.</para>
+        </listitem>
+       </orderedlist></para>
+    </sect2>
+  </sect1>
+
+ <!-- ============= Preferences ================================== -->
+ <sect1 id="preferences">
+  <title>Préférences</title>
+  <para>Pour configurer <application>gThumb</application>, ouvrez la boîte de dialogue <guilabel>Préférences</guilabel> en choisissant <menuchoice><guimenu>Édition</guimenu><guisubmenu>Préférences</guisubmenu></menuchoice>.</para>
+  <para>Cette boîte de dialogue contient quatre onglets décrits ci-dessous en détails. Au fond de la boîte de dialogue, vous disposez des boutons suivants :</para>
+  <itemizedlist>
+    <listitem>
+      <para><guibutton>Aide</guibutton> : affiche ce manuel.</para>
+    </listitem>
+    <listitem>
+      <para><guibutton>Fermer</guibutton> : ferme la boîte de dialogue.</para>
+    </listitem>
+  </itemizedlist>
+  <para>Souvenez-vous que quand vous modifiez une option, elle est automatiquement appliquée. C'est pourquoi il n'y a pas de bouton <guibutton>Valider</guibutton> ou <guibutton>Appliquer</guibutton>.</para>
+
+<!-- ########### General Tab ################## -->
+    <sect2 id="preferences-general">
+      <title>Onglet Général</title>
+      <para>Cet onglet permet de définir les options suivantes :</para>
+      <itemizedlist>
+	<listitem>
+	<para>Choisir l'agencement de la fenêtre principale de <application>gThumb</application>, c'est-à-dire les positions de la fenêtre contenant la liste des dossiers, de la fenêtre contenant la liste des images (vignettes) et de la fenêtre de visualisation de l'aperçu des images.</para>
+	</listitem>
+	<listitem>
+	  <para>Le style de la barre d'outils</para>
+	</listitem>
+	<listitem>
+	  <para>Le dossier à afficher au démarrage</para>
+	</listitem>
+	<listitem>
+	  <para>S'il faut demander confirmation quand une image ou un catalogue va être supprimé.</para>
+	</listitem>
+	<listitem>
+	  <para>S'il faut demander avant d'enregistrer une image modifiée.</para>
+	</listitem>
+      </itemizedlist>
+    </sect2>
+
+<!-- ########### Browser Tab ################## -->
+    <sect2 id="preferences-browser">
+      <title>Onglet Navigateur</title>
+      <para>Sur cet onglet, vous pouvez configurer les options suivantes :</para>
+      <variablelist>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Afficher les noms des fichiers</guilabel></term>
+	  <listitem>
+	    <para>Cette option permet de choisir si <application>gThumb</application> affiche les noms des fichiers des images.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Afficher les commentaires</guilabel></term>
+	  <listitem>
+	    <para>Cette option permet de choisir si <application>gThumb</application> affiche les commentaires (dont la date et le lieu) dans la liste des images. Par défaut, <application>gThumb</application> affiche le commentaire comme une légende sous la vignette.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Afficher les vignettes</guilabel></term>
+	  <listitem>
+	    <para>Cette option, que vous pouvez activer en tapant simplement <keycombo><keycap>T</keycap></keycombo>, permet de choisir si <application>gThumb</application> affiche les vignettes.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Autre</guilabel></term>
+	  <listitem>
+	    <para>Ici, vous pouvez choisir si un seul clic ou un double-clic sur le nom du dossier permet de changer de dossier. Le simple clic est utile si vous avez l'habitude de parcourir rapidement votre disque dur pour chercher des images. Le comportement par défaut est de suivre la règle du gestionnaire de fichiers Nautilus. De plus, vous pouvez choisir si <application>gThumb</application> détermine le type de l'image d'après l'extension ou le contenu du fichier. La deuxième option est plus fiable (certaines applications créent des fichiers avec une extension qui ne correspond pas au type réel du fichier) mais c'est aussi plus lent de déterminer le type de fichier à partir du contenu. Si votre système est rapide, sélectionnez <guilabel>Déterminer le type d'image d'après le contenu</guilabel>.</para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+
+    </sect2>
+<!-- ########### Viewer Tab ################## -->
+    <sect2 id="preferences-viewer">
+      <title>Onglet Visionneur</title>
+      <para>Cet onglet contient les options du visionneur.</para>
+      <variablelist>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Après le chargement d'une image</guilabel></term>
+	  <listitem>
+	    <para>Contrôle le niveau de zoom initial à utiliser pour une image.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Type de transparence</guilabel></term>
+	  <listitem>
+	    <para>Contrôle l'arrière-plan utilisé pour les images en partie transparente. Par défaut, la partie transparente de l'image est remplacée par la couleur de l'arrière-plan de la fenêtre, c'est-à-dire l'option <guilabel>Aucun</guilabel>.</para>
+	  </listitem>
+	</varlistentry>
+        <!-- ########### -->
+        <varlistentry>
+          <term><guilabel>Qualité du zoom</guilabel></term>
+          <listitem>
+            <para>Cela permet de contrôler la méthode utilisée pour afficher une image redimensionnée. Les choix possibles sont haute qualité (lent sur les anciennes machines ou en affichant des grandes images) et basse qualité (toujours rapide).</para>
+          </listitem>
+        </varlistentry>
+        <!-- ########### -->
+	<varlistentry>
+	  <term><guilabel>Positions de la barre de défilement après avoir utilisé Suivante/Précédente</guilabel></term>
+	  <listitem>
+	    <para>En fonction du niveau de zoom choisi, vos images peuvent être plus grandes que la fenêtre d'affichage. Si cela arrive, des barres de défilement verticale et/ou horizontale apparaissent pour vous permettre d'afficher différentes zones de l'image.</para>
+	    <para>Quand vous passez d'une image à une autre en utilisant les boutons Suivante/Précédente, les positions des barres de défilement peuvent être conservées ou réinitialisées à leur position par défaut.</para>
+	    <para>Si vous affichez les pages d'un texte scanné, par exemple, il est probablement souhaitable de choisir <guilabel>Réinitialiser en haut à gauche les images</guilabel> afin que le haut de la page soit affiché lorsque vous allez à la page suivante.</para>
+	    <para>Si vous essayez de comparer de petites parties de plusieurs grandes images (peut-être pour comparer des images similaires, prises à des instants différents, tel que des photos prises en mode « rafale » sur un appareil photo numérique ou des images satellite d'une même zone à des dates différentes), alors le mode <guilabel>Conserver la même position</guilabel> est le plus adapté.</para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+
+    </sect2>
+<!-- ########### Slide Show Tab ################## -->
+    <sect2 id="preferences-slideshow">
+      <title>Onglet Diaporama</title>
+      <para>Cet onglet contient les options pour contrôler le style du diaporama (que vous pouvez démarrer en choisissant <menuchoice><guimenu>Affichage</guimenu><guisubmenu>Diaporama</guisubmenu></menuchoice> ou en utilisant le raccourci clavier <keycombo><keycap>S</keycap></keycombo>). Les options sont la direction (en avant/en arrière/aléatoire) et le délai entre les images. Vous pouvez également choisir si le diaporama redémarre à la fin ou pas (c.-à-d. si après avoir affiché la dernière image, il redémarre au début) et s'il bascule automatiquement en mode plein écran.</para>
+     </sect2>
+
+<!-- ########### Hot Keys Tab ################## -->
+    <sect2 id="preferences-hotkeys">
+      <title>Onglet Raccourcis</title>
+      <para>Cet onglet contient les définitions des scripts shell associés aux raccourcis clavier 0-9 du pavé numérique.</para>
+      <para>Quand vous appuyez sur une de ces touches, un script shell externe est lancé. Certains codes peuvent être utilisés dans le script. En fait, lorsque le script est lancé, ces codes sont remplacés par <application>gThumb</application> de la manière suivante :</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="20.00*"/>
+          <colspec colname="COLSPEC1" colwidth="80.00*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Code</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Explication</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>%F</para></entry>
+	      <entry align="left"><para>tous les noms des fichiers sélectionnés, sur une ligne, séparés par un espace</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>%f</para></entry>
+              <entry align="left"><para>un seul nom de fichier, avec son chemin</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>%n</para></entry>
+              <entry align="left"><para>un seul nom de fichier, avec son chemin, sans extension</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>%e</para></entry>
+              <entry align="left"><para>une seule extension (commence par un point)</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>%p</para></entry>
+              <entry align="left"><para>le dossier parent d'un fichier unique</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+      <para>Les scripts avec le code %F sont exécutés seulement une fois, indépendamment du nombre de fichiers sélectionnés. Tous les autres scripts sont exécutés pour chaque fichier sélectionné.</para>
+      <para>Plusieurs scripts par défaut sont fournis. Vous pouvez les remplacer si vous le désirez. Les scripts par défaut sont décrits ci-dessous :</para>
+      <itemizedlist>
+	  <listitem>
+	    <para>
+		<command>gimp-remote %F</command>
+            </para>
+	    <para>Ce script indique à Gimp (GNU Image Manipulation Program) d'ouvrir tous les fichiers sélectionnés. Il est plus efficace d'inclure tous les noms de fichiers sur une ligne, plutôt que d'appeler <command>gimp-remote</command> pour chaque fichier, donc nous avons utilisé le code %F.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>convert %f -font Helvetica -pointsize 20 -fill white -box '#00000080' -gravity South -annotate +0+5 ' Copyright 2007, Votre nom ici ' %n-copyright%e</command>
+            </para>
+            <para>Ce script fait une copie du fichier de l'image et y ajoute une mention de copyright. La commande « convert » fait partie du paquet ImageMagick. Si le fichier d'origine s'appelle exemple.jpg, alors le nouveau fichier s'appelle exemple-copyright.jpg.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>mkdir -p %p/approved ; cp %f %p/approved/</command>
+            </para>
+            <para>Ce script crée un nouveau sous-dossier appelé « approved », s'il n'existe pas déjà, puis copie les fichiers sélectionnés dans ce sous-dossier.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>uuencode %f %f | mail -s Photos votre@courriel.com</command>
+            </para>
+            <para>Ce script code les fichiers images dans un format approprié pour les pièces jointes, puis envoie par courriel chaque photo à l'adresse indiquée. Un courriel par photo est envoyé.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>rm ~/monarchive.zip; zip -j ~/monarchive %F</command>
+            </para>
+            <para>Ce script écrase un fichier ZIP existant, s'il existe, par un nouveau fichier ZIP contenant les images sélectionnées.</para>
+          </listitem>
+          <listitem>
+            <para>
+                <command>rm ~/monarchive.zip; zip -j ~/monarchive %F; uuencode ~/monarchive.zip ~/monarchive.zip | mail -s Photos votre@courriel.com</command>
+            </para>
+            <para>Celui-ci associe les deux scripts précédents, en regroupant les images sélectionnées dans un unique fichier ZIP qui est ensuite envoyé par courriel.</para>
+          </listitem>
+      </itemizedlist>
+     </sect2>
+
+  </sect1>
+
+  <!-- ============= Keyboard Shortcuts ================================== -->
+  <sect1 id="shortcuts">
+  <title>Référence rapide : raccourcis clavier</title>
+  <para><xref linkend="gthumb-TBL-keyword-shortcuts-browser"/>, <xref linkend="gthumb-TBL-keyword-shortcuts-viewer"/>, <xref linkend="gthumb-TBL-keyword-shortcuts-other"/> et <xref linkend="gthumb-TBL-keyword-shortcuts-fullscreen"/> fournissent une référence rapide pour les raccourcis clavier de <application>gThumb</application>. Regardez dans les menus pour découvrir les autres raccourcis.</para>
+  <para>
+      <table id="gthumb-TBL-keyword-shortcuts-browser" frame="topbot">
+      <title>Raccourcis clavier pour changer de dossier</title>
+      <tgroup cols="3" colsep="1" rowsep="1">
+      	<colspec colname="COLSPEC0" colwidth="50*"/>
+	<colspec colname="COLSPEC1" colwidth="50*"/>
+	<colspec colname="COLSPEC2" colwidth="50*"/>
+	<thead>
+	  <row valign="top" rowsep="1">
+	    <entry colname="COLSPEC0">
+	    	<para>Raccourci clavier</para></entry>
+	    <entry colname="COLSPEC1">
+                <para>Description</para></entry>
+            <entry colname="COLSPEC2">
+                <para>Disponible en mode plein écran</para></entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row valign="top">
+            <entry>
+	      <para><keycombo><keycap>n</keycap></keycombo> ou <keycombo action="simul"><keycap>Espace</keycap></keycombo> ou <keycombo action="simul"><keycap>Page Suivante</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Affiche l'image suivante.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo action="simul"><keycap>b</keycap></keycombo> ou <keycombo><keycap>Retour Arrière</keycap></keycombo> ou <keycombo action="simul"><keycap>Page précédente</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Affiche l'image précédente.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Origine</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Affiche la première image.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Fin</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Affiche la dernière image.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo action="simul"><keycap>Alt</keycap><keycap>Origine </keycap></keycombo> ou <keycombo action="simul"><keycap>h</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Va dans votre dossier personnel.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Alt</keycap><keycap>Gauche</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Va au dossier visité précédent.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para><keycombo action="simul"><keycap>Alt</keycap><keycap>Haut </keycap></keycombo> ou <keycombo action="simul"><keycap>u</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Remonte d'un niveau.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>Échap</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Interrompt la création des vignettes.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Ctrl</keycap><keycap>D</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ajoute l'emplacement actuel aux signets.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Entrée</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Affiche/Masque le navigateur.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>q</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Modifie le contenu du volet de propriétés des images ou affiche le volet s'il n'est pas visible.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Ctrl</keycap><keycap>1</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Définit l'aperçu de l'image comme contenu du volet de propriétés des images ou masque le volet si ce type de contenu est déjà visible.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Ctrl</keycap><keycap>2</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Définit les données Exif de l'image comme contenu du volet de propriétés des images ou masque le volet si ce type de contenu est déjà visible.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Ctrl</keycap><keycap>3</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Définit le commentaire de l'image comme contenu du volet de propriétés des images ou masque le volet si ce type de contenu est déjà visible.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>t</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Affiche/masque les vignettes.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>F2</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Renomme l'image actuelle.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>o</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ouvre les images sélectionnées avec une application.</para>
+	    </entry>
+            <entry>
+	      <para>non</para>
+	    </entry>
+	  </row>
+          <row rowsep="0">
+            <entry>
+              <para>
+                <keycombo><keycap>g</keycap></keycombo>
+              </para>
+            </entry>
+            <entry>
+              <para>Ouvre les images sélectionnées avec GIMP, s'il est installé.</para>
+            </entry>
+            <entry>
+              <para>non</para>
+            </entry>
+          </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>Suppr</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Supprime les images sélectionnées.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	</tbody>
+      </tgroup>
+      </table>
+  </para>
+
+  <para>
+  </para>
+
+    <table id="gthumb-TBL-keyword-shortcuts-viewer" frame="topbot">
+    <title>Raccourcis clavier pour afficher les images</title>
+    <tgroup cols="3" colsep="1" rowsep="1">
+      	<colspec colname="COLSPEC0" colwidth="50*"/>
+	<colspec colname="COLSPEC1" colwidth="50*"/>
+	<colspec colname="COLSPEC2" colwidth="50*"/>
+	<thead>
+	  <row valign="top">
+	    <entry colname="COLSPEC0">
+              <para>Raccourci clavier</para></entry>
+	    <entry colname="COLSPEC1">
+              <para>Description</para></entry>
+	    <entry colname="COLSPEC2">
+              <para>Disponible en mode plein écran</para></entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row valign="top">
+            <entry>
+	      <para><keycombo><keycap>v</keycap></keycombo> ou <keycombo><keycap>f</keycap></keycombo> ou <keycombo><keycap>F11</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Active/désactive le mode plein écran.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo><keycap>+</keycap></keycombo> ou <keycombo><keycap>=</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Zoom avant.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>-</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Zoom arrière.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo><keycap>1</keycap></keycombo> ou <keycombo><keycap>z</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Taille réelle.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>x</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ajusté à la fenêtre.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>l</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Retourne l'image.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>m</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Image en miroir.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>r</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Tourne l'image de 90 degrés dans le sens horaire sans enregistrer.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>e</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Tourne l'image de 90 degrés dans le sens anti-horaire sans enregistrer.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>]</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Tourne l'image de 90 degrés dans le sens horaire et l'enregistre. La rotation se fait sans perte de qualité pour les images Jpeg.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>[</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Tourne l'image de 90 degrés dans le sens anti-horaire et l'enregistre. La rotation se fait sans perte de qualité pour les images Jpeg.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>a</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Démarre/arrête l'animation.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>j</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Affiche la prochaine image d'une animation arrêtée.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+	        <keycombo><keycap>Flèches</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Fait défiler l'image.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row>
+            <entry>
+	      <para>
+	        <keycombo action="simul"><keycap>Maj</keycap><keycap>Flèches</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Fait défiler l'image plus rapidement.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	</tbody>
+     </tgroup>
+   </table>
+
+  <para>
+  </para>
+
+  <table id="gthumb-TBL-keyword-shortcuts-other" frame="topbot">
+    <title>Autres raccourcis clavier.</title>
+    <tgroup cols="3" colsep="0" rowsep="0">
+      	<colspec colname="COLSPEC0" colwidth="50*"/>
+	<colspec colname="COLSPEC1" colwidth="50*"/>
+	<colspec colname="COLSPEC2" colwidth="50*"/>
+	<thead>
+	  <row valign="top" rowsep="1">
+	    <entry colname="COLSPEC0">
+                <para>Raccourci clavier</para></entry>
+	    <entry colname="COLSPEC1">
+                <para>Description</para></entry>
+            <entry colname="COLSPEC2">
+                <para>Disponible en mode plein écran</para></entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row valign="top">
+            <entry>
+	      <para>
+		<keycombo><keycap>s</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Démarre/arrête le diaporama.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>c</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Ajoute un commentaire aux images sélectionnées.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>k</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Attribue des catégories aux images sélectionnées.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>i</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Affiche/masque le commentaire et les propriétés de l'image.</para>
+	    </entry>
+            <entry>
+	      <para>oui</para>
+	    </entry>
+	  </row>
+	</tbody>
+     </tgroup>
+  </table>
+  <para>
+  </para>
+  <table id="gthumb-TBL-keyword-shortcuts-fullscreen" frame="topbot">
+    <title>Raccourcis clavier disponibles uniquement en mode plein écran</title>
+    <tgroup cols="2" colsep="0" rowsep="0">
+      	<colspec colwidth="20.00*"/>
+	<colspec colwidth="20.00*"/>
+	<thead>
+	  <row rowsep="1">
+	    <entry><para>Raccourci clavier</para></entry>
+	    <entry><para>Description</para></entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row rowsep="0">
+            <entry>
+	      <para>
+		<keycombo><keycap>p</keycap></keycombo>
+	      </para>
+	    </entry>
+            <entry>
+	      <para>Interrompt/reprend un diaporama.</para>
+	    </entry>
+	  </row>
+	  <row rowsep="0">
+            <entry>
+	      <para><keycombo><keycap>Échap</keycap></keycombo> ou <keycombo><keycap>f</keycap></keycombo> ou <keycombo><keycap>v</keycap></keycombo> ou <keycombo><keycap>F11</keycap></keycombo> ou <keycombo><keycap>q</keycap></keycombo></para>
+	    </entry>
+            <entry>
+	      <para>Quitte le mode plein écran.</para>
+	    </entry>
+	  </row>
+	</tbody>
+     </tgroup>
+  </table>
+  </sect1>
+
+</article>

@@ -1,0 +1,10 @@
+01-PIC.patch
+02-preserve_gnome-doc-utils.make.patch
+03-libgthumb_moduledir.patch
+04-fix_gthumb.desktop.in.patch
+05-fix_locales.patch
+06-add_keybinding_DoNotSave.patch
+07-fix_zooms.patch
+08-fix_missing_include.patch
+09-fix_infinite_loop_dragging_parent_dir.patch
+10-dont_follow_symlinks_on_dups_search.patch

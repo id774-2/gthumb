@@ -1,0 +1,11 @@
+--- gthumb-2.10.7.orig/Makefile.am
++++ gthumb-2.10.7/Makefile.am
+@@ -30,7 +30,6 @@
+ 	po/.intltool-merge-cache	\
+ 	intltool-extract        	\
+ 	intltool-merge          	\
+-	intltool-update			\
+-	gnome-doc-utils.make
++	intltool-update
+ 
+ DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper

@@ -1,0 +1,2 @@
+# This is on gthumb-data, which we are depending on
+gthumb: menu-icon-missing /usr/share/pixmaps/gthumb.xpm

@@ -1,0 +1,589 @@
+--- gthumb.orig/po/ar.po
++++ gthumb/po/ar.po
+@@ -3887,7 +3887,7 @@
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:1007
+ #, fuzzy
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "_لا تحفظ"
+ 
+ #: ../src/gth-browser.c:3552
+--- gthumb.orig/po/bg.po
++++ gthumb/po/bg.po
+@@ -3323,7 +3323,7 @@
+ msgstr "Текущото изображение беше променено, искате ли да го запазите?"
+ 
+ #: ../src/gth-browser.c:1874 ../src/gth-viewer.c:889
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Да не се запазва"
+ 
+ #: ../src/gth-browser.c:3473
+--- gthumb.orig/po/ca.po
++++ gthumb/po/ca.po
+@@ -3441,7 +3441,7 @@
+ msgstr "La imatge actual s'ha modificat, voleu desar-la?"
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:1007
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "No la desis"
+ 
+ #: ../src/gth-browser.c:3552
+--- gthumb.orig/po/cs.po
++++ gthumb/po/cs.po
+@@ -3417,7 +3417,7 @@
+ msgstr "Aktuální obrázek byl změněn, chcete jej uložit?"
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:1007
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Neukládat"
+ 
+ #: ../src/gth-browser.c:3552
+--- gthumb.orig/po/da.po
++++ gthumb/po/da.po
+@@ -3439,7 +3439,7 @@
+ 
+ #: ../src/gth-browser.c:1844
+ #: ../src/gth-viewer.c:1007
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Gem ikke"
+ 
+ #: ../src/gth-browser.c:3552
+--- gthumb.orig/po/de.po
++++ gthumb/po/de.po
+@@ -2803,7 +2803,7 @@
+ msgstr "Das momentan geöffnete Bild wurde verändert, wollen Sie es speichern?"
+ 
+ #: ../src/gthumb-window.c:1623
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Nicht speichern"
+ 
+ #: ../src/gthumb-window.c:3232
+--- gthumb.orig/po/dz.po
++++ gthumb/po/dz.po
+@@ -3449,7 +3449,7 @@
+ 
+ #: ../src/gth-browser.c:1844
+ #: ../src/gth-viewer.c:1007
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "སྲུངས་མ་འབད།"
+ 
+ #: ../src/gth-browser.c:3552
+--- gthumb.orig/po/el.po
++++ gthumb/po/el.po
+@@ -3405,7 +3405,7 @@
+ msgstr "Η τρέχουσα εικόνα έχει τροποποιηθεί, θέλετε να την αποθηκεύσετε;"
+ 
+ #: ../src/gth-browser.c:1835 ../src/gth-viewer.c:989
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Όχι αποθήκευση"
+ 
+ #: ../src/gth-browser.c:3363
+--- gthumb.orig/po/en_CA.po
++++ gthumb/po/en_CA.po
+@@ -3348,8 +3348,8 @@
+ msgstr "The current image has been modified, do you want to save it?"
+ 
+ #: ../src/gth-browser.c:1906 ../src/gth-viewer.c:975
+-msgid "Do Not Save"
+-msgstr "Do Not Save"
++msgid "Do _Not Save"
++msgstr "Do _Not Save"
+ 
+ #: ../src/gth-browser.c:3441
+ msgid "Dragged Images"
+--- gthumb.orig/po/en_GB.po
++++ gthumb/po/en_GB.po
+@@ -3440,8 +3440,8 @@
+ 
+ #: ../src/gth-browser.c:1844
+ #: ../src/gth-viewer.c:1007
+-msgid "Do Not Save"
+-msgstr "Do Not Save"
++msgid "Do _Not Save"
++msgstr "Do _Not Save"
+ 
+ #: ../src/gth-browser.c:3552
+ msgid "Dragged Images"
+--- gthumb.orig/po/es.po
++++ gthumb/po/es.po
+@@ -3436,7 +3436,7 @@
+ msgstr "La imagen actual ha sido modificada, ¿quiere guardarla?"
+ 
+ #: ../src/gth-browser.c:1868 ../src/gth-viewer.c:1006
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "No guardar"
+ 
+ #: ../src/gth-browser.c:3582
+--- gthumb.orig/po/et.po
++++ gthumb/po/et.po
+@@ -3302,7 +3302,7 @@
+ msgstr "Aktiivset pilti on muudetud, kas soovid muudatusi salvestada?"
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:791
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Ära salvesta"
+ 
+ #: ../src/gth-browser.c:3422
+--- gthumb.orig/po/eu.po
++++ gthumb/po/eu.po
+@@ -3424,7 +3424,7 @@
+ msgstr "Uneko irudia aldatua izan da, gorde nahi duzu?"
+ 
+ #: ../src/gth-browser.c:1826 ../src/gth-viewer.c:996
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Ez gorde"
+ 
+ #: ../src/gth-browser.c:3535
+--- gthumb.orig/po/fa.po
++++ gthumb/po/fa.po
+@@ -3288,7 +3288,7 @@
+ msgstr "تصویر فعلی تغییر کرده است، آیا می‌خواهید آن را ذخیره کنید؟"
+ 
+ #: ../src/gth-browser.c:1777 ../src/gth-viewer.c:791
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "ذخیره نشود"
+ 
+ #: ../src/gth-browser.c:3390
+--- gthumb.orig/po/fi.po
++++ gthumb/po/fi.po
+@@ -3446,7 +3446,7 @@
+ msgstr "Valittua kuvaa on muokattu. Tallennetaanko muutokset?"
+ 
+ #: ../src/gth-browser.c:1868 ../src/gth-viewer.c:996
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Älä tallenna"
+ 
+ #: ../src/gth-browser.c:3581
+--- gthumb.orig/po/fr.po
++++ gthumb/po/fr.po
+@@ -3460,7 +3460,7 @@
+ msgstr "L'image actuelle a été modifiée, voulez-vous l'enregistrer ?"
+ 
+ #: ../src/gth-browser.c:1892 ../src/gth-viewer.c:996
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Ne pas enregistrer"
+ 
+ #: ../src/gth-browser.c:3607
+--- gthumb.orig/po/gl.po
++++ gthumb/po/gl.po
+@@ -3309,7 +3309,7 @@
+ msgstr "A imaxe actual foi modificada, quere gardala?"
+ 
+ #: ../src/gth-browser.c:1837 ../src/gth-viewer.c:987
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Non gardar"
+ 
+ #: ../src/gth-browser.c:3432
+--- gthumb.orig/po/gu.po
++++ gthumb/po/gu.po
+@@ -2746,7 +2746,7 @@
+ msgstr "વર્તમાન ઈમેજ સુધારાઈ ગયેલ છે, શું તમે એને સંગ્રહવા માંગો છો?"
+ 
+ #: src/gthumb-window.c:1476
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "સંગ્રહો નહિં"
+ 
+ #: src/gthumb-window.c:3074
+--- gthumb.orig/po/hi.po
++++ gthumb/po/hi.po
+@@ -2727,7 +2727,7 @@
+ msgstr ""
+ 
+ #: src/gthumb-window.c:1623
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr ""
+ 
+ #: src/gthumb-window.c:3232
+--- gthumb.orig/po/hr.po
++++ gthumb/po/hr.po
+@@ -3687,7 +3687,7 @@
+ msgstr "Trenutna slika je promijenjena, želite li ju spremiti?"
+ 
+ #: src/gthumb-window.c:1679
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Nemoj sačuvati"
+ 
+ #: src/gthumb-window.c:3247
+--- gthumb.orig/po/hu.po
++++ gthumb/po/hu.po
+@@ -3383,7 +3383,7 @@
+ msgstr "A jelenlegi kép megváltozott. Szeretné menteni?"
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:1007
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Ne mentse"
+ 
+ #: ../src/gth-browser.c:3552
+--- gthumb.orig/po/id.po
++++ gthumb/po/id.po
+@@ -2775,7 +2775,7 @@
+ msgstr "gambar sekarang telah diubah, anda ingin menyimpannya?"
+ 
+ #: src/gthumb-window.c:1476
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Jangan Simpan"
+ 
+ #: src/gthumb-window.c:3073
+--- gthumb.orig/po/it.po
++++ gthumb/po/it.po
+@@ -2784,8 +2784,8 @@
+ msgstr "L'immagine corrente è stata modificata, si vuole salvarla?"
+ 
+ #: src/gthumb-window.c:1476
+-msgid "Do Not Save"
+-msgstr "Non salvare"
++msgid "Do _Not Save"
++msgstr "_Non salvare"
+ 
+ #: src/gthumb-window.c:3074
+ msgid "Dragged Images"
+--- gthumb.orig/po/ja.po
++++ gthumb/po/ja.po
+@@ -3411,7 +3411,7 @@
+ msgstr "この画像が変更されました。保存しますか？"
+ 
+ #: ../src/gth-browser.c:1892 ../src/gth-viewer.c:996
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "保存しない"
+ 
+ #: ../src/gth-browser.c:3607
+--- gthumb.orig/po/ko.po
++++ gthumb/po/ko.po
+@@ -2757,7 +2757,7 @@
+ msgstr ""
+ 
+ #: src/gthumb-window.c:1609
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr ""
+ 
+ #: src/gthumb-window.c:3215
+--- gthumb.orig/po/lt.po
++++ gthumb/po/lt.po
+@@ -3323,7 +3323,7 @@
+ msgstr "Šis paveikslėlis buvo pakeistas, ar norite jį išsaugoti?"
+ 
+ #: ../src/gth-browser.c:1837 ../src/gth-viewer.c:987
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Nesaugoti"
+ 
+ #: ../src/gth-browser.c:3432
+--- gthumb.orig/po/lv.po
++++ gthumb/po/lv.po
+@@ -3373,7 +3373,7 @@
+ msgstr "Pašreizējais attēls ir pārveidots, vai jūs vēlaties saglabāt to?"
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:1007
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Nesaglabāt"
+ 
+ #: ../src/gth-browser.c:3552
+--- gthumb.orig/po/mk.po
++++ gthumb/po/mk.po
+@@ -3341,7 +3341,7 @@
+ msgstr "Тековната слика е променета, дали сакате да ја зачувате?"
+ 
+ #: ../src/gth-browser.c:1956 ../src/gth-viewer.c:991
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Не зачувувај"
+ 
+ #: ../src/gth-browser.c:3501
+--- gthumb.orig/po/nb.po
++++ gthumb/po/nb.po
+@@ -3376,7 +3376,7 @@
+ msgstr "Denne siden er endret. Vil du lagre den?"
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:1007
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Ikke lagre"
+ 
+ #: ../src/gth-browser.c:3552
+--- gthumb.orig/po/ne.po
++++ gthumb/po/ne.po
+@@ -3310,7 +3310,7 @@
+ msgstr "हालको छवि परिमार्जित गरिएको छ, के तपाईँ यसलाई बचत गर्न चाहनुहुन्छ ?"
+ 
+ #: ../src/gth-browser.c:1956 ../src/gth-viewer.c:991
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "बचत नगर्नुहोस्"
+ 
+ #: ../src/gth-browser.c:3501
+--- gthumb.orig/po/nl.po
++++ gthumb/po/nl.po
+@@ -3380,7 +3380,7 @@
+ msgstr "De huidige afbeelding is veranderd, wilt u hem opslaan?"
+ 
+ #: ../src/gth-browser.c:1908 ../src/gth-viewer.c:988
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Niet opslaan"
+ 
+ #: ../src/gth-browser.c:3443
+--- gthumb.orig/po/nn.po
++++ gthumb/po/nn.po
+@@ -3552,7 +3552,7 @@
+ 
+ #: ../src/gth-browser.c:1908 ../src/gth-viewer.c:992
+ #, fuzzy
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Lagra"
+ 
+ #: ../src/gth-browser.c:3424
+--- gthumb.orig/po/pa.po
++++ gthumb/po/pa.po
+@@ -3386,7 +3386,7 @@
+ msgstr "ਮੌਜੂਦਾ ਚਿੱਤਰ ਸੋਧਿਆ ਗਿਆ ਹੈ, ਕੀ ਤੁਸੀਂ ਇਹਨਾਂ ਨੂੰ ਸੰਭਾਲਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+ 
+ #: ../src/gth-browser.c:1868 ../src/gth-viewer.c:1006
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "ਨਾ ਸੰਭਾਲੋ"
+ 
+ #: ../src/gth-browser.c:3582
+--- gthumb.orig/po/pl.po
++++ gthumb/po/pl.po
+@@ -2778,7 +2778,7 @@
+ msgstr "Bieżący obraz został zmodyfikowany, czy chcesz go zapisać?"
+ 
+ #: src/gthumb-window.c:1476
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Nie zapisuj"
+ 
+ #: src/gthumb-window.c:3074
+--- gthumb.orig/po/pt.po
++++ gthumb/po/pt.po
+@@ -3430,7 +3430,7 @@
+ msgstr "A imagem actual foi alterada, deseja gravá-la?"
+ 
+ #: ../src/gth-browser.c:1899 ../src/gth-viewer.c:996
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Não Gravar"
+ 
+ #: ../src/gth-browser.c:3615
+--- gthumb.orig/po/pt_BR.po
++++ gthumb/po/pt_BR.po
+@@ -3446,7 +3446,7 @@
+ msgstr "A imagem atual foi modificada, você quer salvá-la?"
+ 
+ #: ../src/gth-browser.c:1892 ../src/gth-viewer.c:996
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Não Salvar"
+ 
+ #: ../src/gth-browser.c:3607
+--- gthumb.orig/po/ru.po
++++ gthumb/po/ru.po
+@@ -3338,7 +3338,7 @@
+ msgstr "Текущее изображение было изменено, сохранить его?"
+ 
+ #: ../src/gth-browser.c:1956 ../src/gth-viewer.c:991
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Не сохранять"
+ 
+ #: ../src/gth-browser.c:3501
+--- gthumb.orig/po/rw.po
++++ gthumb/po/rw.po
+@@ -3422,7 +3422,7 @@
+ msgstr "KIGEZWEHO Ishusho Byahinduwe Kuri Kubika"
+ 
+ #: src/gthumb-window.c:1623
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Ntubike"
+ 
+ #: src/gthumb-window.c:3232
+--- gthumb.orig/po/sk.po
++++ gthumb/po/sk.po
+@@ -3332,7 +3332,7 @@
+ msgstr "Aktuálny obrázok bol zmenený, chcete ho uložiť?"
+ 
+ #: ../src/gth-browser.c:1937 ../src/gth-viewer.c:912
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Neukladať"
+ 
+ #: ../src/gth-browser.c:3635
+--- gthumb.orig/po/sq.po
++++ gthumb/po/sq.po
+@@ -3010,7 +3010,7 @@
+ 
+ #: src/gthumb-window.c:1476
+ #, fuzzy
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Bëje Not Ruaj"
+ 
+ #: src/gthumb-window.c:3074
+--- gthumb.orig/po/sr.po
++++ gthumb/po/sr.po
+@@ -3318,7 +3318,7 @@
+ msgstr "Текућа слика је измењена, желите ли да је сачувате?"
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:791
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Не чувај"
+ 
+ #: ../src/gth-browser.c:3422
+--- gthumb.orig/po/sr@Latn.po
++++ gthumb/po/sr@Latn.po
+@@ -3318,7 +3318,7 @@
+ msgstr "Tekuća slika je izmenjena, želite li da je sačuvate?"
+ 
+ #: ../src/gth-browser.c:1844 ../src/gth-viewer.c:791
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Ne čuvaj"
+ 
+ #: ../src/gth-browser.c:3422
+--- gthumb.orig/po/sv.po
++++ gthumb/po/sv.po
+@@ -3448,7 +3448,7 @@
+ 
+ #: ../src/gth-browser.c:1868
+ #: ../src/gth-viewer.c:1006
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Spara inte"
+ 
+ #: ../src/gth-browser.c:3575
+--- gthumb.orig/po/th.po
++++ gthumb/po/th.po
+@@ -3334,7 +3334,7 @@
+ msgstr "รูปที่แสดงอยู่นี้มีการเปลี่ยนแปลง ต้องการบันทึกหรือไม่?"
+ 
+ #: ../src/gth-browser.c:1956 ../src/gth-viewer.c:991
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "ไม่บันทึก"
+ 
+ #: ../src/gth-browser.c:3501
+--- gthumb.orig/po/tr.po
++++ gthumb/po/tr.po
+@@ -2769,7 +2769,7 @@
+ msgstr "Geçerli resim değiştirildi, kaydetmek ister misiniz?"
+ 
+ #: src/gthumb-window.c:1482
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Kaydetme"
+ 
+ #: src/gthumb-window.c:3066
+--- gthumb.orig/po/uk.po
++++ gthumb/po/uk.po
+@@ -3738,7 +3738,7 @@
+ msgstr "Поточне зображення було змінено, бажаєте його зберегти?"
+ 
+ #: src/gthumb-window.c:1679
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Не зберігати"
+ 
+ #: src/gthumb-window.c:3247
+--- gthumb.orig/po/vi.po
++++ gthumb/po/vi.po
+@@ -3616,7 +3616,7 @@
+ 
+ #: ../src/gth-browser.c:1868
+ #: ../src/gth-viewer.c:1006
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Không lưu"
+ 
+ #: ../src/gth-browser.c:3582
+--- gthumb.orig/po/xh.po
++++ gthumb/po/xh.po
+@@ -2801,7 +2801,7 @@
+ msgstr "Umfanekiso okhoyo ulungisiwe, ufuna ukuwugcina?"
+ 
+ #: ../src/gthumb-window.c:1623
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "Sukugcina"
+ 
+ #: ../src/gthumb-window.c:3232
+--- gthumb.orig/po/zh_CN.po
++++ gthumb/po/zh_CN.po
+@@ -3331,7 +3331,7 @@
+ msgstr "当前图像已修改，你要保存它吗？"
+ 
+ #: ../src/gth-browser.c:1905 ../src/gth-viewer.c:988
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "不保存"
+ 
+ #: ../src/gth-browser.c:3440
+--- gthumb.orig/po/zh_HK.po
++++ gthumb/po/zh_HK.po
+@@ -3331,7 +3331,7 @@
+ msgstr "目前的圖片檔已經修改，你要儲存它嗎？"
+ 
+ #: ../src/gth-browser.c:1956 ../src/gth-viewer.c:991
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "不要儲存"
+ 
+ #: ../src/gth-browser.c:3501
+--- gthumb.orig/po/zh_TW.po
++++ gthumb/po/zh_TW.po
+@@ -3338,7 +3338,7 @@
+ msgstr "目前的圖片檔已經修改，您要儲存它嗎？"
+ 
+ #: ../src/gth-browser.c:1956 ../src/gth-viewer.c:991
+-msgid "Do Not Save"
++msgid "Do _Not Save"
+ msgstr "不要儲存"
+ 
+ #: ../src/gth-browser.c:3501
+--- gthumb.orig/src/gth-browser.c
++++ gthumb/src/gth-browser.c
+@@ -1896,7 +1896,7 @@
+ 			    GTK_WINDOW (browser),
+ 			    GTK_DIALOG_MODAL,
+ 			    _("The current image has been modified, do you want to save it?"),
+-			    _("Do Not Save"),
++			    _("Do _Not Save"),
+ 			    GTK_STOCK_SAVE_AS,
+ 			    _("_Do not display this message again"),
+ 			    PREF_MSG_SAVE_MODIFIED_IMAGE);
+--- gthumb.orig/src/gth-viewer.c
++++ gthumb/src/gth-viewer.c
+@@ -993,7 +993,7 @@
+ 			    GTK_WINDOW (viewer),
+ 			    GTK_DIALOG_MODAL,
+ 			    _("The current image has been modified, do you want to save it?"),
+-			    _("Do Not Save"),
++			    _("Do _Not Save"),
+ 			    GTK_STOCK_SAVE_AS,
+ 			    _("_Do not display this message again"),
+ 			    PREF_MSG_SAVE_MODIFIED_IMAGE);

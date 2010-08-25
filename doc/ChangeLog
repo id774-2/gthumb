@@ -1,0 +1,45 @@
+2007-12-16  Daniel Nylander <po@danielnylander.se>
+
+	* sv/sv.po: Updated Swedish translation.
+
+2007-10-08  Claude Paroz  <claude@2xlibre.net>
+
+	* Makefile.am: Added fr to DOC_LINGUAS.
+	* fr/fr.po: Added French translation by Bruno Annoa and Claude Paroz.
+	* fr/figures/*: Added screenshots.
+
+2007-08-03  Daniel Nylander <po@danielnylander.se>
+
+	* sv/sv.po: Updated Swedish translation.
+
+2007-07-21  Jorge Gonzalez <jorgegonz@svn.gnome.org>
+
+        * es/es.po: Added initial Spanish translation
+        * Makefile.am: Added es to DOC_LINGUAS
+
+2007-04-17  Daniel Nylander <po@danielnylander.se>
+
+	* sv/sv.po: Updated Swedish translation.
+
+2007-02-20  Daniel Nylander <po@danielnylander.se>
+
+	* sv/sv.po: Updated Swedish translation.
+	* sv/figures/*png: Added screenshots.
+
+2006-11-09  Michael J. Chudobiak  <mjc@cvs.gnome.org>
+
+        * ru: Deleted obsolete Russian manual translation.
+          Bug #346889.
+
+2006-11-08  Daniel Nylander <po@danielnylander.se>
+
+	* sv/sv.po: Added initial Swedish translation.
+	* Makefile.am: Added sv to DOC_LINGUAS
+
+2006-07-07  Don Scorgie  <dscorgie@cvs.gnome.org>
+
+	* C/gthumb.xml: 
+	Update doc to validate properly
+
+	New Changelog for help documents
+	Convert gThumb to gnome-doc-utils

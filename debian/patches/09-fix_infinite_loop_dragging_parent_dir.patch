@@ -1,0 +1,33 @@
+Author: David Paleino <d.paleino@gmail.com>
+Reason: when dragging ".." from the left pane to the main widget (where thumbnails 
+appear), the parent directory is infinitely copied in a loop. Example:
+
+$ mkdir -p /tmp/example/
+$ gthumb
+[ go in /tmp/example/ and drag ".." into the main window ]
+[ at this point, you'll end up with /tmp/example/tmp/example/tmp/example/... ]
+
+See Debian bug #420195.
+---
+ src/gth-browser.c |   10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+--- gthumb.orig/src/gth-browser.c
++++ gthumb/src/gth-browser.c
+@@ -3968,6 +3968,16 @@ image_list_drag_data_received  (GtkWidge
+ 		return;
+ 	}
+ 
++	// Fix infinite loop when dragging ../ into CWD
++	const gchar *dragged = (gchar*) data->data;
++	const gchar *current = (gchar*) priv->dir_list->path;
++	const gchar *parent = (gchar*) g_path_get_dirname(current);
++	if (strcmp(dragged, parent) == 0) {
++		g_print ("Cannot drag .. into the current folder\n");
++		return;
++	}
++	g_free(parent);
++
+ 	if (! ((data->length >= 0) && (data->format == 8))
+ 	    || (((context->action & GDK_ACTION_COPY) != GDK_ACTION_COPY)
+ 		&& ((context->action & GDK_ACTION_MOVE) != GDK_ACTION_MOVE))) {

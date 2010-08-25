@@ -1,0 +1,129 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DH_OPTIONS
+
+# GNOME policy
+export PACKAGE_NAME=gthumb
+export GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
+
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+include /usr/share/quilt/quilt.make
+
+CFLAGS = -Wall -g -lpng
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+configure: configure-stamp
+configure-stamp: patch
+	dh_testdir
+
+	CPPFLAGS=-I/usr/include/libpng12 ./configure --disable-scrollkeeper \
+	--host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) \
+	--prefix=/usr --mandir=\$${prefix}/share/man --sysconfdir=/etc \
+	--libdir=\$${prefix}/lib --libexecdir=\$${prefix}/lib \
+	--datadir=\$${prefix}/share --enable-maintainer-mode --disable-render \
+	CFLAGS="$(CFLAGS)" LDFLAGS="-Wl,-rpath,/usr/lib/gthumb"
+	#LDFLAGS="-Wl,-z,defs"
+
+	# Remove RPATH warning from lintian
+	perl -i -pe 's/^(hardcode_libdir_flag_spec\s*=\s*).+$$/$$1" -D__LIBTOOL_IS_A_FOOL__ "/' libtool
+
+	touch $@
+
+build: build-stamp
+build-stamp: configure-stamp
+	dh_testdir
+
+	# ugly hack to preserve the original tarball
+	#[ ! -f $(CURDIR)/debian/GNOME_GThumb.h.backup ] && \
+	#	(cp -vrf $(CURDIR)/src/GNOME_GThumb.h $(CURDIR)/debian/GNOME_GThumb.h.backup && echo "Copying the file")
+	#read
+
+	$(MAKE)
+
+	touch $@
+
+clean: distclean unpatch
+distclean:
+	dh_testdir
+	dh_testroot
+
+	[ ! -f Makefile ] || $(MAKE) distclean
+
+#	dh_clean build-stamp po/.intltool-merge-cache intltool-extract intltool-merge \
+#	intltool-update doc/C/gthumb-C.omf.out components/catalog-view/GNOME_GThumb_CatalogView.xml \
+#	components/image-viewer/GNOME_GThumb_Viewer.xml configure-stamp
+
+	# see the hack in the build rule
+	#[ -f $(CURDIR)/debian/GNOME_GThumb.h.backup ] && \
+	#	(mv $(CURDIR)/debian/GNOME_GThumb.h.backup $(CURDIR)/src/GNOME_GThumb.h && echo "Moving it back")
+	#read
+
+	dh_clean build-stamp configure-stamp
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+
+	$(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
+
+	-find . -name "*.a" -exec rm -vrf {} \;
+	-find . -name "*.la" -exec rm -vrf {} \;
+
+	dh_install --sourcedir=$(CURDIR)/debian/tmp
+
+	# These go into gthumb...
+	-rm -rf $(CURDIR)/debian/gthumb-data/usr/share/applications
+	-rm -rf $(CURDIR)/debian/gthumb-data/usr/share/man
+
+	# ...put this in the right location...
+	install -m644 $(CURDIR)/debian/tmp/usr/lib/libgthumb.so $(CURDIR)/debian/$(PACKAGE_NAME)/usr/lib/gthumb/libgthumb.so
+
+	# ...and this into lintian/overrides
+	install -m644 $(CURDIR)/debian/gthumb.lintian-overrides $(CURDIR)/debian/$(PACKAGE_NAME)/usr/share/lintian/overrides/gthumb
+
+binary-common:
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs ChangeLog
+	dh_installdocs README NEWS
+	dh_installmenu
+	dh_installman
+	dh_scrollkeeper
+	dh_desktop
+	dh_gconf
+	dh_icons
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-indep: build install
+	$(MAKE) -f debian/rules DH_OPTIONS=-i binary-common
+
+binary-arch: build install
+	$(MAKE) -f debian/rules DH_OPTIONS=-s binary-common
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary install configure

@@ -1,0 +1,5 @@
+usr/bin/*
+usr/lib/bonobo
+usr/lib/gthumb
+usr/share/applications
+usr/share/man
